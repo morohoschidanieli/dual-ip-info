@@ -2,7 +2,9 @@
 
 Dual IP Info is a Chrome extension that provides real-time display of both your public and private IP addresses. It also maintains a history of your last 5 IP addresses, making it a useful tool for network monitoring and security.
 
-![Dual IP Info Screenshot](screenshot.png)
+![Dual IP Info Screenshot 1](docs/images/screenshot1.png)
+![Dual IP Info Screenshot 2](docs/images/screenshot2.png)
+![Dual IP Info Screenshot 3](docs/images/screenshot3.png)
 
 ## Features
 
@@ -24,11 +26,7 @@ You can install Dual IP Info directly from the [Chrome Web Store](https://chrome
 
 ## Feedback and Issues
 
-If you encounter any issues or have suggestions for improvement, please [submit an issue](https://github.com/yourusername/dual-ip-info-extension/issues).
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please follow the [contribution guidelines](CONTRIBUTING.md).
+If you encounter any issues or have suggestions for improvement, please [submit an issue](https://github.com/morohoschidanieli/dual-ip-info/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
 
 ## License
 
