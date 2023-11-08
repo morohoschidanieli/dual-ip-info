@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+# Dual IP Info Chrome Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dual IP Info is a Chrome extension that provides real-time display of both your public and private IP addresses. It also maintains a history of your last 5 IP addresses, making it a useful tool for network monitoring and security.
 
-Currently, two official plugins are available:
+![Dual IP Info Screenshot](screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-Time IP Display:** Dual IP Info displays both your local and public IP addresses in your Chrome browser's toolbar.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Refresh with a Click:** With a single click, you can refresh the displayed IP addresses to stay up-to-date.
 
-- Configure the top-level `parserOptions` property like this:
+- **IP History:** Dual IP Info stores the last 5 IP addresses you've used, making it easy to revisit them.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Installation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+You can install Dual IP Info directly from the [Chrome Web Store](https://chrome.google.com/webstore/detail/dual-ip-info-extension-link).
+
+## Usage
+
+1. After installing the extension, you'll see the IP addresses in your browser's toolbar.
+2. Click the refresh button to update the IP addresses in real-time.
+3. Click the extension icon to access your IP history.
+
+## Feedback and Issues
+
+If you encounter any issues or have suggestions for improvement, please [submit an issue](https://github.com/yourusername/dual-ip-info-extension/issues).
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow the [contribution guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
