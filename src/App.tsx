@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import { Detail, Footer, LastIps, RefreshButton } from "@components";
 import { useInternalIPV4, usePublicIPV4 } from "@hooks";
 import { getCurrentDate, getCurrentHour } from "@utils";
-import { loading } from "@assets";
+import { errorGif, loading } from "@assets";
 import { IP } from "components/LastIps";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<Boolean>(true);
   const [prevIps, setPrevIps] = useState<Array<IP>>();
 
-  const [isLoadingInternalIPV4, internalIPV4] = useInternalIPV4();
-  const [isLoadingPublicIPV4, publicIPV4] = usePublicIPV4();
+  const [isLoadingInternalIPV4, internalIPV4, errorInternalIPV4] =
+    useInternalIPV4();
+  const [isLoadingPublicIPV4, publicIPV4, errorPublicIPV4] = usePublicIPV4();
 
   useEffect(() => {
     if (isLoading === false)
@@ -48,7 +49,13 @@ const App = () => {
 
   return (
     <>
-      {isLoading ? (
+      {errorInternalIPV4 && errorPublicIPV4 ? (
+        <img
+          className="w-full object-contain h-60"
+          src={errorGif}
+          alt="Loading"
+        />
+      ) : isLoading ? (
         <img
           className="w-full object-contain h-60"
           src={loading}
@@ -61,7 +68,11 @@ const App = () => {
           </div>
 
           <Detail title="Your Public IP:" ip={publicIPV4 as string} />
-          <Detail title="Your Private IP:" ip={internalIPV4 as string} />
+
+          {!errorInternalIPV4 && (
+            <Detail title="Your Private IP:" ip={internalIPV4 as string} />
+          )}
+
           {prevIps !== undefined && <LastIps lastIps={prevIps} />}
           <Footer>
             <>

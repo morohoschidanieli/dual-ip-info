@@ -27,9 +27,14 @@ const LastIps: React.FC<LastIpsProps> = ({ lastIps }) => {
             <div>
               <span className="font-bold">Public IP:</span> {ip.publicIPV4}
             </div>
-            <div>
-              <span className="font-bold">Private IP:</span> {ip.internalIPV4}
-            </div>
+
+            {ip.internalIPV4 ? (
+              <div>
+                <span className="font-bold">Private IP:</span> {ip.internalIPV4}
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       ))}
