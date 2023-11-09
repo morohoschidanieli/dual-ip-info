@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "name": "Dual IP Info",
-  "description": "Dual IP Info: One-click IP check for network troubleshooting, privacy, and curiosity. Get your public IP and location instantly.",
+  "description": "One-click IP check for network troubleshooting, privacy, and curiosity. Get your public IP and location instantly.",
   "action": {
     "default_popup": "./index.html",
     "default_icon": "./assets/icons/icon128.png",
