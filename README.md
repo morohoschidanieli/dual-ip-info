@@ -16,7 +16,7 @@ Dual IP Info is a Chrome extension that provides real-time display of both your 
 
 ## Installation
 
-You can install Dual IP Info directly from the [Chrome Web Store](https://chrome.google.com/webstore/detail/dual-ip-info-extension-link).
+You can install Dual IP Info directly from the [Chrome Web Store](https://chrome.google.com/webstore/detail/dual-ip-info/mkogjkljakhdcbajpejnkkmfhngbojhi?hl=ro&authuser=0).
 
 ## Usage
 
