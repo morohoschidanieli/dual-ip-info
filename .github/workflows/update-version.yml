@@ -3,7 +3,7 @@ name: Update Version and Create Release
 on:
   push:
     branches:
-      - feature/test
+      - main
 
 jobs:
   update-version:
