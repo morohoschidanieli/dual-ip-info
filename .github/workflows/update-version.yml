@@ -68,11 +68,23 @@ jobs:
           fi
 
           case "$BUMP" in
-            patch) ((patch++)) ;;
-            minor) ((minor++)); patch=0 ;;
-            major) ((major++)); minor=0; patch=0 ;;
-            *) echo "Unknown BUMP type: $BUMP"; exit 1 ;;
-          esac
+            patch) 
+              ((patch++)) 
+              ;;
+            minor) 
+              ((minor++))
+              patch=0  # Resetăm patch-ul
+              ;;
+            major) 
+              ((major++))
+              minor=0   # Resetăm minor
+              patch=0   # Resetăm patch
+              ;;
+            *) 
+              echo "Unknown BUMP type: $BUMP"
+              exit 1
+              ;;
+            esac
 
           new_version="v${version_parts[0]}.${version_parts[1]}.${version_parts[2]}"
           echo "New version: $new_version"
