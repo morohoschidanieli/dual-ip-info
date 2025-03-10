@@ -33,6 +33,7 @@ jobs:
           branch_name="${{ github.ref_name }}"
           echo "branch name: ${branch_name}"
           if [[ "$branch_name" == feature/* ]]; then
+            echo "intra aici"
             echo "BUMP=minor" >> $GITHUB_ENV
           elif [[ "$branch_name" == fix/* ]]; then
             echo "BUMP=patch" >> $GITHUB_ENV
