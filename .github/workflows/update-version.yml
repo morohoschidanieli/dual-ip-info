@@ -41,19 +41,26 @@ jobs:
         id: increment_version
         run: |
           current_version="${{ env.version }}"
-          current_version="${current_version#v}"  # Elimină 'v' din față
+          current_version="${current_version#v}"  
+
+          if [[ ! $current_version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Version format is invalid: $current_version"
+            exit 1
+          fi
+
           IFS='.' read -r -a version_parts <<< "$current_version"
 
-          if [[ "${{ env.BUMP }}" == "patch" ]]; then
-            ((version_parts[2]++))
-          elif [[ "${{ env.BUMP }}" == "minor" ]]; then
-            ((version_parts[1]++))
-            version_parts[2]=0
-          elif [[ "${{ env.BUMP }}" == "major" ]]; then
-            ((version_parts[0]++))
-            version_parts[1]=0
-            version_parts[2]=0
+          if [[ ${#version_parts[@]} -ne 3 ]]; then
+            echo "Version parsing failed: ${version_parts[*]}"
+            exit 1
           fi
+
+          case "$BUMP" in
+            patch) ((version_parts[2]++)) ;;
+            minor) ((version_parts[1]++)); version_parts[2]=0 ;;
+            major) ((version_parts[0]++)); version_parts[1]=0; version_parts[2]=0 ;;
+            *) echo "Unknown BUMP type: $BUMP"; exit 1 ;;
+          esac
 
           new_version="v${version_parts[0]}.${version_parts[1]}.${version_parts[2]}"
           echo "New version: $new_version"
