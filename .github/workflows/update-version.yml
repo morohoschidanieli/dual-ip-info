@@ -41,6 +41,7 @@ jobs:
         id: increment_version
         run: |
           current_version="${{ env.version }}"
+          current_version="${current_version#v}"  # Elimină 'v' din față
           IFS='.' read -r -a version_parts <<< "$current_version"
 
           if [[ "${{ env.BUMP }}" == "patch" ]]; then
