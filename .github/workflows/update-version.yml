@@ -15,11 +15,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Debug Version Extraction
+        run: |
+          echo "Current version raw: '${{ env.version }}'"
+
       - name: Get the current version
         id: get_version
         run: |
-          git fetch --tags  
-          current_version=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          current_version=$(git describe --tags --abbrev=0 --match "v*")
           echo "Current version: $current_version"
           echo "version=$current_version" >> $GITHUB_ENV
 
@@ -27,6 +30,7 @@ jobs:
         id: version-bump
         run: |
           branch_name="${{ github.ref_name }}"
+          echo "branch name: ${branch_name}"
           if [[ "$branch_name" == feature/* ]]; then
             echo "BUMP=minor" >> $GITHUB_ENV
           elif [[ "$branch_name" == fix/* ]]; then
@@ -43,6 +47,7 @@ jobs:
           current_version="${{ env.version }}"
           current_version="${current_version#v}"  
 
+
           if [[ ! $current_version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Version format is invalid: $current_version"
             exit 1
@@ -58,13 +63,21 @@ jobs:
           fi
 
           case "$BUMP" in
-            patch) ((patch++)) ;;
-            minor) ((minor++)); patch=0 ;;
-            major) ((major++)); minor=0; patch=0 ;;
-            *) echo "Unknown BUMP type: $BUMP"; exit 1 ;;
+            patch) 
+              patch=$((patch + 1))
+              ;;
+            minor) 
+              minor=$((minor + 1))
+              patch=0
+              ;;
+            major) 
+              minor=$((major + 1))
+              minor=0   # Resetăm minor
+              patch=0   # Resetăm patch
+              ;;
           esac
 
-          new_version="v${version_parts[0]}.${version_parts[1]}.${version_parts[2]}"
+          new_version="v${major}.${minor}.${patch}"
           echo "New version: $new_version"
           echo "new_version=$new_version" >> $GITHUB_ENV
 
