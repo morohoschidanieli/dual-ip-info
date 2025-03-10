@@ -1,0 +1,80 @@
+name: Update Version and Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get the current version
+        id: get_version
+        run: |
+          current_version=$(git describe --tags --abbrev=0 || echo "v0.0.0") 
+          echo "Current version: $current_version"
+          echo "::set-output name=version::$current_version"
+
+      - name: Determine version bump
+        id: version-bump
+        run: |
+          branch_name="${{ github.head_ref }}"
+          if [[ "$branch_name" == feature/* ]]; then
+            echo "bump=minor" >> $GITHUB_ENV
+          elif [[ "$branch_name" == fix/* ]]; then
+            echo "bump=patch" >> $GITHUB_ENV
+          elif [[ "$branch_name" == version/* ]]; then
+            echo "bump=major" >> $GITHUB_ENV
+          else
+            echo "bump=patch" >> $GITHUB_ENV
+          fi
+
+      - name: Increment version
+        id: increment_version
+        run: |
+          current_version="${{ steps.get_version.outputs.version }}"
+          IFS='.' read -r -a version_parts <<< "$current_version"
+
+          if [[ "$BUMP" == "patch" ]]; then
+            ((version_parts[2]++))
+          elif [[ "$BUMP" == "minor" ]]; then
+            ((version_parts[1]++))
+            version_parts[2]=0
+          elif [[ "$BUMP" == "major" ]]; then
+            ((version_parts[0]++))
+            version_parts[1]=0
+            version_parts[2]=0
+          fi
+
+          new_version="${version_parts[0]}.${version_parts[1]}.${version_parts[2]}"
+          echo "New version: $new_version"
+          echo "::set-output name=new_version::$new_version"
+
+      - name: Update version in code
+        run: |
+          echo "Updating version to ${{ steps.increment_version.outputs.new_version }}"
+          echo ${{ steps.increment_version.outputs.new_version }} > version.txt
+
+      - name: Create new tag
+        run: |
+          git tag ${{ steps.increment_version.outputs.new_version }}
+          git push origin ${{ steps.increment_version.outputs.new_version }}
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.increment_version.outputs.new_version }}
+          release_name: Release ${{ steps.increment_version.outputs.new_version }}
+          body: |
+            Changes in this Release:
+            - Added new feature
+            - Fixed a bug
+          draft: false
+          prerelease: false
