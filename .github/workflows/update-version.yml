@@ -16,7 +16,7 @@ jobs:
       - name: Get the current version
         id: get_version
         run: |
-          current_version=$(git describe --tags --abbrev=0 || echo "v0.0.0") 
+          current_version=$(git describe --tags --abbrev=0) 
           echo "Current version: $current_version"
           echo "::set-output name=version::$current_version"
 
