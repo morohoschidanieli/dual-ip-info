@@ -31,6 +31,7 @@ jobs:
         id: version-bump
         run: |
           branch_name="${{ github.ref_name }}"
+          echo "branch name: ${branch_name}"
           if [[ "$branch_name" == feature/* ]]; then
             echo "BUMP=minor" >> $GITHUB_ENV
           elif [[ "$branch_name" == fix/* ]]; then
