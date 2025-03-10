@@ -71,6 +71,7 @@ jobs:
               ;;
             minor) 
               ((minor++))
+              echo "minor = $minor"
               patch=0  # Resetăm patch-ul
               ;;
             major) 
