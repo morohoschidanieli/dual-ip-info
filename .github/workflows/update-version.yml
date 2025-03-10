@@ -19,6 +19,7 @@ jobs:
         run: |
           echo "Current version raw: '${{ env.version }}'"
 
+
       - name: Get the current version
         id: get_version
         run: |
