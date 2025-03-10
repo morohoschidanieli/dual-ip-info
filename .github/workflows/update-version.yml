@@ -37,7 +37,6 @@ jobs:
             echo "BUMP=patch" >> $GITHUB_ENV
           fi
 
-
       - name: Increment version
         id: increment_version
         run: |
@@ -49,17 +48,17 @@ jobs:
             exit 1
           fi
 
-          IFS='.' read -r -a version_parts <<< "$current_version"
+          echo "$current_version" | awk -F. '{print $1, $2, $3}' | read -r major minor patch
 
-          if [[ ${#version_parts[@]} -ne 3 ]]; then
-            echo "Version parsing failed: ${version_parts[*]}"
+          if [[ -z "$major" || -z "$minor" || -z "$patch" ]]; then
+            echo "Version parsing failed: $current_version"
             exit 1
           fi
 
           case "$BUMP" in
-            patch) ((version_parts[2]++)) ;;
-            minor) ((version_parts[1]++)); version_parts[2]=0 ;;
-            major) ((version_parts[0]++)); version_parts[1]=0; version_parts[2]=0 ;;
+            patch) ((patch++)) ;;
+            minor) ((minor++)); patch=0 ;;
+            major) ((major++)); minor=0; patch=0 ;;
             *) echo "Unknown BUMP type: $BUMP"; exit 1 ;;
           esac
 
