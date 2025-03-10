@@ -37,6 +37,7 @@ jobs:
             echo "BUMP=patch" >> $GITHUB_ENV
           fi
 
+
       - name: Increment version
         id: increment_version
         run: |
