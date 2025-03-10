@@ -22,7 +22,7 @@ jobs:
       - name: Get the current version
         id: get_version
         run: |
-          git fetch --tags  
+          # Obține cel mai recent tag, sau folosește v0.0.0 dacă nu există tag-uri
           current_version=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
           echo "Current version: $current_version"
           echo "version=$current_version" >> $GITHUB_ENV
