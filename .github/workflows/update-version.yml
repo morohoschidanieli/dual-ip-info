@@ -63,21 +63,21 @@ jobs:
           #   exit 1
           # fi
 
-          # case "$BUMP" in
-          #   patch) 
-          #     ((patch++)) 
+          case "$BUMP" in
+            patch) 
+              ((patch++)) 
 
-          #     ;;
-          #   minor) 
-          #     ((minor++))
-          #     patch=0  # Resetăm patch-ul
-          #     ;;
-          #   major) 
-          #     ((major++))
-          #     minor=0   # Resetăm minor
-          #     patch=0   # Resetăm patch
-          #     ;;
-          #   esac
+              ;;
+            minor) 
+              ((minor++))
+              patch=0  # Resetăm patch-ul
+              ;;
+            major) 
+              ((major++))
+              minor=0   # Resetăm minor
+              patch=0   # Resetăm patch
+              ;;
+          esac
 
           echo "major: $major"
           echo "minor: $minor"
