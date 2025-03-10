@@ -48,7 +48,9 @@ jobs:
             exit 1
           fi
 
-          echo "$current_version" | awk -F. '{print $1, $2, $3}' | read -r major minor patch
+          major=$(echo "$current_version" | cut -d. -f1)
+          minor=$(echo "$current_version" | cut -d. -f2)
+          patch=$(echo "$current_version" | cut -d. -f3)
 
           if [[ -z "$major" || -z "$minor" || -z "$patch" ]]; then
             echo "Version parsing failed: $current_version"
