@@ -77,10 +77,6 @@ jobs:
               minor=0   # Resetăm minor
               patch=0   # Resetăm patch
               ;;
-            *) 
-              echo "Unknown BUMP type: $BUMP"
-              exit 1
-              ;;
             esac
 
           echo "major: $major"
