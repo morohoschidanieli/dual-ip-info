@@ -9,9 +9,6 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/extension
 
     steps:
       - name: Checkout code
@@ -22,14 +19,17 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install dependencies
+      - name: Install dependencies (from root)
         run: npm install
 
       - name: Lint
         run: npm run lint
+        working-directory: apps/extension
 
       - name: Test
         run: npm run test
+        working-directory: apps/extension
 
       - name: Build
         run: npm run build
+        working-directory: apps/extension
