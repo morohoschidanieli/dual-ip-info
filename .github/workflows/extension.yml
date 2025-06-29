@@ -1,0 +1,38 @@
+name: Extension
+
+on:
+  pull_request:
+    paths:
+      - "apps/extension/**"
+  push:
+    paths:
+      - "apps/extension/**"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies (from root)
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+        working-directory: apps/extension
+
+      - name: Test
+        run: npm run test
+        working-directory: apps/extension
+
+      - name: Build
+        run: npm run build
+        working-directory: apps/extension
