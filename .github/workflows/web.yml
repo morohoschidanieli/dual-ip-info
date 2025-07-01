@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        uses: ../actions/install-dependencies/actions
+        uses: ./.github/actions/install-dependencies
         with:
           - node-version: 24
 
@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        uses: ../actions/install-dependencies/actions
+        uses: ./.github/actions/install-dependencies
         with:
           - node-version: 24
 
@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        uses: ../actions/install-dependencies/actions
+        uses: ./.github/actions/install-dependencies
         with:
           - node-version: 24
 
@@ -63,7 +63,7 @@ jobs:
 
     steps:
       - name: Install dependencies
-        uses: ../actions/install-dependencies/actions
+        uses: ./.github/actions/install-dependencies
         with:
           - node-version: 24
 
