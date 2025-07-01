@@ -59,3 +59,10 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: ./apps/extension
+
+      - name: Zip build output
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: apps/extension/dist/ apps/extension/manifest.json
+          recursive: false
+          dest: extension-output.zip
