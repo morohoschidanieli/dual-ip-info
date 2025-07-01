@@ -7,36 +7,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  init:
-    name: Init
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
   install-dependencies:
     name: Install dependencies
     needs: init
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Install dependencies
+        uses: ../actions/install-dependencies/actions
         with:
-          node-version: 24
-
-      - name: Install dependencies (from root)
-        run: npm install
-        working-directory: ./
+          - node-version: 24
 
   lint:
     name: Run lint
@@ -46,17 +26,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Install dependencies
+        uses: ../actions/install-dependencies/actions
         with:
-          node-version: 24
-
-      - name: Install dependencies (from root)
-        run: npm install
-        working-directory: ./
+          - node-version: 24
 
       - name: Lint
         run: npm run lint
@@ -70,17 +43,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Install dependencies
+        uses: ../actions/install-dependencies/actions
         with:
-          node-version: 24
-
-      - name: Install dependencies (from root)
-        run: npm install
-        working-directory: ./
+          - node-version: 24
 
       - name: Test
         run: npm run test
@@ -96,17 +62,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Install dependencies
+        uses: ../actions/install-dependencies/actions
         with:
-          node-version: 24
-
-      - name: Install dependencies (from root)
-        run: npm install
-        working-directory: ./
+          - node-version: 24
 
       - name: Build
         run: npm run build
