@@ -40,7 +40,9 @@ jobs:
 
   lint:
     name: Run lint
-    needs: init
+    needs:
+      - init
+      - install-dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -58,7 +60,9 @@ jobs:
 
   unit-tests:
     name: Unit Tests
-    needs: init
+    needs:
+      - init
+      - install-dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -79,6 +83,7 @@ jobs:
     needs:
       - init
       - unit-tests
+      - lint
 
     runs-on: ubuntu-latest
 
