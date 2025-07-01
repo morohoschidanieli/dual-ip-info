@@ -1,53 +1,74 @@
 name: Extension
 
 on:
-  pull_request:
-    paths:
-      - "apps/extension/**"
   push:
+    branches:
+      - master
+    paths:
+      - apps/extension/**
+  pull_request:
     paths:
       - "apps/extension/**"
   workflow_dispatch:
 
 jobs:
-  setup-node:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
   install-dependencies:
+    name: Install dependencies
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install dependencies (from root)
-        run: npm install
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
 
   lint:
+    name: Run lint
+    needs: install-dependencies
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
       - name: Lint
         run: npm run lint
-        working-directory: apps/extension
+        working-directory: ./apps/extension
 
-    tests:
-      runs-on: ubuntu-latest
+  unit-tests:
+    name: Unit Tests
+    needs: install-dependencies
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Test
-          run: npm run test
-          working-directory: apps/extension
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
 
-    build:
-      runs-on: ubuntu-latest
+      - name: Test
+        run: npm run test
+        working-directory: ./apps/extension
 
-      steps:
-        - name: Build
-          run: npm run build
-          working-directory: apps/extension
+  build:
+    name: Build
+    needs:
+      - unit-tests
+      - lint
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Build
+        run: npm run build
+        working-directory: ./apps/extension
+
+      - name: Zip build output
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: apps/extension/dist/ apps/extension/manifest.json
+          recursive: false
+          dest: extension-output.zip
