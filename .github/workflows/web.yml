@@ -4,9 +4,6 @@ on:
   pull_request:
     paths:
       - "apps/web/**"
-  push:
-    paths:
-      - "apps/web/**"
   workflow_dispatch:
 
 jobs:

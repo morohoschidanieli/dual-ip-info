@@ -4,9 +4,6 @@ on:
   pull_request:
     paths:
       - "apps/extension/**"
-  push:
-    paths:
-      - "apps/extension/**"
   workflow_dispatch:
 
 jobs:
