@@ -54,6 +54,10 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install dependencies (from root)
+        run: npm install
+        working-directory: ./
+
       - name: Lint
         run: npm run lint
         working-directory: ./apps/web
@@ -73,6 +77,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+
+      - name: Install dependencies (from root)
+        run: npm install
+        working-directory: ./
 
       - name: Test
         run: npm run test
@@ -95,6 +103,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+
+      - name: Install dependencies (from root)
+        run: npm install
+        working-directory: ./
 
       - name: Build
         run: npm run build
