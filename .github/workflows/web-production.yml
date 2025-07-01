@@ -1,11 +1,11 @@
-name: Extension - deploy
+name: Web - production
 
 on:
   push:
     branches:
       - master
     paths:
-      - apps/extension/**
+      - apps/web/**
   workflow_dispatch:
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
 
       - name: Lint
         run: npm run lint
-        working-directory: ./apps/extension
+        working-directory: ./apps/web
 
   unit-tests:
     name: Unit Tests
@@ -44,13 +44,14 @@ jobs:
 
       - name: Test
         run: npm run test
-        working-directory: ./apps/extension
+        working-directory: ./apps/web
 
   build:
     name: Build
     needs:
       - unit-tests
       - lint
+
     runs-on: ubuntu-latest
 
     steps:
@@ -60,11 +61,4 @@ jobs:
 
       - name: Build
         run: npm run build
-        working-directory: ./apps/extension
-
-      - name: Zip build output
-        uses: vimtor/action-zip@v1.2
-        with:
-          files: apps/extension/dist/ apps/extension/manifest.json
-          recursive: false
-          dest: extension-output.zip
+        working-directory: ./apps/web
