@@ -1,6 +1,11 @@
 name: Extension
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - apps/extension/**
   pull_request:
     paths:
       - "apps/extension/**"
@@ -50,6 +55,7 @@ jobs:
       - unit-tests
       - lint
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
       - uses: actions/checkout@v4
