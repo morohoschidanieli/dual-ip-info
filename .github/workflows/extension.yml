@@ -4,13 +4,11 @@ on:
   pull_request:
     paths:
       - "apps/extension/**"
-  push:
-    paths:
-      - "apps/extension/**"
   workflow_dispatch:
 
 jobs:
-  setup-node:
+  init:
+    name: Init
     runs-on: ubuntu-latest
 
     steps:
@@ -21,14 +19,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+
   install-dependencies:
+    name: Install dependencies
+    needs: init
     runs-on: ubuntu-latest
 
     steps:
       - name: Install dependencies (from root)
         run: npm install
+        working-directory: ./
 
   lint:
+    name: Run lint
+    needs: init
     runs-on: ubuntu-latest
 
     steps:
@@ -36,18 +40,25 @@ jobs:
         run: npm run lint
         working-directory: apps/extension
 
-    tests:
-      runs-on: ubuntu-latest
+  unit-tests:
+    name: Unit Tests
+    needs: init
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Test
-          run: npm run test
-          working-directory: apps/extension
+    steps:
+      - name: Test
+        run: npm run test
+        working-directory: apps/extension
 
-    build:
-      runs-on: ubuntu-latest
+  build:
+    name: Build
+    needs:
+      - init
+      - unit-tests
 
-      steps:
-        - name: Build
-          run: npm run build
-          working-directory: apps/extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        run: npm run build
+        working-directory: apps/extension
