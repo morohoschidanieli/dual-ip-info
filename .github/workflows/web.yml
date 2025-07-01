@@ -54,7 +54,7 @@ jobs:
 
       - name: Lint
         run: npm run lint
-        working-directory: apps/web
+        working-directory: ./apps/web
 
   unit-tests:
     name: Unit Tests
@@ -72,7 +72,7 @@ jobs:
 
       - name: Test
         run: npm run test
-        working-directory: apps/web
+        working-directory: ./apps/web
 
   build:
     name: Build
@@ -93,4 +93,4 @@ jobs:
 
       - name: Build
         run: npm run build
-        working-directory: apps/web
+        working-directory: ./apps/web
