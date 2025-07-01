@@ -1,4 +1,4 @@
-name: Extension
+name: Web
 
 on:
   pull_request:
