@@ -9,7 +9,6 @@ on:
 jobs:
   install-dependencies:
     name: Install dependencies
-    needs: init
     runs-on: ubuntu-latest
 
     steps:
