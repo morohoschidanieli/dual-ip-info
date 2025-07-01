@@ -1,0 +1,21 @@
+name: Install dependencies
+description: Setup node.js and install dependencies
+
+inputs:
+  node-version:
+    description: "node.js version"
+    required: false
+    default: 24
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install dependencies (from root)
+      run: npm install
+      working-directory: ./
+      shell: bash
