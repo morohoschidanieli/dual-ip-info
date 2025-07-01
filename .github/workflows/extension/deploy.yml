@@ -1,0 +1,70 @@
+name: Extension - deploy
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - apps/extension/**
+  workflow_dispatch:
+
+jobs:
+  install-dependencies:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+  lint:
+    name: Run lint
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Lint
+        run: npm run lint
+        working-directory: ./apps/extension
+
+  unit-tests:
+    name: Unit Tests
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Test
+        run: npm run test
+        working-directory: ./apps/extension
+
+  build:
+    name: Build
+    needs:
+      - unit-tests
+      - lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Build
+        run: npm run build
+        working-directory: ./apps/extension
+
+      - name: Zip build output
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: apps/extension/dist/ apps/extension/manifest.json
+          recursive: false
+          dest: extension-output.zip

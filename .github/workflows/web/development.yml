@@ -1,0 +1,45 @@
+name: Web - development
+
+on:
+  pull_request:
+    paths:
+      - "apps/web/**"
+  workflow_dispatch:
+
+jobs:
+  install-dependencies:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+  lint:
+    name: Run lint
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Lint
+        run: npm run lint
+        working-directory: ./apps/web
+
+  unit-tests:
+    name: Unit Tests
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Test
+        run: npm run test
+        working-directory: ./apps/web
