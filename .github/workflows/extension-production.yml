@@ -1,0 +1,100 @@
+name: Extension - production
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - apps/extension/**
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Confirm deployment to production?"
+        required: true
+        type: boolean
+
+jobs:
+  install-dependencies:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+  lint:
+    name: Run lint
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Lint
+        run: npm run lint
+        working-directory: ./apps/extension
+
+  unit-tests:
+    name: Unit Tests
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Test
+        run: npm run test
+        working-directory: ./apps/extension
+
+  build:
+    name: Build
+    needs:
+      - unit-tests
+      - lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Build
+        run: npm run build
+        working-directory: ./apps/extension
+
+      - name: Zip build output
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: apps/extension/dist/ apps/extension/manifest.json
+          recursive: false
+          dest: extension-output.zip
+
+      - name: Upload zip as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-zip
+          path: apps/extension/extension-output.zip
+  deploy:
+    name: Deploy to Chrome Extension
+    needs:
+      - unit-tests
+      - lint
+      - build
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'true'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download zip artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: extension-zip
+
+      - name: Deploy
+        run: echo "🚀 Deploy logic goes here!"
