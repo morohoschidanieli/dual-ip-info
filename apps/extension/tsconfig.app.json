@@ -9,6 +9,9 @@
     "paths": {
       "@constants/*": ["./src/constants/*"],
       "@models/*": ["./src/models/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@components/*": ["./src/components/*"],
+      "@app": ["./src/App.tsx"],
       "@store": ["./src/store/store"],
       "@reducers/*": ["./src/store/reducers/*"]
     }

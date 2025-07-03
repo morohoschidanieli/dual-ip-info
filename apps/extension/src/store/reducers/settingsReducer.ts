@@ -7,6 +7,7 @@ import type {
 
 const initialState: ApplicationSettingsModel = {
   theme: "light",
+  useSystemTheme: false,
   language: "English",
   showIPV6: false,
   showPublicIPNotification: false,
@@ -18,8 +19,19 @@ export const settingsSlice = createSlice({
   name: "settings",
   initialState,
   reducers: {
-    changeTheme: (state, action: PayloadAction<Theme>) => {
-      state.theme = action.payload;
+    changeTheme: (
+      state,
+      action: PayloadAction<{ theme: Theme; isManual?: boolean }>
+    ) => {
+      const { theme, isManual = true } = action.payload;
+
+      if (isManual) {
+        state.useSystemTheme = false;
+      }
+      state.theme = theme;
+    },
+    changeUseSystemTheme: (state, action: PayloadAction<boolean>) => {
+      state.useSystemTheme = action.payload;
     },
     changeLanguage: (state, action: PayloadAction<Language>) => {
       state.language = action.payload;
@@ -41,6 +53,7 @@ export const settingsSlice = createSlice({
 
 export const {
   changeTheme,
+  changeUseSystemTheme,
   changeLanguage,
   changeShowIPV6,
   changeShowPublicIPNotification,
