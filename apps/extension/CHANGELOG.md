@@ -1,5 +1,6 @@
-## [2.0.0] - 02-07-2025
+## [2.0.0] - 03-07-2025
 
+- ✨ feat: add redux/redux-persist and initial state for settings
 - 🔧 chore: add Chackra UI
 - 🔧 chore: add manifest.json for chrome extension API
 - 🔧 chore: add vitest
