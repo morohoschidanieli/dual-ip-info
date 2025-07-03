@@ -1,8 +1,14 @@
 import { useEffect, type FC } from "react";
-import { ChakraProvider, defaultSystem, Theme } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
+import {
+  ChakraProvider,
+  createSystem,
+  defaultConfig,
+  Theme,
+} from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "@reducers/settingsReducer";
+import { themeConfiguration } from "@configuration/theme";
 
 export interface ChakraProps {
   children: React.JSX.Element;
@@ -13,6 +19,8 @@ export const StyleProvider: FC<ChakraProps> = ({ children }) => {
     ({ settings }: RootState) => settings
   );
   const dispatch = useDispatch();
+
+  const system = createSystem(defaultConfig, themeConfiguration(theme));
 
   useEffect(() => {
     if (useSystemTheme) {
@@ -41,8 +49,8 @@ export const StyleProvider: FC<ChakraProps> = ({ children }) => {
   }, [useSystemTheme, dispatch]);
 
   return (
-    <ChakraProvider value={defaultSystem}>
-      <Theme style={{ height: "100vh" }} appearance={theme}>
+    <ChakraProvider value={system}>
+      <Theme style={{ height: "100%" }} appearance={theme}>
         {children}
       </Theme>
     </ChakraProvider>

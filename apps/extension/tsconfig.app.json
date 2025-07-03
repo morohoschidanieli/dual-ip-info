@@ -11,7 +11,8 @@
       "@models/*": ["./src/models/*"],
       "@providers/*": ["./src/providers/*"],
       "@components/*": ["./src/components/*"],
-      "@app": ["./src/App.tsx"],
+      "@pages/*": ["./src/pages/*"],
+      "@configuration/*": ["./src/configuration/*"],
       "@store": ["./src/store/store"],
       "@reducers/*": ["./src/store/reducers/*"]
     }
