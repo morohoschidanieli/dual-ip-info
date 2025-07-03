@@ -1,0 +1,15 @@
+export enum Languages {
+  English = "en",
+  Romanian = "ro",
+  German = "de",
+  French = "fr",
+  Spanish = "es",
+  Italian = "it",
+  Dutch = "nl",
+  Polish = "pl",
+  Portuguese = "pt",
+  Russian = "ru",
+  Chinese = "zh",
+  Japanese = "ja",
+  Korean = "ko",
+}

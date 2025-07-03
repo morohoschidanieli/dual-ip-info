@@ -1,12 +1,12 @@
+import type { FC } from "react";
 import { Button } from "@chakra-ui/react";
-import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "@store";
 
-function App() {
+export const App: FC = () => {
   return (
     <>
-      <Button>Click me</Button>
+      <Button>Toggle theme</Button>
     </>
   );
-}
-
-export default App;
+};
