@@ -1,5 +1,5 @@
 import { defineConfig } from "@chakra-ui/react";
-import type { Theme } from "@models/ApplicationSettingsModel";
+import type { Theme } from "@models/ApplicationSettings.model";
 
 // export const themeConfiguration = defineConfig({
 //   theme: {
@@ -91,8 +91,11 @@ export const themeConfiguration = (theme: Theme) =>
       "#root": {
         maxWidth: "1280px",
         margin: "0 auto",
-        width: "500px",
-        height: "700px",
+        width: "460px",
+        height: "750px",
       },
+    },
+    theme: {
+      textStyles: {},
     },
   });

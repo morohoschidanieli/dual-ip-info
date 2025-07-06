@@ -1,9 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type {
-  ApplicationSettingsModel,
-  Language,
-  Theme,
-} from "@models/ApplicationSettingsModel";
+import type { ApplicationSettingsModel, Language, Theme } from "@models";
 
 const initialState: ApplicationSettingsModel = {
   theme: "light",

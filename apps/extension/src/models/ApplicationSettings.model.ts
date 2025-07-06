@@ -1,4 +1,4 @@
-import type { Languages } from "@constants/languages";
+import type { Languages } from "@constants";
 
 export type Language = keyof typeof Languages;
 export type Theme = "light" | "dark";
