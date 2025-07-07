@@ -1,5 +1,7 @@
 ## [2.0.0] - 07-07-2025
 
+- 🐞 fix: ensure invalid or unsupported languages (e.g. `mo`, `de-AT`, `pt-BR`) are normalized and fallback language is saved to `localStorage`
+- ✨ feat: update application logo
 - ✨ feat: update application logo
 - ✨ feat: updated `developedBy` message with ❤️ and translations
 - ✨ feat: added `version` label to translations

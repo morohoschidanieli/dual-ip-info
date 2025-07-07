@@ -20,7 +20,7 @@ export const en = {
   info: "Info",
   settings: "Settings",
   general: "General",
-  aboutThisExtension: "About this Extension",
+  aboutThisExtension: "About this extension",
   extensionDescription:
     "This extension helps you view and manage your current IP address, view IP history, and receive notifications when your IP changes.",
   developedBy: `Developed with ❤️ by `,

@@ -29,8 +29,7 @@ export const SettingsPage: FC = () => {
 
   const languages = createListCollection({
     items: Languages,
-    itemToString: (language) =>
-      `${language.flag} ${t(`languages.${language.value}`)}`,
+    itemToString: (language) => `${language.flag} ${t(`${language.name}`)}`,
     itemToValue: (language) => language.value,
   });
 
@@ -125,7 +124,7 @@ export const SettingsPage: FC = () => {
                   {languages.items.map((language) => (
                     <Select.Item item={language.value} key={language.value}>
                       {language.flag}
-                      {t(`languages.${language.value}`)}
+                      {t(`${language.name}`)}
                       <Select.ItemIndicator />
                     </Select.Item>
                   ))}

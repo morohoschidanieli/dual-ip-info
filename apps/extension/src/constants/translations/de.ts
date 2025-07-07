@@ -20,7 +20,7 @@ export const de = {
   info: "Informationen",
   settings: "Einstellungen",
   general: "Allgemein",
-  aboutThisExtension: "Über diese Erweiterung",
+  aboutThisExtension: "Über diese erweiterung",
   extensionDescription:
     "Diese Erweiterung hilft dir, deine aktuelle IP-Adresse anzuzeigen und zu verwalten, den IP-Verlauf einzusehen und Benachrichtigungen zu erhalten, wenn sich deine IP-Adresse ändert.",
   developedBy: "Entwickelt mit ❤️ von ",

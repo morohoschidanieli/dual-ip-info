@@ -16,7 +16,7 @@ i18n
       escapeValue: false,
     },
     resources: {
-      en: { translation: en },
+      "en-us": { translation: en },
       ro: { translation: ro },
       de: { translation: de },
       fr: { translation: fr },
@@ -26,10 +26,25 @@ i18n
       pl: { translation: pl },
       pt: { translation: pt },
       ru: { translation: ru },
-      zh: { translation: zh },
+      "zh-cn": { translation: zh },
       ja: { translation: ja },
       ko: { translation: ko },
     },
+  })
+  .then(() => {
+    const availableLanguages = Object.keys(i18n.options.resources ?? {});
+    const detectedLang = i18n.language.toLowerCase();
+    const baseLang = detectedLang.split("-")[0];
+
+    const fallback = "en-us";
+
+    if (!availableLanguages.includes(baseLang)) {
+      i18n.changeLanguage(fallback);
+      localStorage.setItem("i18nextLng", fallback);
+    } else if (!availableLanguages.includes(detectedLang)) {
+      i18n.changeLanguage(baseLang);
+      localStorage.setItem("i18nextLng", baseLang);
+    }
   });
 
 export default i18n;

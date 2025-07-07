@@ -3,7 +3,7 @@ import type { ApplicationSettingsModel, Theme } from "@models";
 
 const initialState: ApplicationSettingsModel = {
   theme: "light",
-  useSystemTheme: false,
+  useSystemTheme: true,
   showIPV6: false,
   showPublicIPNotification: false,
   showIconInToolbar: false,
