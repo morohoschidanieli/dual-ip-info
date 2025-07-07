@@ -19,4 +19,4 @@ export const TimeFormats = [
     example: "02:30:12 PM",
     formatString: "hh:mm:ss a",
   },
-];
+] as const;

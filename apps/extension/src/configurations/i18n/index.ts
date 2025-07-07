@@ -7,7 +7,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    debug: true,
+    // debug: true,
     fallbackLng: "en-us",
     nonExplicitSupportedLngs: true,
     load: "languageOnly",

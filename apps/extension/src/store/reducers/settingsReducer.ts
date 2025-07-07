@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { ApplicationSettingsModel, Theme } from "@models";
+import type { ApplicationSettingsModel, Date, Theme, Time } from "@models";
 
 const initialState: ApplicationSettingsModel = {
   theme: "light",
@@ -8,6 +8,8 @@ const initialState: ApplicationSettingsModel = {
   showPublicIPNotification: false,
   showIconInToolbar: false,
   numberOfIPsToShow: 5,
+  dateFormat: "dd/MM/yyyy",
+  timeFormat: "HH:mm",
 };
 
 export const settingsSlice = createSlice({
@@ -40,6 +42,12 @@ export const settingsSlice = createSlice({
     changeNumberOfIPsToShow: (state, action: PayloadAction<5 | 10>) => {
       state.numberOfIPsToShow = action.payload;
     },
+    changeDateFormat: (state, action: PayloadAction<Date>) => {
+      state.dateFormat = action.payload;
+    },
+    changeTimeFormat: (state, action: PayloadAction<Time>) => {
+      state.timeFormat = action.payload;
+    },
   },
 });
 
@@ -50,6 +58,8 @@ export const {
   changeShowPublicIPNotification,
   changeShowIconInToolbar,
   changeNumberOfIPsToShow,
+  changeDateFormat,
+  changeTimeFormat,
 } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

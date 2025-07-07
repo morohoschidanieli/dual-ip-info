@@ -1,3 +1,5 @@
+import type { Time, Date } from "@models";
+
 export type Theme = "light" | "dark";
 
 export interface ApplicationSettingsModel {
@@ -7,4 +9,6 @@ export interface ApplicationSettingsModel {
   showPublicIPNotification: boolean;
   showIconInToolbar: boolean;
   numberOfIPsToShow: 5 | 10;
+  dateFormat: Date;
+  timeFormat: Time;
 }

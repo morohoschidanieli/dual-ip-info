@@ -29,4 +29,4 @@ export const DateFormats = [
     example: "Friday, 4 July 2025",
     formatString: "EEEE, d MMMM yyyy",
   },
-];
+] as const;
