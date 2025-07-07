@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "erasableSyntaxOnly": false,
     "paths": {
+      "@root/*": ["./*"],
       "@constants": ["./src/constants"],
       "@constants/*": ["./src/constants/*"],
       "@models": ["./src/models"],
@@ -17,8 +18,8 @@
       "@components/*": ["./src/components/*"],
       "@pages": ["./src/pages"],
       "@pages/*": ["./src/pages/*"],
-      "@configuration": ["./src/configuration"],
-      "@configuration/*": ["./src/configuration/*"],
+      "@configurations": ["./src/configurations"],
+      "@configurations/*": ["./src/configurations/*"],
       "@store": ["./src/store/store"],
       "@store/*": ["./src/store/store/*"],
       "@reducers/*": ["./src/store/reducers/*"]

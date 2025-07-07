@@ -1,10 +1,9 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { ApplicationSettingsModel, Language, Theme } from "@models";
+import type { ApplicationSettingsModel, Theme } from "@models";
 
 const initialState: ApplicationSettingsModel = {
   theme: "light",
   useSystemTheme: false,
-  language: "English",
   showIPV6: false,
   showPublicIPNotification: false,
   showIconInToolbar: false,
@@ -29,9 +28,6 @@ export const settingsSlice = createSlice({
     changeUseSystemTheme: (state, action: PayloadAction<boolean>) => {
       state.useSystemTheme = action.payload;
     },
-    changeLanguage: (state, action: PayloadAction<Language>) => {
-      state.language = action.payload;
-    },
     changeShowIPV6: (state, action: PayloadAction<boolean>) => {
       state.showIPV6 = action.payload;
     },
@@ -50,7 +46,6 @@ export const settingsSlice = createSlice({
 export const {
   changeTheme,
   changeUseSystemTheme,
-  changeLanguage,
   changeShowIPV6,
   changeShowPublicIPNotification,
   changeShowIconInToolbar,

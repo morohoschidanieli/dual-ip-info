@@ -1,5 +1,25 @@
-## [2.0.0] - 06-07-2025
+## [2.0.0] - 07-07-2025
 
+- ✨ feat: add new page (`Info`) with static content and footer
+- ✨ feat: added support for i18n using `react-i18next`
+- ✨ feat: added language selector with flags and native language names
+- ✨ feat: added translations for:
+  - English (`en`)
+  - Romanian (`ro`)
+  - German (`de`)
+  - French (`fr`)
+  - Spanish (`es`)
+  - Italian (`it`)
+  - Dutch (`nl`)
+  - Polish (`pl`)
+  - Portuguese (`pt`)
+  - Russian (`ru`)
+  - Chinese (`zh`)
+  - Japanese (`ja`)
+  - Korean (`ko`)
+- ✨ feat: added version-aware `Footer` component (dark/light mode support)
+- ✨ feat: added date/time format options with i18n support
+- ✨ feat: restructure imports to use TypeScript `paths` aliasing
 - ✨ feat: add new page(Info), content for Settings/Info page and modify imports using typescript paths
 - ✨ feat: add routing(home and settings)
 - ✨ feat: add functionality for dark/light/system theme

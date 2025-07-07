@@ -1,6 +1,7 @@
 {
   "name": "extension",
   "private": true,
+  "author": "Daniel Morohoschi",
   "version": "2.0.0",
   "type": "module",
   "scripts": {

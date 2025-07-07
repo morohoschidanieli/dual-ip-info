@@ -10,12 +10,15 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { Routes } from "@constants";
 import { Header } from "@components";
 
 export const InfoPage: FC = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const handleNavigateToHomepage = () => {
@@ -33,20 +36,19 @@ export const InfoPage: FC = () => {
         >
           <FaArrowLeft />
         </IconButton>
-        <Heading size="2xl">Info</Heading>
+        <Heading size="2xl">{t("info")}</Heading>
       </Header>
       <Box paddingY="4">
         <Heading size="xl" mb={2}>
-          About this Extension
+          {t("aboutThisExtension")}
         </Heading>
 
         <Text fontSize="lg" mb={3}>
-          This extension helps you view and manage your current IP address, view
-          IP history, and receive notifications when your IP changes.
+          {t("extensionDescription")}
         </Text>
 
         <Text fontSize="lg" mb={2}>
-          Developed by <b>Daniel M.</b> – version 2.0.0
+          {t("developedBy")}
         </Text>
 
         <HStack align="start" mt={4}>

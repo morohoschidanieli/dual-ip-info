@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "@reducers/settingsReducer";
-import { themeConfiguration } from "@configuration";
+import { themeConfiguration } from "@configurations";
 
 export interface ChakraProps {
   children: React.JSX.Element;

@@ -92,7 +92,7 @@ export const themeConfiguration = (theme: Theme) =>
         maxWidth: "1280px",
         margin: "0 auto",
         width: "460px",
-        height: "750px",
+        height: "auto",
       },
     },
     theme: {
