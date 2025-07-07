@@ -1,5 +1,6 @@
 ## [2.0.0] - 07-07-2025
 
+- ✨ feat: update application logo
 - ✨ feat: updated `developedBy` message with ❤️ and translations
 - ✨ feat: added `version` label to translations
 - ✨ feat: added `viewOnGitHub` and `buyMeACoffee` translations in all supported languages
