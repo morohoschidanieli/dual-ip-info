@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const pl = {
   languages: {
     en: "Angielski",
@@ -16,6 +14,8 @@ export const pl = {
     ja: "Japoński",
     ko: "Koreański",
   },
+  viewOnGitHub: "Zobacz na GitHubie",
+  buyMeACoffee: "Postaw mi kawę",
   version: "wersja",
   info: "Informacje",
   settings: "Ustawienia",
@@ -24,7 +24,7 @@ export const pl = {
   aboutThisExtension: "O tym rozszerzeniu",
   extensionDescription:
     "To rozszerzenie pomaga wyświetlać i zarządzać bieżącym adresem IP, przeglądać historię IP i otrzymywać powiadomienia, gdy adres IP się zmieni.",
-  developedBy: `Stworzone z ❤️ przez ${packageJSON.author}`,
+  developedBy: "Stworzone z ❤️ przez ",
   dark: "Ciemny",
   light: "Jasny",
   system: "System",

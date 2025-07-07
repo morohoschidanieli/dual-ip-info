@@ -13,10 +13,16 @@ import {
 import { useTranslation } from "react-i18next";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
+import packageJSON from "@root/package.json";
 import { Routes } from "@constants";
 import { Header } from "@components";
 
 export const InfoPage: FC = () => {
+  const {
+    VITE_BUY_ME_A_COFFEE_URL,
+    VITE_GITHUB_URL,
+    VITE_PERSONAL_WEBSITE_URL,
+  } = import.meta.env;
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -49,23 +55,45 @@ export const InfoPage: FC = () => {
 
         <Text fontSize="lg" mb={2}>
           {t("developedBy")}
+          <Link 
+            href={VITE_PERSONAL_WEBSITE_URL}
+            target="_blank"
+            variant="plain"
+          >
+            {packageJSON.author}
+          </Link>
         </Text>
 
         <HStack align="start" mt={4}>
-          <Link width="100%" href="https://github.com/username/ip-extension">
+          <Link
+            width="100%"
+            href={VITE_GITHUB_URL}
+            target="_blank"
+            variant="plain"
+          >
             <Button width="100%" size="sm">
               <Icon>
                 <FaGithub />
               </Icon>
-              View on GitHub
+              {t("viewOnGitHub")}
             </Button>
           </Link>
-          <Link width="100%" href="https://github.com/username/ip-extension">
-            <Button width="100%" size="sm">
-              <Icon>
-                <FaGithub />
-              </Icon>
-              View on GitHub
+          <Link
+            width="100%"
+            href={VITE_BUY_ME_A_COFFEE_URL}
+            target="_blank"
+            variant="plain"
+          >
+            <Button
+              width="100%"
+              size="sm"
+              backgroundColor="yellow.300"
+              color="black"
+            >
+              <span role="img" aria-label="coffee">
+                ☕
+              </span>
+              {t("buyMeACoffee")}
             </Button>
           </Link>
         </HStack>

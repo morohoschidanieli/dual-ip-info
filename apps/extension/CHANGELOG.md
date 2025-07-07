@@ -1,5 +1,10 @@
 ## [2.0.0] - 07-07-2025
 
+- ✨ feat: updated `developedBy` message with ❤️ and translations
+- ✨ feat: added `version` label to translations
+- ✨ feat: added `viewOnGitHub` and `buyMeACoffee` translations in all supported languages
+- ✨ feat: improved footer text to match dark mode design
+- ✨ feat: added dynamic author and version injection using `package.json`
 - 🔧 chore: modify `.gitignore` and add `.env.exampe`
 - ✨ feat: add new page (`Info`) with static content and footer
 - ✨ feat: added support for i18n using `react-i18next`

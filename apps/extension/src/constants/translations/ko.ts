@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const ko = {
   languages: {
     en: "영어",
@@ -16,6 +14,8 @@ export const ko = {
     ja: "일본어",
     ko: "한국어",
   },
+  viewOnGitHub: "GitHub에서 보기",
+  buyMeACoffee: "커피 한 잔 사주세요",
   version: "버전",
   info: "정보",
   settings: "설정",
@@ -23,7 +23,7 @@ export const ko = {
   aboutThisExtension: "이 확장 프로그램 정보",
   extensionDescription:
     "이 확장 프로그램은 현재 IP 주소를 확인하고 관리하며, IP 기록을 보고, IP가 변경될 때 알림을 받을 수 있도록 도와줍니다.",
-  developedBy: `${packageJSON.author} ❤️ 개발`,
+  developedBy: "❤️ 로 개발한 ",
   theme: "테마",
   dark: "다크",
   light: "라이트",

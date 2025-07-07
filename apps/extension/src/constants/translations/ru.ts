@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const ru = {
   languages: {
     en: "Английский",
@@ -16,6 +14,8 @@ export const ru = {
     ja: "Японский",
     ko: "Корейский",
   },
+  viewOnGitHub: "Посмотреть на GitHub",
+  buyMeACoffee: "Угостить меня кофе",
   version: "версия",
   info: "Информация",
   settings: "Настройки",
@@ -23,7 +23,7 @@ export const ru = {
   aboutThisExtension: "О данном расширении",
   extensionDescription:
     "Это расширение помогает просматривать и управлять вашим текущим IP-адресом, просматривать историю IP и получать уведомления при изменении IP-адреса.",
-  developedBy: `Разработано с ❤️ ${packageJSON.author}`,
+  developedBy: "Разработано с ❤️ ",
   theme: "Тема",
   dark: "Тёмная",
   light: "Светлая",

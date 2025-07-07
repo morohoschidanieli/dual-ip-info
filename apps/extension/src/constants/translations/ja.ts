@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const ja = {
   languages: {
     en: "英語",
@@ -16,13 +14,15 @@ export const ja = {
     ja: "日本語",
     ko: "韓国語",
   },
+  viewOnGitHub: "GitHubで見る",
+  buyMeACoffee: "コーヒーをごちそうして",
   version: "バージョン",
   settings: "情報",
   general: "一般",
   aboutThisExtension: "この拡張機能について",
   extensionDescription:
     "この拡張機能では、現在の IP アドレスの表示と管理、IP 履歴の確認、IP が変更されたときの通知を受け取ることができます。",
-  developedBy: `${packageJSON.author} によって ❤️ 開発`,
+  developedBy: "❤️ によって開発：",
   theme: "テーマ",
   dark: "ダーク",
   light: "ライト",

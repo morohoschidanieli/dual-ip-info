@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const ro = {
   languages: {
     en: "Engleză",
@@ -16,6 +14,8 @@ export const ro = {
     ja: "Japoneză",
     ko: "Coreeană",
   },
+  viewOnGitHub: "Vezi pe GitHub",
+  buyMeACoffee: "Cumpără-mi o cafea",
   version: "versiune",
   info: "Informații",
   settings: "Setări",
@@ -23,7 +23,7 @@ export const ro = {
   aboutThisExtension: "Despre această extensie",
   extensionDescription:
     "Această extensie te ajută să vizualizezi și să gestionezi adresa ta IP curentă, să vezi istoricul IP-urilor și să primești notificări când adresa IP se schimbă.",
-  developedBy: `Dezvoltat cu ❤️ de ${packageJSON.author}`,
+  developedBy: "Dezvoltat cu ❤️ de ",
   theme: "Temă",
   dark: "Întunecat",
   light: "Luminos",

@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const it = {
   languages: {
     en: "Inglese",
@@ -16,6 +14,8 @@ export const it = {
     ja: "Giapponese",
     ko: "Coreano",
   },
+  viewOnGitHub: "Vedi su GitHub",
+  buyMeACoffee: "Offrimi un caffè",
   version: "versione",
   info: "Informazioni",
   settings: "Impostazioni",
@@ -23,7 +23,7 @@ export const it = {
   aboutThisExtension: "Informazioni su questa estensione",
   extensionDescription:
     "Questa estensione ti aiuta a visualizzare e gestire il tuo indirizzo IP attuale, consultare la cronologia degli IP e ricevere notifiche quando l'indirizzo IP cambia.",
-  developedBy: `Sviluppato con ❤️ da ${packageJSON.author}`,
+  developedBy: "Sviluppato con ❤️ da ",
   theme: "Tema",
   dark: "Scuro",
   light: "Chiaro",

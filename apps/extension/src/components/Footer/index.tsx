@@ -9,12 +9,12 @@ export const Footer: FC = () => {
   const theme = useSelector(({ settings }: RootState) => settings.theme);
   const { t } = useTranslation();
 
-  const changelogURL = import.meta.env.VITE_CHANGELOG_URL;
+  const { VITE_CHANGELOG_URL } = import.meta.env;
 
   return (
     <footer>
       <Link
-        href={changelogURL}
+        href={VITE_CHANGELOG_URL}
         target="_blank"
         variant="plain"
         fontWeight="semibold"

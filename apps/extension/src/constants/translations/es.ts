@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const es = {
   languages: {
     en: "Inglés",
@@ -16,6 +14,8 @@ export const es = {
     ja: "Japonés",
     ko: "Coreano",
   },
+  viewOnGitHub: "Ver en GitHub",
+  buyMeACoffee: "Cómprame un café",
   version: "versión",
   info: "Información",
   settings: "Configuración",
@@ -23,7 +23,7 @@ export const es = {
   aboutThisExtension: "Acerca de esta extensión",
   extensionDescription:
     "Esta extensión te ayuda a ver y gestionar tu dirección IP actual, consultar el historial de IP y recibir notificaciones cuando tu IP cambie.",
-  developedBy: `Desarrollado con ❤️ por ${packageJSON.author}`,
+  developedBy: "Desarrollado con ❤️ por ",
   theme: "Tema",
   dark: "Oscuro",
   light: "Claro",

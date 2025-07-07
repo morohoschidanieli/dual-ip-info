@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const zh = {
   languages: {
     en: "英语",
@@ -16,6 +14,8 @@ export const zh = {
     ja: "日语",
     ko: "韩语",
   },
+  viewOnGitHub: "在 GitHub 上查看",
+  buyMeACoffee: "请我喝杯咖啡",
   version: "版本",
   info: "信息",
   settings: "设置",
@@ -23,7 +23,7 @@ export const zh = {
   aboutThisExtension: "关于此扩展程序",
   extensionDescription:
     "此扩展程序可帮助您查看和管理当前的 IP 地址，查看 IP 历史记录，并在 IP 更改时接收通知。",
-  developedBy: `由 ${packageJSON.author} ❤️ 开发`,
+  developedBy: "由 ❤️ 开发者 ",
   theme: "主题",
   dark: "深色",
   light: "浅色",

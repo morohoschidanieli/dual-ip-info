@@ -1,5 +1,3 @@
-import packageJSON from "@root/package.json";
-
 export const nl = {
   languages: {
     en: "Engels",
@@ -16,6 +14,8 @@ export const nl = {
     ja: "Japans",
     ko: "Koreaans",
   },
+  viewOnGitHub: "Zobacz na GitHubie",
+  buyMeACoffee: "Postaw mi kawę",
   version: "versie",
   info: "Informatie",
   settings: "Instellingen",
@@ -23,7 +23,7 @@ export const nl = {
   aboutThisExtension: "Over deze extensie",
   extensionDescription:
     "Deze extensie helpt je je huidige IP-adres te bekijken en beheren, IP-geschiedenis te bekijken en meldingen te ontvangen wanneer je IP-adres verandert.",
-  developedBy: `Ontwikkeld met ❤️ door ${packageJSON.author}`,
+  developedBy: "Ontwikkeld met ❤️ door ",
   theme: "Thema",
   dark: "Donker",
   light: "Licht",
