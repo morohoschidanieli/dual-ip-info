@@ -1,5 +1,6 @@
 ## [2.0.0] - 07-07-2025
 
+- 🔧 chore: modify `.gitignore` and add `.env.exampe`
 - ✨ feat: add new page (`Info`) with static content and footer
 - ✨ feat: added support for i18n using `react-i18next`
 - ✨ feat: added language selector with flags and native language names
