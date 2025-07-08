@@ -41,4 +41,12 @@ export const ko = {
   history: "기록",
   numbersIPsToShow: "표시할 IP 수",
   selectNumbersOfIPsToShow: "표시할 IP 수 선택",
+  continent: "대륙",
+  latitude: "위도",
+  longitude: "경도",
+  yourPublicIP: "당신의 공인 IP",
+  yourPrivateIP: "당신의 사설 IP",
+  yourPublicIPv6: "당신의 공인 IP (V6)",
+  yourPrivateIPv6: "당신의 사설 IP (V6)",
+  lastIPs: "최근 IP",
 };

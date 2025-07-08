@@ -41,4 +41,12 @@ export const zh = {
   history: "历史记录",
   numbersIPsToShow: "显示的IP数量",
   selectNumbersOfIPsToShow: "选择显示的IP数量",
+  continent: "洲",
+  latitude: "纬度",
+  longitude: "经度",
+  yourPublicIP: "你的公网 IP",
+  yourPrivateIP: "你的私网 IP",
+  yourPublicIPv6: "你的公网 IP（V6）",
+  yourPrivateIPv6: "你的私网 IP（V6）",
+  lastIPs: "最近的 IP",
 };

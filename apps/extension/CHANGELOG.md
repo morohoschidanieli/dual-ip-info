@@ -1,5 +1,6 @@
 ## [2.0.0] - 07-07-2025
 
+- ✨ feat: add hardcoded components for last ips section and popover for more details
 - ♻️ refactor: split every setting section in component
 - 🐞 fix: ensure invalid or unsupported languages (e.g. `mo`, `de-AT`, `pt-BR`) are normalized and fallback language is saved to `localStorage`
 - ✨ feat: update application logo

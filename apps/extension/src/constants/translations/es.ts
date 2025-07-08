@@ -41,4 +41,12 @@ export const es = {
   history: "Historial",
   numbersIPsToShow: "Número de IPs a mostrar",
   selectNumbersOfIPsToShow: "Seleccionar número de IPs a mostrar",
+  continent: "Continente",
+  latitude: "Latitud",
+  longitude: "Longitud",
+  yourPublicIP: "Tu IP pública",
+  yourPrivateIP: "Tu IP privada",
+  yourPublicIPv6: "Tu IP pública (V6)",
+  yourPrivateIPv6: "Tu IP privada (V6)",
+  lastIPs: "Últimas IPs",
 };

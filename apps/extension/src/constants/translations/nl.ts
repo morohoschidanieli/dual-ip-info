@@ -41,4 +41,12 @@ export const nl = {
   history: "Geschiedenis",
   numbersIPsToShow: "Aantal IP's om te tonen",
   selectNumbersOfIPsToShow: "Selecteer aantal IP's om te tonen",
+  continent: "Continent",
+  latitude: "Breedtegraad",
+  longitude: "Lengtegraad",
+  yourPublicIP: "Jouw publieke IP",
+  yourPrivateIP: "Jouw privé IP",
+  yourPublicIPv6: "Jouw publieke IP (V6)",
+  yourPrivateIPv6: "Jouw privé IP (V6)",
+  lastIPs: "Laatste IP-adressen",
 };

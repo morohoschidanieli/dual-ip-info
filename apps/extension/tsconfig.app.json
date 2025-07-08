@@ -22,7 +22,8 @@
       "@configurations/*": ["./src/configurations/*"],
       "@store": ["./src/store/store"],
       "@store/*": ["./src/store/store/*"],
-      "@reducers/*": ["./src/store/reducers/*"]
+      "@reducers/*": ["./src/store/reducers/*"],
+      "@utils": ["./src/utils"]
     }
   },
   "include": ["src"]

@@ -40,4 +40,12 @@ export const ja = {
   history: "履歴",
   numbersIPsToShow: "表示するIPの数",
   selectNumbersOfIPsToShow: "表示するIPの数を選択",
+  continent: "大陸",
+  latitude: "緯度",
+  longitude: "経度",
+  yourPublicIP: "あなたのパブリックIP",
+  yourPrivateIP: "あなたのプライベートIP",
+  yourPublicIPv6: "あなたのパブリックIP（V6）",
+  yourPrivateIPv6: "あなたのプライベートIP（V6）",
+  lastIPs: "最近のIPアドレス",
 };

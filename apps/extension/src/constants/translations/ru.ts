@@ -41,4 +41,12 @@ export const ru = {
   history: "История",
   numbersIPsToShow: "Количество IP для отображения",
   selectNumbersOfIPsToShow: "Выбрать количество IP для отображения",
+  continent: "Континент",
+  latitude: "Широта",
+  longitude: "Долгота",
+  yourPublicIP: "Ваш публичный IP",
+  yourPrivateIP: "Ваш приватный IP",
+  yourPublicIPv6: "Ваш публичный IP (V6)",
+  yourPrivateIPv6: "Ваш приватный IP (V6)",
+  lastIPs: "Последние IP-адреса",
 };

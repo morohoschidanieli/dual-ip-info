@@ -41,4 +41,12 @@ export const ro = {
   history: "Istoric",
   numbersIPsToShow: "Număr de IP-uri de afișat",
   selectNumbersOfIPsToShow: "Selectează numărul de IP-uri de afișat",
+  continent: "Continent",
+  latitude: "Latitudine",
+  longitude: "Longitudine",
+  yourPublicIP: "Adresa ta IP publică",
+  yourPrivateIP: "Adresa ta IP privată",
+  yourPublicIPv6: "Adresa ta IP publică (V6)",
+  yourPrivateIPv6: "Adresa ta IP privată (V6)",
+  lastIPs: "Ultimele IP-uri",
 };
