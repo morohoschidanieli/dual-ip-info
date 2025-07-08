@@ -1,7 +1,7 @@
 import type { LanguageModel } from "@models";
 
 export const Languages: LanguageModel[] = [
-  { name: "English", value: "en-us", flag: "🇬🇧" },
+  { name: "English", value: "en", flag: "🇬🇧" },
   { name: "Română", value: "ro", flag: "🇷🇴" },
   { name: "Deutsch", value: "de", flag: "🇩🇪" },
   { name: "Français", value: "fr", flag: "🇫🇷" },

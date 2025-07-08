@@ -3,6 +3,7 @@ import { Box, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import { FaHistory, FaGlobe } from "react-icons/fa";
 import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 import { InfoPopover } from "@components/LastIP/InfoPopover";
+import { FormattedDate, FormattedTime } from "@components";
 
 export interface LastIPProps {}
 
@@ -23,8 +24,8 @@ export const LastIP: FC<LastIPProps> = () => {
               width="100%"
               justifyContent="flex-start"
             >
-              <Text>Wed, 27 NOV 2025</Text>
-              <Text>22:05:56</Text>
+              <FormattedDate date={new Date()} />
+              <FormattedTime date={new Date()} />
             </HStack>
             <HStack width="100%" justifyContent="flex-start">
               <HStack>

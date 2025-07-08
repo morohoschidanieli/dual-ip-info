@@ -8,7 +8,7 @@ const initialState: ApplicationSettingsModel = {
   showPublicIPNotification: false,
   showIconInToolbar: false,
   numberOfIPsToShow: 5,
-  dateFormat: "dd/MM/yyyy",
+  dateFormat: "EEEE, d MMMM yyyy",
   timeFormat: "HH:mm",
 };
 

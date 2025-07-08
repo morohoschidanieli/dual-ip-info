@@ -91,7 +91,7 @@ export const themeConfiguration = (theme: Theme) =>
       "#root": {
         maxWidth: "1280px",
         margin: "0 auto",
-        width: "460px",
+        width: "490px",
         height: "auto",
       },
     },

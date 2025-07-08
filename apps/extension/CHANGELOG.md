@@ -1,5 +1,7 @@
 ## [2.0.0] - 07-07-2025
 
+- ✨ feat: added `date-fns` for localized date formatting
+- ✨ feat: created `DateFnsProvider` to set global locale based on selected language
 - ✨ feat: add hardcoded components for last ips section and popover for more details
 - ♻️ refactor: split every setting section in component
 - 🐞 fix: ensure invalid or unsupported languages (e.g. `mo`, `de-AT`, `pt-BR`) are normalized and fallback language is saved to `localStorage`
@@ -39,3 +41,4 @@
 - 🔧 chore: add manifest.json for chrome extension API
 - 🔧 chore: add vitest
 - 🔧 chore: add monorepo setup, changelog file and version.txt file
+✨ feat: integrate date-fns with global locale support via DateFnsProvider

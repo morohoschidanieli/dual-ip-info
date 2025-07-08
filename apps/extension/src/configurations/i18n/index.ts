@@ -1,7 +1,22 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { de, en, es, fr, ro, it, nl, pl, pt, ru, zh, ja, ko } from "@constants";
+import {
+  Languages,
+  de,
+  en,
+  es,
+  fr,
+  ro,
+  it,
+  nl,
+  pl,
+  pt,
+  ru,
+  zh,
+  ja,
+  ko,
+} from "@constants";
 
 i18n
   .use(LanguageDetector)
@@ -15,8 +30,9 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    supportedLngs: Languages.map((language) => language.value),
     resources: {
-      "en-us": { translation: en },
+      en: { translation: en },
       ro: { translation: ro },
       de: { translation: de },
       fr: { translation: fr },

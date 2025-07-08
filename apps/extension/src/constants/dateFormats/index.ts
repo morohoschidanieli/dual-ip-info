@@ -1,5 +1,10 @@
 export const DateFormats = [
   {
+    label: "dddd, D MMMM YYYY",
+    example: "Friday, 4 July 2025",
+    formatString: "EEEE, d MMMM yyyy",
+  },
+  {
     label: "DD/MM/YYYY",
     example: "04/07/2025",
     formatString: "dd/MM/yyyy",
@@ -23,10 +28,5 @@ export const DateFormats = [
     label: "D MMM YYYY",
     example: "4 Jul 2025",
     formatString: "d MMM yyyy",
-  },
-  {
-    label: "dddd, D MMMM YYYY",
-    example: "Friday, 4 July 2025",
-    formatString: "EEEE, d MMMM yyyy",
   },
 ] as const;
