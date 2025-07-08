@@ -49,4 +49,5 @@ export const zh = {
   yourPublicIPv6: "你的公网 IP（V6）",
   yourPrivateIPv6: "你的私网 IP（V6）",
   lastIPs: "最近的 IP",
+  allowDeleteFromHistory: "允许从历史中删除 IP",
 };

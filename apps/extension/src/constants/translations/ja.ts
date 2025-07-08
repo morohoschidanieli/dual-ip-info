@@ -48,4 +48,5 @@ export const ja = {
   yourPublicIPv6: "あなたのパブリックIP（V6）",
   yourPrivateIPv6: "あなたのプライベートIP（V6）",
   lastIPs: "最近のIPアドレス",
+  allowDeleteFromHistory: "履歴からIPを削除できるようにする",
 };

@@ -49,4 +49,5 @@ export const ru = {
   yourPublicIPv6: "Ваш публичный IP (V6)",
   yourPrivateIPv6: "Ваш приватный IP (V6)",
   lastIPs: "Последние IP-адреса",
+  allowDeleteFromHistory: "Разрешить удаление IP-адресов из истории",
 };

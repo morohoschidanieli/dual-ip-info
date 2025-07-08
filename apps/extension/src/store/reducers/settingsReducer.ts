@@ -1,15 +1,16 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { ApplicationSettingsModel, Date, Theme, Time } from "@models";
+import type { Date, SettingsModel, Theme, Time } from "@models";
 
-const initialState: ApplicationSettingsModel = {
+const initialState: SettingsModel = {
   theme: "light",
   useSystemTheme: true,
   showIPV6: false,
   showPublicIPNotification: false,
   showIconInToolbar: false,
   numberOfIPsToShow: 5,
+  allowDeleteFromHistory: false,
   dateFormat: "EEEE, d MMMM yyyy",
-  timeFormat: "HH:mm",
+  timeFormat: "HH:mm:ss",
 };
 
 export const settingsSlice = createSlice({
@@ -48,6 +49,9 @@ export const settingsSlice = createSlice({
     changeTimeFormat: (state, action: PayloadAction<Time>) => {
       state.timeFormat = action.payload;
     },
+    changeAllowDeleteFromHistory: (state, action: PayloadAction<boolean>) => {
+      state.allowDeleteFromHistory = action.payload;
+    },
   },
 });
 
@@ -60,6 +64,7 @@ export const {
   changeNumberOfIPsToShow,
   changeDateFormat,
   changeTimeFormat,
+  changeAllowDeleteFromHistory,
 } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

@@ -5,13 +5,13 @@ import { useSelector } from "react-redux";
 import type { RootState } from "@store";
 
 export interface FormattedTimeProps {
-  date: Date;
+  timestamp: number;
 }
 
-export const FormattedTime: FC<FormattedTimeProps> = ({ date }) => {
+export const FormattedTime: FC<FormattedTimeProps> = ({ timestamp }) => {
   const timeFormat = useSelector(
     ({ settings }: RootState) => settings.timeFormat
   );
 
-  return <Text>{format(date, timeFormat)}</Text>;
+  return <Text>{format(timestamp, timeFormat)}</Text>;
 };

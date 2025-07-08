@@ -15,8 +15,14 @@ import { RiSettings5Fill } from "react-icons/ri";
 import { Routes } from "@constants";
 import { Header } from "@components";
 import { LastIP } from "@components/LastIP";
+import { useDispatch, useSelector } from "react-redux";
+import { insert } from "@root/src/store/reducers/historyReducer";
+import type { RootState } from "@root/src/store/store";
 
 export const HomePage: FC = () => {
+  const history = useSelector(({ history }: RootState) => history);
+  console.log("history", history);
+  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -29,6 +35,17 @@ export const HomePage: FC = () => {
     navigate(Routes.info, { replace: true });
   };
 
+  const add = () => {
+    dispatch(
+      insert({
+        ip: {
+          v4: { private: "private v4", public: "public v4" },
+          v6: { private: "private v6", public: "public v6" },
+        },
+        location: undefined,
+      })
+    );
+  };
   return (
     <>
       <Header>
@@ -86,6 +103,7 @@ export const HomePage: FC = () => {
             <LastIP />
             <LastIP />
           </Stack>
+          <Button onClick={() => add()}>Add</Button>
         </Box>
       </Box>
     </>

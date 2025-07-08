@@ -1,23 +1,29 @@
 import type { FC } from "react";
-import { Box, HStack, Icon, Text, VStack } from "@chakra-ui/react";
-import { FaGlobe, FaHistory } from "react-icons/fa";
+import { Box, Button, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { FaGlobe } from "react-icons/fa";
 import { RiGitRepositoryPrivateFill } from "react-icons/ri";
+import { MdDeleteForever } from "react-icons/md";
 import { InfoPopover } from "@components/LastIP/InfoPopover";
 import { FormattedDate, FormattedTime } from "@components";
+import { useSelector } from "react-redux";
+import type { RootState } from "@store";
 
 export interface LastIPProps {
   test?: string;
 }
 
 export const LastIP: FC<LastIPProps> = () => {
+  const allowDeleteFromHistory = useSelector(
+    ({ settings }: RootState) => settings.allowDeleteFromHistory
+  );
+
   return (
     <Box shadow="lg" padding="2" borderRadius="lg" fontSize="sm">
       <HStack>
-        <VStack padding="3">
-          <Icon size="lg">
-            <FaHistory />
-          </Icon>
+        <VStack>
+          <InfoPopover />
         </VStack>
+
         <VStack width="100%" paddingY="2">
           <VStack width="100%" gap="2">
             <HStack
@@ -26,8 +32,8 @@ export const LastIP: FC<LastIPProps> = () => {
               width="100%"
               justifyContent="flex-start"
             >
-              <FormattedDate date={new Date()} />
-              <FormattedTime date={new Date()} />
+              <FormattedDate timestamp={Date.now()} />
+              <FormattedTime timestamp={Date.now()} />
             </HStack>
             <HStack width="100%" justifyContent="flex-start">
               <HStack>
@@ -46,8 +52,20 @@ export const LastIP: FC<LastIPProps> = () => {
             </HStack>
           </VStack>
         </VStack>
-        <VStack>
-          <InfoPopover />
+
+        <VStack padding="3">
+          <Button
+            variant="plain"
+            title="Delete"
+            disabled={!allowDeleteFromHistory}
+          >
+            <Icon
+              size="lg"
+              _hover={{ color: allowDeleteFromHistory ? "red.600" : undefined }}
+            >
+              <MdDeleteForever />
+            </Icon>
+          </Button>
         </VStack>
       </HStack>
     </Box>

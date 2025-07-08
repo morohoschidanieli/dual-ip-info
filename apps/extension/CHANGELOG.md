@@ -1,5 +1,7 @@
 ## [2.0.0] - 07-07-2025
 
+- ✨ feat: add persisted storage in redux for history
+- ✨ feat: add new setting(`allow deleting IPs from history`) with translations for supported languages
 - 🔧 chore: update imports to be sorted and added new package.json commands for lint and lint fix
 - 🔧 chore: add rule for eslint for unused variable
 - ✨ feat: added `date-fns` for localized date formatting

@@ -11,15 +11,17 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import settingsReducer from "@reducers/settingsReducer";
+import historyReducer from "@reducers/historyReducer";
 
 const rootReducer = combineReducers({
   settings: settingsReducer,
+  history: historyReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["settings"],
+  whitelist: ["settings", "history"],
 };
 
 const persistedReducers = persistReducer(persistConfig, rootReducer);

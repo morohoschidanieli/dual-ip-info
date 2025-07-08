@@ -49,4 +49,5 @@ export const pt = {
   yourPublicIPv6: "Seu IP público (V6)",
   yourPrivateIPv6: "Seu IP privado (V6)",
   lastIPs: "Últimos IPs",
+  allowDeleteFromHistory: "Permitir excluir IPs do histórico",
 };

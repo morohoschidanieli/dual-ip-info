@@ -49,4 +49,5 @@ export const ro = {
   yourPublicIPv6: "Adresa ta IP publică (V6)",
   yourPrivateIPv6: "Adresa ta IP privată (V6)",
   lastIPs: "Ultimele IP-uri",
+  allowDeleteFromHistory: "Permite ștergerea IP-urilor din istoric",
 };

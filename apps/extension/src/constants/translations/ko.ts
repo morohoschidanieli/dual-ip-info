@@ -49,4 +49,5 @@ export const ko = {
   yourPublicIPv6: "당신의 공인 IP (V6)",
   yourPrivateIPv6: "당신의 사설 IP (V6)",
   lastIPs: "최근 IP",
+  allowDeleteFromHistory: "히스토리에서 IP 삭제 허용",
 };

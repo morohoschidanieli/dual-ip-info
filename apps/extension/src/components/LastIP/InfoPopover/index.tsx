@@ -18,7 +18,7 @@ export const InfoPopover: FC<InfoPopoverProps> = () => {
   };
 
   return (
-    <Popover.Root lazyMount unmountOnExit positioning={{ placement: "left" }}>
+    <Popover.Root lazyMount unmountOnExit positioning={{ placement: "right" }}>
       <Popover.Trigger asChild>
         <Button variant="plain" fontSize="4xl" title="Show info">
           {countryCodeToFlagEmoji("ro")}

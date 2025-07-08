@@ -49,4 +49,5 @@ export const nl = {
   yourPublicIPv6: "Jouw publieke IP (V6)",
   yourPrivateIPv6: "Jouw privé IP (V6)",
   lastIPs: "Laatste IP-adressen",
+  allowDeleteFromHistory: "Verwijderen van IP's uit geschiedenis toestaan",
 };

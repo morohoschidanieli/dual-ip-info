@@ -9,17 +9,26 @@ import {
   Icon,
   Portal,
   Select,
+  Switch,
 } from "@chakra-ui/react";
 import type { RootState } from "@store";
 import { useDispatch, useSelector } from "react-redux";
-import { changeNumberOfIPsToShow } from "@reducers/settingsReducer";
+import {
+  changeAllowDeleteFromHistory,
+  changeNumberOfIPsToShow,
+} from "@reducers/settingsReducer";
+import { HiCheck, HiX } from "react-icons/hi";
 
 type ValueChangeDetails = {
   value: string | string[];
 };
 
+interface CheckedChangeDetails {
+  checked: boolean;
+}
+
 export const History: FC = () => {
-  const { numberOfIPsToShow } = useSelector(
+  const { numberOfIPsToShow, allowDeleteFromHistory } = useSelector(
     ({ settings }: RootState) => settings
   );
 
@@ -36,6 +45,12 @@ export const History: FC = () => {
     dispatch(changeNumberOfIPsToShow(value[0] as unknown as 5 | 10));
   };
 
+  const handleAllowDeleteFromHistoryChange = ({
+    checked,
+  }: CheckedChangeDetails) => {
+    dispatch(changeAllowDeleteFromHistory(checked));
+  };
+
   return (
     <Box
       id="history"
@@ -48,6 +63,24 @@ export const History: FC = () => {
         <Icon as={FiClock} />
         <Heading>{t("history")}</Heading>
       </HStack>
+
+      <Switch.Root
+        size="lg"
+        display="flex"
+        justifyContent="space-between"
+        defaultChecked={allowDeleteFromHistory}
+        onCheckedChange={handleAllowDeleteFromHistoryChange}
+      >
+        <Switch.Label fontSize="lg">{t("allowDeleteFromHistory")}</Switch.Label>
+        <Switch.HiddenInput />
+        <Switch.Control>
+          <Switch.Thumb>
+            <Switch.ThumbIndicator fallback={<HiX color="black" />}>
+              <HiCheck />
+            </Switch.ThumbIndicator>
+          </Switch.Thumb>
+        </Switch.Control>
+      </Switch.Root>
 
       <Select.Root
         size="lg"
