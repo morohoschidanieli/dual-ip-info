@@ -2,7 +2,9 @@ import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Popover, Portal, Stack, Text } from "@chakra-ui/react";
 
-export interface InfoPopoverProps {}
+export interface InfoPopoverProps {
+  test?: string;
+}
 
 export const InfoPopover: FC<InfoPopoverProps> = () => {
   const { t } = useTranslation();

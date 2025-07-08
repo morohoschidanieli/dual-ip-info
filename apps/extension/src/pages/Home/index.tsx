@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import {
@@ -21,7 +20,6 @@ export const HomePage: FC = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleNavigateToSettings = () => {
     navigate(Routes.settings, { replace: true });

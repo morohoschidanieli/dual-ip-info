@@ -9,6 +9,8 @@
     "dev:web": "npm --workspace web run dev",
     "dev:extension": "npm --workspace extension run dev",
     "lint": "turbo run lint",
+    "lint:extension": "npm --workspace extension run lint",
+    "lint:wev": "npm --workspace web run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },

@@ -5,7 +5,9 @@ import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 import { InfoPopover } from "@components/LastIP/InfoPopover";
 import { FormattedDate, FormattedTime } from "@components";
 
-export interface LastIPProps {}
+export interface LastIPProps {
+  test?: string;
+}
 
 export const LastIP: FC<LastIPProps> = () => {
   return (
