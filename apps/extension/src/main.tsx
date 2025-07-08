@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import {
+  DateFnsProvider,
   I18nProvider,
   ReduxProvider,
   StyleProvider,
-  DateFnsProvider,
 } from "@providers";
 import { RouterProvider } from "react-router";
 import { routes } from "./routes";

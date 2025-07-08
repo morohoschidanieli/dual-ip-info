@@ -1,18 +1,18 @@
 import {
-  enUS,
-  ro,
-  fr,
   de,
+  enUS,
   es,
+  fr,
   it,
-  pl,
-  ru,
-  zhCN,
   ja,
   ko,
-  ptBR,
-  nl,
   type Locale,
+  nl,
+  pl,
+  ptBR,
+  ro,
+  ru,
+  zhCN,
 } from "date-fns/locale";
 
 export const localeMap: Record<string, Locale> = {

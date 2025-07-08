@@ -1,5 +1,6 @@
 ## [2.0.0] - 07-07-2025
 
+- 🔧 chore: update imports to be sorted and added new package.json commands for lint and lint fix
 - 🔧 chore: add rule for eslint for unused variable
 - ✨ feat: added `date-fns` for localized date formatting
 - ✨ feat: created `DateFnsProvider` to set global locale based on selected language

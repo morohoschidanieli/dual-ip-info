@@ -1,4 +1,4 @@
-import { useMemo, type FC } from "react";
+import { type FC, useMemo } from "react";
 import {
   Box,
   createListCollection,
@@ -26,7 +26,7 @@ import {
 } from "@reducers/settingsReducer";
 import type { RootState } from "@store";
 import type { Date, Theme, Time } from "@models";
-import { DateFormats, TimeFormats, Languages } from "@constants";
+import { DateFormats, Languages, TimeFormats } from "@constants";
 
 type ValueChangeDetails = {
   value: string | string[];

@@ -1,4 +1,4 @@
-import type { Time, Date } from "@models";
+import type { Date, Time } from "@models";
 
 export type Theme = "light" | "dark";
 

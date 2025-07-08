@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Box, HStack, Icon, Text, VStack } from "@chakra-ui/react";
-import { FaHistory, FaGlobe } from "react-icons/fa";
+import { FaGlobe, FaHistory } from "react-icons/fa";
 import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 import { InfoPopover } from "@components/LastIP/InfoPopover";
 import { FormattedDate, FormattedTime } from "@components";

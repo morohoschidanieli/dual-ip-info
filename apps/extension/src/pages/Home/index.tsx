@@ -6,8 +6,8 @@ import {
   Button,
   Heading,
   HStack,
-  Stack,
   IconButton,
+  Stack,
   Text,
 } from "@chakra-ui/react";
 import { FaCircleInfo } from "react-icons/fa6";
