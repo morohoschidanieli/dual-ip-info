@@ -50,4 +50,17 @@ export const ro = {
   yourPrivateIPv6: "Adresa ta IP privată (V6)",
   lastIPs: "Ultimele IP-uri",
   allowDeleteFromHistory: "Permite ștergerea IP-urilor din istoric",
+  allowDeleteFromHistoryInfo:
+    "Vizibil când există mai multe IP-uri în istoric.",
+  emptyIpTitle: "Niciun IP găsit",
+  emptyIpDescription:
+    "Istoricul tău de IP-uri este momentan gol. Adresele IP vor apărea aici imediat ce sunt detectate.",
+  visibleWhenIPv6Available: "Vizibil când IP V6 este disponibil",
+  showInfo: "Afișează informații",
+  noCountryDetected: "Țara nu a fost detectată",
+  delete: "Șterge",
+  cannotDelete: "Nu se poate șterge",
+  back: "Înapoi",
+  copyToClipboard: "Copiază în clipboard",
+  copiedToClipboard: "Copiat în clipboard",
 };

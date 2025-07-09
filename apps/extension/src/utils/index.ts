@@ -31,7 +31,11 @@ export const localeMap: Record<string, Locale> = {
   nl,
 };
 
-export const countryCodeToFlagEmoji = (code: string): string => {
+export const countryCodeToFlagEmoji = (code: string | undefined): string => {
+  if (!code) {
+    return "🗺️";
+  }
+
   return code
     .toUpperCase()
     .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));

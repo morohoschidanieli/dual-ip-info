@@ -12,10 +12,18 @@ import {
 import storage from "redux-persist/lib/storage";
 import settingsReducer from "@reducers/settingsReducer";
 import historyReducer from "@reducers/historyReducer";
+import { privateIPApi } from "@services/privateIpService";
+import { publicIPApi } from "@services/publicIpService";
+import { locationApi } from "@services/locationService";
+import { updateAllowDeleteFromHistory } from "@middlewares/updateAllowDeleteFromHistory";
+import { updateCanShowIPV6 } from "@middlewares/updateCanShowIPV6";
 
 const rootReducer = combineReducers({
   settings: settingsReducer,
   history: historyReducer,
+  [privateIPApi.reducerPath]: privateIPApi.reducer,
+  [publicIPApi.reducerPath]: publicIPApi.reducer,
+  [locationApi.reducerPath]: locationApi.reducer,
 });
 
 const persistConfig = {
@@ -33,7 +41,12 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    })
+      .prepend(updateAllowDeleteFromHistory.middleware)
+      .prepend(updateCanShowIPV6.middleware)
+      .concat(privateIPApi.middleware)
+      .concat(publicIPApi.middleware)
+      .concat(locationApi.middleware),
 });
 
 export const persistedStore = persistStore(store);

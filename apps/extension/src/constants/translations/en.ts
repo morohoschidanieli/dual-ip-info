@@ -50,4 +50,16 @@ export const en = {
   yourPrivateIPv6: "Your private IP (V6)",
   lastIPs: "Last IPs",
   allowDeleteFromHistory: "Allow deleting IPs from history",
+  allowDeleteFromHistoryInfo: "Visible when multiple IPs are in history.",
+  emptyIpTitle: "No IPs found",
+  emptyIpDescription:
+    "Your IP history is currently empty. New IP addresses will appear here as soon as they're detected.",
+  visibleWhenIPv6Available: "Visible when IP V6 is available",
+  showInfo: "Show info",
+  noCountryDetected: "No country detected",
+  delete: "Delete",
+  cannotDelete: "Cannot delete",
+  back: "Back",
+  copyToClipboard: "Copy to clipboard",
+  copiedToClipboard: "Copied to clipboard",
 };

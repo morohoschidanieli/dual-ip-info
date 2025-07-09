@@ -13,10 +13,10 @@ import {
 import { useTranslation } from "react-i18next";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
+import { FiInfo } from "react-icons/fi";
 import packageJSON from "@root/package.json";
 import { Routes } from "@constants";
 import { Header } from "@components";
-import { FiInfo } from "react-icons/fi";
 
 export const InfoPage: FC = () => {
   const {
@@ -25,7 +25,6 @@ export const InfoPage: FC = () => {
     VITE_PERSONAL_WEBSITE_URL,
   } = import.meta.env;
   const { t } = useTranslation();
-
   const navigate = useNavigate();
 
   const handleNavigateToHomepage = () => {
@@ -39,6 +38,7 @@ export const InfoPage: FC = () => {
           size="md"
           variant="plain"
           aria-label="Back"
+          title={t("back")}
           onClick={handleNavigateToHomepage}
         >
           <FaArrowLeft />

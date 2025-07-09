@@ -1,4 +1,5 @@
 import { type FC, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "@store";
 import {
   ChakraProvider,
@@ -6,9 +7,8 @@ import {
   defaultConfig,
   Theme,
 } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { changeTheme } from "@reducers/settingsReducer";
 import { themeConfiguration } from "@configurations";
+import { changeTheme } from "@reducers/settingsReducer";
 
 export interface ChakraProps {
   children: React.JSX.Element;

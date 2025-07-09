@@ -50,4 +50,16 @@ export const nl = {
   yourPrivateIPv6: "Jouw privé IP (V6)",
   lastIPs: "Laatste IP-adressen",
   allowDeleteFromHistory: "Verwijderen van IP's uit geschiedenis toestaan",
+  allowDeleteFromHistoryInfo: "Zichtbaar bij meerdere IP-adressen.",
+  emptyIpTitle: "Geen IP-adressen gevonden",
+  emptyIpDescription:
+    "Je IP-geschiedenis is momenteel leeg. Nieuwe IP-adressen verschijnen hier zodra ze worden gedetecteerd.",
+  visibleWhenIPv6Available: "Zichtbaar wanneer IP V6 beschikbaar is",
+  showInfo: "Toon info",
+  noCountryDetected: "Geen land gedetecteerd",
+  delete: "Verwijderen",
+  cannotDelete: "Kan niet worden verwijderd",
+  back: "Terug",
+  copyToClipboard: "Kopiëren naar klembord",
+  copiedToClipboard: "Gekopieerd naar klembord",
 };

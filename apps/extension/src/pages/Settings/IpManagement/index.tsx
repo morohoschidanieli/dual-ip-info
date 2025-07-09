@@ -1,18 +1,20 @@
 import type { FC } from "react";
-import { Box, Heading, HStack, Icon, Switch } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
 import { FiWifi } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { HiCheck, HiX } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "@store";
-import { changeShowIPV6 } from "@reducers/settingsReducer";
-
-interface CheckedChangeDetails {
-  checked: boolean;
-}
+import { Box, Heading, HStack, Icon, Switch } from "@chakra-ui/react";
+import type { CheckedChangeDetails } from "@models";
+import { InfoTip } from "@components";
+import {
+  changeShowIPV6,
+  selectCanShowIPV6,
+  selectShowIPV6,
+} from "@reducers/settingsReducer";
 
 export const IpManagement: FC = () => {
-  const { showIPV6 } = useSelector(({ settings }: RootState) => settings);
+  const showIPV6 = useSelector(selectShowIPV6);
+  const canShowIPV6 = useSelector(selectCanShowIPV6);
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -38,10 +40,14 @@ export const IpManagement: FC = () => {
         size="lg"
         display="flex"
         justifyContent="space-between"
+        disabled={!canShowIPV6}
         defaultChecked={showIPV6}
         onCheckedChange={handleEnableIPV6Change}
       >
-        <Switch.Label fontSize="lg">{t("enableIPV6")}</Switch.Label>
+        <Switch.Label fontSize="lg">
+          {t("enableIPV6")}
+          <InfoTip size="lg" content={t("visibleWhenIPv6Available")} />
+        </Switch.Label>
         <Switch.HiddenInput />
         <Switch.Control>
           <Switch.Thumb>

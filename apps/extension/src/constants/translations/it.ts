@@ -50,4 +50,16 @@ export const it = {
   yourPrivateIPv6: "Il tuo IP privato (V6)",
   lastIPs: "Ultimi IP",
   allowDeleteFromHistory: "Consenti l'eliminazione degli IP dalla cronologia",
+  allowDeleteFromHistoryInfo: "Visibile se ci sono più IP nella cronologia.",
+  emptyIpTitle: "Nessun IP trovato",
+  emptyIpDescription:
+    "La cronologia degli IP è attualmente vuota. I nuovi indirizzi IP appariranno qui non appena saranno rilevati.",
+  visibleWhenIPv6Available: "Visibile quando è disponibile l'IP V6",
+  showInfo: "Mostra informazioni",
+  noCountryDetected: "Nessun paese rilevato",
+  delete: "Elimina",
+  cannotDelete: "Impossibile eliminare",
+  back: "Indietro",
+  copyToClipboard: "Copia negli appunti",
+  copiedToClipboard: "Copiato negli appunti",
 };

@@ -1,5 +1,9 @@
-export { HomePage } from "@pages/Home";
-export { InfoPage } from "@pages/Info";
-export { SettingsPage } from "@pages/Settings";
-export { NotFoundPage } from "@pages/NotFound";
-export { Root } from "@pages/Root";
+export { HomePage } from "./Home";
+export { HomePageSkeleton } from "./Home/Skeleton";
+export { InfoPage } from "./Info";
+export { SettingsPage } from "./Settings";
+export { General } from "./Settings/General";
+export { IpManagement } from "./Settings/IpManagement";
+export { History } from "./Settings/History";
+export { NotFoundPage } from "./NotFound";
+export { Root } from "./Root";

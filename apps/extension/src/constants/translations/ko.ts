@@ -50,4 +50,16 @@ export const ko = {
   yourPrivateIPv6: "당신의 사설 IP (V6)",
   lastIPs: "최근 IP",
   allowDeleteFromHistory: "히스토리에서 IP 삭제 허용",
+  allowDeleteFromHistoryInfo: "IP가 여러 개인 경우 표시됩니다.",
+  emptyIpTitle: "IP를 찾을 수 없습니다",
+  emptyIpDescription:
+    "IP 기록이 비어 있습니다. 새로운 IP가 감지되면 여기에 표시됩니다.",
+  visibleWhenIPv6Available: "IPv6 사용 가능 시 표시됩니다",
+  showInfo: "정보 보기",
+  noCountryDetected: "국가를 감지할 수 없음",
+  delete: "삭제",
+  cannotDelete: "삭제할 수 없습니다",
+  back: "뒤로",
+  copyToClipboard: "클립보드에 복사",
+  copiedToClipboard: "클립보드에 복사됨",
 };

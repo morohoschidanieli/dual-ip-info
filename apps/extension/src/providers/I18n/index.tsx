@@ -1,7 +1,6 @@
 import { type FC, type ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
-import i18n from "@configurations/i18n";
-
+import { i18n } from "@configurations";
 
 export interface I18nProps {
   children: ReactNode;

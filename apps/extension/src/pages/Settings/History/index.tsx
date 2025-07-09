@@ -1,6 +1,8 @@
 import type { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { FiClock } from "react-icons/fi";
+import { HiCheck, HiX } from "react-icons/hi";
 import {
   Box,
   createListCollection,
@@ -11,38 +13,32 @@ import {
   Select,
   Switch,
 } from "@chakra-ui/react";
-import type { RootState } from "@store";
-import { useDispatch, useSelector } from "react-redux";
+import type { CheckedChangeDetails, ValueChangeDetails } from "@models";
+import { InfoTip } from "@components";
+import { selectHistoryLength } from "@reducers/historyReducer";
 import {
   changeAllowDeleteFromHistory,
   changeNumberOfIPsToShow,
+  selectAllowDeleteFromHistory,
+  selectNumberOfIPsToShow,
 } from "@reducers/settingsReducer";
-import { HiCheck, HiX } from "react-icons/hi";
-
-type ValueChangeDetails = {
-  value: string | string[];
-};
-
-interface CheckedChangeDetails {
-  checked: boolean;
-}
 
 export const History: FC = () => {
-  const { numberOfIPsToShow, allowDeleteFromHistory } = useSelector(
-    ({ settings }: RootState) => settings
-  );
+  const historyLength = useSelector(selectHistoryLength);
+  const numberOfIPsToShow = useSelector(selectNumberOfIPsToShow);
+  const allowDeleteFromHistory = useSelector(selectAllowDeleteFromHistory);
 
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const historyOptions = createListCollection<5 | 10>({
-    items: [5, 10],
+  const historyOptions = createListCollection<3 | 6>({
+    items: [3, 6],
     itemToString: (num) => num.toString(),
     itemToValue: (num) => num.toString(),
   });
 
   const handleNumberOfIPsToShowChange = ({ value }: ValueChangeDetails) => {
-    dispatch(changeNumberOfIPsToShow(value[0] as unknown as 5 | 10));
+    dispatch(changeNumberOfIPsToShow(value[0] as unknown as 3 | 6));
   };
 
   const handleAllowDeleteFromHistoryChange = ({
@@ -69,9 +65,13 @@ export const History: FC = () => {
         display="flex"
         justifyContent="space-between"
         defaultChecked={allowDeleteFromHistory}
+        disabled={historyLength <= 1}
         onCheckedChange={handleAllowDeleteFromHistoryChange}
       >
-        <Switch.Label fontSize="lg">{t("allowDeleteFromHistory")}</Switch.Label>
+        <Switch.Label fontSize="lg">
+          {t("allowDeleteFromHistory")}
+          <InfoTip size="lg" content={t("allowDeleteFromHistoryInfo")} />
+        </Switch.Label>
         <Switch.HiddenInput />
         <Switch.Control>
           <Switch.Thumb>

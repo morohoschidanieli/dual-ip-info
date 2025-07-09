@@ -50,4 +50,16 @@ export const ru = {
   yourPrivateIPv6: "Ваш приватный IP (V6)",
   lastIPs: "Последние IP-адреса",
   allowDeleteFromHistory: "Разрешить удаление IP-адресов из истории",
+  allowDeleteFromHistoryInfo: "Видно при нескольких IP в истории.",
+  emptyIpTitle: "IP-адреса не найдены",
+  emptyIpDescription:
+    "Ваша история IP пуста. Новые IP-адреса появятся здесь, как только будут обнаружены.",
+  visibleWhenIPv6Available: "Видно, когда доступен IPv6",
+  showInfo: "Показать информацию",
+  noCountryDetected: "Страна не определена",
+  delete: "Удалить",
+  cannotDelete: "Удаление невозможно",
+  back: "Назад",
+  copyToClipboard: "Скопировать в буфер обмена",
+  copiedToClipboard: "Скопировано в буфер обмена",
 };

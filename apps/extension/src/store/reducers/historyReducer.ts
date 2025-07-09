@@ -1,5 +1,10 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import {
+  createSelector,
+  createSlice,
+  type PayloadAction,
+} from "@reduxjs/toolkit";
 import type { HistoryModel, IPModel, LocationModel } from "@models";
+import type { RootState } from "@store";
 
 const initialState: HistoryModel[] = [];
 
@@ -7,6 +12,9 @@ export const historySlice = createSlice({
   name: "history",
   initialState,
   reducers: {
+    remove: (state, action: PayloadAction<string>) => {
+      return state.filter(({ id }) => id !== action.payload);
+    },
     insert: (
       state,
       action: PayloadAction<{ ip: IPModel; location?: LocationModel }>
@@ -38,6 +46,12 @@ export const historySlice = createSlice({
   },
 });
 
-export const { insert } = historySlice.actions;
+export const { insert, remove } = historySlice.actions;
+
+export const selectHistory = ({ history }: RootState) => history;
+export const selectHistoryLength = createSelector(
+  ({ history }: RootState) => history,
+  (history) => history.length
+);
 
 export default historySlice.reducer;

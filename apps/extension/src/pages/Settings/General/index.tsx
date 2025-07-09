@@ -1,4 +1,8 @@
 import { type FC, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { FiSettings } from "react-icons/fi";
+import { HiCheck, HiX } from "react-icons/hi";
 import {
   Box,
   createListCollection,
@@ -13,36 +17,26 @@ import {
   Stack,
   Switch,
 } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
-import { FiSettings } from "react-icons/fi";
-import { HiCheck, HiX } from "react-icons/hi";
+import type {
+  CheckedChangeDetails,
+  Date,
+  Theme,
+  Time,
+  ValueChangeDetails,
+} from "@models";
+import { DateFormats, Languages, TimeFormats } from "@constants";
 import {
   changeDateFormat,
   changeShowIconInToolbar,
   changeTheme,
   changeTimeFormat,
   changeUseSystemTheme,
+  selectSettings,
 } from "@reducers/settingsReducer";
-import type { RootState } from "@store";
-import type { Date, Theme, Time } from "@models";
-import { DateFormats, Languages, TimeFormats } from "@constants";
-
-type ValueChangeDetails = {
-  value: string | string[];
-};
-
-interface CheckedChangeDetails {
-  checked: boolean;
-}
-
-interface ValueChangeDetails2 {
-  value: string | null;
-}
 
 export const General: FC = () => {
   const { dateFormat, timeFormat, showIconInToolbar, theme, useSystemTheme } =
-    useSelector(({ settings }: RootState) => settings);
+    useSelector(selectSettings);
 
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
@@ -73,7 +67,7 @@ export const General: FC = () => {
     itemToValue: (language) => language.value,
   });
 
-  const handleThemeChange = ({ value }: ValueChangeDetails2) => {
+  const handleThemeChange = ({ value }: ValueChangeDetails<string | null>) => {
     if (value === "system") {
       dispatch(changeUseSystemTheme(true));
     } else {

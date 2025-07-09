@@ -1,5 +1,5 @@
-import { Separator, Stack } from "@chakra-ui/react";
 import type { FC, ReactNode } from "react";
+import { Separator, Stack } from "@chakra-ui/react";
 
 export interface HeaderProps {
   children: ReactNode;

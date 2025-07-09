@@ -50,4 +50,16 @@ export const zh = {
   yourPrivateIPv6: "你的私网 IP（V6）",
   lastIPs: "最近的 IP",
   allowDeleteFromHistory: "允许从历史中删除 IP",
+  allowDeleteFromHistoryInfo: "当有多个 IP 时可见。",
+  emptyIpTitle: "未找到 IP",
+  emptyIpDescription:
+    "您的 IP 历史记录为空。检测到新的 IP 地址后将显示在此处。",
+  visibleWhenIPv6Available: "当 IPv6 可用时可见",
+  showInfo: "显示信息",
+  noCountryDetected: "未检测到国家",
+  delete: "删除",
+  cannotDelete: "无法删除",
+  back: "返回",
+  copyToClipboard: "复制到剪贴板",
+  copiedToClipboard: "已复制到剪贴板",
 };

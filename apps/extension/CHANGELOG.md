@@ -1,5 +1,25 @@
-## [2.0.0] - 07-07-2025
+## [2.0.0] - 09-07-2025
 
+- ✨ feat: detect and display private IPs (v4/v6) using internal-ip
+- ✨ feat: detect and display public IP info with geo location, timezone, connection and country flag
+- ✨ feat: show flag emoji or fallback icon when country is not detected
+- ✨ feat: show local time and timezone info in IP details
+- ✨ feat: add clipboard copy button for IPs with i18n feedback message
+- ✨ feat: add `ButtonWithTextFeedback` component with feedback timer
+- ✨ feat: create UI state for empty history (with image + translated message)
+- ✨ feat: display IP history in reverse chronological order
+- ✨ feat: prevent duplicate IPs in history and update timestamp instead
+- ✨ feat: auto-disable delete option when history has fewer than 2 entries
+- ✨ feat: add Redux middleware to sync `allowDeleteFromHistory` based on history length
+- ✨ feat: use RTK Query `fakeBaseQuery` for internal IP and local async data
+- ✨ feat: persist last location result using localStorage fallback
+- ✨ feat: add i18n strings for "Back", "Delete", "Copy to clipboard", "Copied to clipboard", etc.
+- ✨ feat: add visibility logic and tooltips for v6-only IP options
+- ✨ feat: handle and normalize flags for invalid/missing country codes
+- ✨ feat: responsive `Skeleton` loading states for async IP data
+- 🐞 fix: properly serialize query errors from internal/public IP detection
+- 🔧 chore: optimize `queryFn` structure in RTK Query endpoints
+- 🔧 chore: unify fallback logic for missing IP data
 - ✨ feat: add persisted storage in redux for history
 - ✨ feat: add new setting(`allow deleting IPs from history`) with translations for supported languages
 - 🔧 chore: update imports to be sorted and added new package.json commands for lint and lint fix
@@ -9,7 +29,6 @@
 - ✨ feat: add hardcoded components for last ips section and popover for more details
 - ♻️ refactor: split every setting section in component
 - 🐞 fix: ensure invalid or unsupported languages (e.g. `mo`, `de-AT`, `pt-BR`) are normalized and fallback language is saved to `localStorage`
-- ✨ feat: update application logo
 - ✨ feat: update application logo
 - ✨ feat: updated `developedBy` message with ❤️ and translations
 - ✨ feat: added `version` label to translations
@@ -45,4 +64,4 @@
 - 🔧 chore: add manifest.json for chrome extension API
 - 🔧 chore: add vitest
 - 🔧 chore: add monorepo setup, changelog file and version.txt file
-✨ feat: integrate date-fns with global locale support via DateFnsProvider
+  ✨ feat: integrate date-fns with global locale support via DateFnsProvider

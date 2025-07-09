@@ -1,13 +1,15 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Date, SettingsModel, Theme, Time } from "@models";
+import type { RootState } from "@store";
 
 const initialState: SettingsModel = {
   theme: "light",
   useSystemTheme: true,
   showIPV6: false,
+  canShowIPV6: false,
   showPublicIPNotification: false,
   showIconInToolbar: false,
-  numberOfIPsToShow: 5,
+  numberOfIPsToShow: 3,
   allowDeleteFromHistory: false,
   dateFormat: "EEEE, d MMMM yyyy",
   timeFormat: "HH:mm:ss",
@@ -34,13 +36,16 @@ export const settingsSlice = createSlice({
     changeShowIPV6: (state, action: PayloadAction<boolean>) => {
       state.showIPV6 = action.payload;
     },
+    changeCanShowIPV6: (state, action: PayloadAction<boolean>) => {
+      state.canShowIPV6 = action.payload;
+    },
     changeShowPublicIPNotification: (state, action: PayloadAction<boolean>) => {
       state.showPublicIPNotification = action.payload;
     },
     changeShowIconInToolbar: (state, action: PayloadAction<boolean>) => {
       state.showIconInToolbar = action.payload;
     },
-    changeNumberOfIPsToShow: (state, action: PayloadAction<5 | 10>) => {
+    changeNumberOfIPsToShow: (state, action: PayloadAction<3 | 6>) => {
       state.numberOfIPsToShow = action.payload;
     },
     changeDateFormat: (state, action: PayloadAction<Date>) => {
@@ -59,6 +64,7 @@ export const {
   changeTheme,
   changeUseSystemTheme,
   changeShowIPV6,
+  changeCanShowIPV6,
   changeShowPublicIPNotification,
   changeShowIconInToolbar,
   changeNumberOfIPsToShow,
@@ -66,5 +72,14 @@ export const {
   changeTimeFormat,
   changeAllowDeleteFromHistory,
 } = settingsSlice.actions;
+
+export const selectSettings = ({ settings }: RootState) => settings;
+export const selectShowIPV6 = ({ settings }: RootState) => settings.showIPV6;
+export const selectCanShowIPV6 = ({ settings }: RootState) =>
+  settings.canShowIPV6;
+export const selectNumberOfIPsToShow = ({ settings }: RootState) =>
+  settings.numberOfIPsToShow;
+export const selectAllowDeleteFromHistory = ({ settings }: RootState) =>
+  settings.allowDeleteFromHistory;
 
 export default settingsSlice.reducer;
