@@ -1,5 +1,6 @@
 ## [2.0.0] - 09-07-2025
 
+- 🔧 chore: add tests for utils
 - ✨ feat: detect and display private IPs (v4/v6) using internal-ip
 - ✨ feat: detect and display public IP info with geo location, timezone, connection and country flag
 - ✨ feat: show flag emoji or fallback icon when country is not detected
