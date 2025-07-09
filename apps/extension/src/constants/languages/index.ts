@@ -11,7 +11,7 @@ export const Languages: LanguageModel[] = [
   { name: "Polski", value: "pl", flag: "🇵🇱" },
   { name: "Português", value: "pt", flag: "🇵🇹" },
   { name: "Русский", value: "ru", flag: "🇷🇺" },
-  { name: "中文", value: "zh-cn", flag: "🇨🇳" },
+  { name: "中文", value: "zh", flag: "🇨🇳" },
   { name: "日本語", value: "ja", flag: "🇯🇵" },
   { name: "한국어", value: "ko", flag: "🇰🇷" },
 ];

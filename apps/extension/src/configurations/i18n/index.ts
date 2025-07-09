@@ -23,7 +23,7 @@ i18n
   .use(initReactI18next)
   .init({
     // debug: true,
-    fallbackLng: "en-us",
+    fallbackLng: "en",
     nonExplicitSupportedLngs: true,
     load: "languageOnly",
     lowerCaseLng: true,
@@ -42,7 +42,7 @@ i18n
       pl: { translation: pl },
       pt: { translation: pt },
       ru: { translation: ru },
-      "zh-cn": { translation: zh },
+      zh: { translation: zh },
       ja: { translation: ja },
       ko: { translation: ko },
     },
@@ -52,7 +52,7 @@ i18n
     const detectedLang = i18n.language.toLowerCase();
     const baseLang = detectedLang.split("-")[0];
 
-    const fallback = "en-us";
+    const fallback = "en";
 
     if (!availableLanguages.includes(baseLang)) {
       i18n.changeLanguage(fallback);
