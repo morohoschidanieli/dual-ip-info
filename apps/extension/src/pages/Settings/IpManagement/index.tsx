@@ -29,7 +29,7 @@ export const IpManagement: FC = () => {
       display="flex"
       flexDirection="column"
       gap="3"
-      fontSize="lg"
+      fontSize="sm"
     >
       <HStack display="flex">
         <Icon as={FiWifi} />
@@ -37,16 +37,15 @@ export const IpManagement: FC = () => {
       </HStack>
 
       <Switch.Root
-        size="lg"
         display="flex"
         justifyContent="space-between"
         disabled={!canShowIPV6}
         defaultChecked={showIPV6}
         onCheckedChange={handleEnableIPV6Change}
       >
-        <Switch.Label fontSize="lg">
+        <Switch.Label fontSize="sm">
           {t("enableIPV6")}
-          <InfoTip size="lg" content={t("visibleWhenIPv6Available")} />
+          <InfoTip content={t("visibleWhenIPv6Available")} />
         </Switch.Label>
         <Switch.HiddenInput />
         <Switch.Control>

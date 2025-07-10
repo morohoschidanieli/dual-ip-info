@@ -1,5 +1,8 @@
 ## [2.0.0] - 09-07-2025
 
+- 🔧 chore: change icons for extension
+- 🔧 chore: modify manifest file
+- 🐞 fix: make font size smaller
 - 🐞 fix: translation for `zh` language
 - 🔧 chore: add tests for utils
 - ✨ feat: detect and display private IPs (v4/v6) using internal-ip

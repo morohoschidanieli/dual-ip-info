@@ -97,7 +97,7 @@ export const General: FC = () => {
       display="flex"
       flexDirection="column"
       gap="3"
-      fontSize="lg"
+      fontSize="sm"
     >
       <HStack display="flex">
         <Icon as={FiSettings} />
@@ -105,9 +105,9 @@ export const General: FC = () => {
       </HStack>
 
       <Fieldset.Root>
-        <Fieldset.Legend fontSize="lg">{t("theme")}</Fieldset.Legend>
+        <Fieldset.Legend fontSize="sm">{t("theme")}</Fieldset.Legend>
         <RadioGroup.Root
-          size="lg"
+          fontSize="sm"
           defaultValue={value}
           onValueChange={handleThemeChange}
         >
@@ -119,21 +119,21 @@ export const General: FC = () => {
             <RadioGroup.Item value="dark">
               <RadioGroup.ItemHiddenInput />
               <RadioGroup.ItemIndicator />
-              <RadioGroup.ItemText fontSize="lg">
+              <RadioGroup.ItemText fontSize="sm">
                 {t("dark")}
               </RadioGroup.ItemText>
             </RadioGroup.Item>
             <RadioGroup.Item value="light">
               <RadioGroup.ItemHiddenInput />
               <RadioGroup.ItemIndicator />
-              <RadioGroup.ItemText fontSize="lg">
+              <RadioGroup.ItemText fontSize="sm">
                 {t("light")}
               </RadioGroup.ItemText>
             </RadioGroup.Item>
             <RadioGroup.Item value="system">
               <RadioGroup.ItemHiddenInput />
               <RadioGroup.ItemIndicator />
-              <RadioGroup.ItemText fontSize="lg">
+              <RadioGroup.ItemText fontSize="sm">
                 {t("system")}
               </RadioGroup.ItemText>
             </RadioGroup.Item>
@@ -141,14 +141,13 @@ export const General: FC = () => {
         </RadioGroup.Root>
       </Fieldset.Root>
       <Select.Root
-        size="lg"
         collection={languages}
         defaultValue={[i18n.language]}
         multiple={false}
         onValueChange={handleLanguageChange}
       >
         <Select.HiddenSelect />
-        <Select.Label fontSize="lg">{t("language")}</Select.Label>
+        <Select.Label fontSize="sm">{t("language")}</Select.Label>
         <Select.Control>
           <Select.Trigger>
             <Select.ValueText placeholder={t("selectLanguage")} />
@@ -172,14 +171,13 @@ export const General: FC = () => {
         </Portal>
       </Select.Root>
       <Select.Root
-        size="lg"
         collection={dateFormats}
         multiple={false}
         defaultValue={[dateFormat]}
         onValueChange={handleDateFormatChange}
       >
         <Select.HiddenSelect />
-        <Select.Label fontSize="lg">{t("dateFormat")}</Select.Label>
+        <Select.Label fontSize="sm">{t("dateFormat")}</Select.Label>
         <Select.Control>
           <Select.Trigger>
             <Select.ValueText placeholder={t("selectDateFormat")} />
@@ -207,14 +205,13 @@ export const General: FC = () => {
         </Portal>
       </Select.Root>
       <Select.Root
-        size="lg"
         collection={timeFormats}
         multiple={false}
         defaultValue={[timeFormat]}
         onValueChange={handleTimeFormatChange}
       >
         <Select.HiddenSelect />
-        <Select.Label fontSize="lg">{t("timeFormat")}</Select.Label>
+        <Select.Label fontSize="sm">{t("timeFormat")}</Select.Label>
         <Select.Control>
           <Select.Trigger>
             <Select.ValueText placeholder={t("selectTimeFormat")} />
@@ -244,13 +241,8 @@ export const General: FC = () => {
           </Select.Positioner>
         </Portal>
       </Select.Root>
-      <Switch.Root
-        size="lg"
-        display="flex"
-        justifyContent="space-between"
-        disabled
-      >
-        <Switch.Label fontSize="lg">
+      <Switch.Root display="flex" justifyContent="space-between" disabled>
+        <Switch.Label fontSize="sm">
           {t("showPublicIpNotifications")}
         </Switch.Label>
         <Switch.HiddenInput />
@@ -263,13 +255,12 @@ export const General: FC = () => {
         </Switch.Control>
       </Switch.Root>
       <Switch.Root
-        size="lg"
         display="flex"
         justifyContent="space-between"
         defaultChecked={showIconInToolbar}
         onCheckedChange={handleShowIconInToolbarChange}
       >
-        <Switch.Label fontSize="lg">{t("showIconInToolbar")}</Switch.Label>
+        <Switch.Label fontSize="sm">{t("showIconInToolbar")}</Switch.Label>
         <Switch.HiddenInput />
         <Switch.Control>
           <Switch.Thumb>

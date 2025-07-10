@@ -140,7 +140,7 @@ export const HomePage: FC = () => {
           display="flex"
           flexDirection="column"
           gap="3"
-          fontSize="lg"
+          fontSize="sm"
         >
           <Show when={!showIPV6}>
             <Stack>
@@ -193,7 +193,7 @@ export const HomePage: FC = () => {
           display="flex"
           flexDirection="column"
           gap="3"
-          fontSize="lg"
+          fontSize="sm"
         >
           <Stack>
             <Text fontWeight="bold">{`${t("lastIPs")}: `}</Text>

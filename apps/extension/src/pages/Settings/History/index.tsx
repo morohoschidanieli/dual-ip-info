@@ -53,7 +53,7 @@ export const History: FC = () => {
       display="flex"
       flexDirection="column"
       gap="3"
-      fontSize="lg"
+      fontSize="sm"
     >
       <HStack display="flex">
         <Icon as={FiClock} />
@@ -61,14 +61,13 @@ export const History: FC = () => {
       </HStack>
 
       <Switch.Root
-        size="lg"
         display="flex"
         justifyContent="space-between"
         defaultChecked={allowDeleteFromHistory}
         disabled={historyLength <= 1}
         onCheckedChange={handleAllowDeleteFromHistoryChange}
       >
-        <Switch.Label fontSize="lg">
+        <Switch.Label fontSize="sm">
           {t("allowDeleteFromHistory")}
           <InfoTip size="lg" content={t("allowDeleteFromHistoryInfo")} />
         </Switch.Label>
@@ -83,13 +82,12 @@ export const History: FC = () => {
       </Switch.Root>
 
       <Select.Root
-        size="lg"
         collection={historyOptions}
         defaultValue={[String(numberOfIPsToShow)]}
         onValueChange={handleNumberOfIPsToShowChange}
       >
         <Select.HiddenSelect />
-        <Select.Label fontSize="lg">{t("numbersIPsToShow")}</Select.Label>
+        <Select.Label fontSize="sm">{t("numbersIPsToShow")}</Select.Label>
         <Select.Control>
           <Select.Trigger>
             <Select.ValueText placeholder={t("selectNumbersOfIPsToShow")} />

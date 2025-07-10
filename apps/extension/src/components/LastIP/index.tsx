@@ -32,12 +32,7 @@ export const LastIP: FC<LastIPProps> = ({ data }) => {
 
         <VStack width="100%" paddingY="2">
           <VStack width="100%" gap="2">
-            <HStack
-              fontSize="md"
-              fontWeight="bold"
-              width="100%"
-              justifyContent="flex-start"
-            >
+            <HStack fontWeight="bold" width="100%" justifyContent="flex-start">
               <FormattedDate timestamp={data.timestamp} />
               <FormattedTime timestamp={data.timestamp} />
             </HStack>

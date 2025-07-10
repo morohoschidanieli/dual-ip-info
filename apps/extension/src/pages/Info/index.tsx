@@ -55,10 +55,10 @@ export const InfoPage: FC = () => {
           </HStack>
         </Box>
         <Box>
-          <Text fontSize="lg">{t("extensionDescription")}</Text>
+          <Text fontSize="sm">{t("extensionDescription")}</Text>
         </Box>
         <Box>
-          <Text fontSize="lg">
+          <Text fontSize="sm">
             {t("developedBy")}
             <Link
               href={VITE_PERSONAL_WEBSITE_URL}
