@@ -62,4 +62,8 @@ export const fr = {
   back: "Retour",
   copyToClipboard: "Copier dans le presse-papiers",
   copiedToClipboard: "Copié dans le presse-papiers",
+  backgroundCheckInterval: "Intervalle (secondes)",
+  selectCheckInterval: "Sélectionner l'intervalle",
+  notificationTitle: "IP Publique Modifiée",
+  notificationMessage: "Votre adresse IP a changé depuis la dernière vérification.",
 };

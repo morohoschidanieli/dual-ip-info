@@ -33,7 +33,10 @@ export const historySlice = createSlice({
 
       if (exists) {
         state[0].timestamp = Date.now();
-
+        /**
+         * Append private IP if it exists (e.g., when added from the service worker).
+         */
+        state[0].ip.v4.private = action.payload.ip.v4.private;
         return;
       }
 

@@ -18,6 +18,8 @@
       "@store": ["./src/store/store"],
       "@store/*": ["./src/store/store/*"],
       "@reducers/*": ["./src/store/reducers/*"],
+      "@storages/*": ["./src/store/storages/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@services/*": ["./src/services/*"],
       "@utils": ["./src/utils"]
     }

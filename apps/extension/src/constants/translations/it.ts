@@ -62,4 +62,8 @@ export const it = {
   back: "Indietro",
   copyToClipboard: "Copia negli appunti",
   copiedToClipboard: "Copiato negli appunti",
+  backgroundCheckInterval: "Intervallo (secondi)",
+  selectCheckInterval: "Seleziona l'intervallo",
+  notificationTitle: "IP Pubblico Cambiato",
+  notificationMessage: "Il tuo indirizzo IP è cambiato dall'ultima verifica.",
 };

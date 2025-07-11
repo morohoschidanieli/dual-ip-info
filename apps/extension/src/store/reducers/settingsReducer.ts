@@ -2,13 +2,12 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Date, SettingsModel, Theme, Time } from "@models";
 import type { RootState } from "@store";
 
-const initialState: SettingsModel = {
+export const initialSettingsState: SettingsModel = {
   theme: "light",
   useSystemTheme: true,
   showIPV6: false,
   canShowIPV6: false,
   showPublicIPNotification: false,
-  showIconInToolbar: false,
   numberOfIPsToShow: 3,
   allowDeleteFromHistory: false,
   dateFormat: "EEEE, d MMMM yyyy",
@@ -17,7 +16,7 @@ const initialState: SettingsModel = {
 
 export const settingsSlice = createSlice({
   name: "settings",
-  initialState,
+  initialState: initialSettingsState,
   reducers: {
     changeTheme: (
       state,
@@ -42,9 +41,6 @@ export const settingsSlice = createSlice({
     changeShowPublicIPNotification: (state, action: PayloadAction<boolean>) => {
       state.showPublicIPNotification = action.payload;
     },
-    changeShowIconInToolbar: (state, action: PayloadAction<boolean>) => {
-      state.showIconInToolbar = action.payload;
-    },
     changeNumberOfIPsToShow: (state, action: PayloadAction<3 | 6>) => {
       state.numberOfIPsToShow = action.payload;
     },
@@ -57,6 +53,9 @@ export const settingsSlice = createSlice({
     changeAllowDeleteFromHistory: (state, action: PayloadAction<boolean>) => {
       state.allowDeleteFromHistory = action.payload;
     },
+    changeLanguage: (state, action: PayloadAction<string>) => {
+      state.language = action.payload;
+    },
   },
 });
 
@@ -66,11 +65,11 @@ export const {
   changeShowIPV6,
   changeCanShowIPV6,
   changeShowPublicIPNotification,
-  changeShowIconInToolbar,
   changeNumberOfIPsToShow,
   changeDateFormat,
   changeTimeFormat,
   changeAllowDeleteFromHistory,
+  changeLanguage,
 } = settingsSlice.actions;
 
 export const selectSettings = ({ settings }: RootState) => settings;

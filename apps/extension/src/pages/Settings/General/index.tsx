@@ -27,7 +27,7 @@ import type {
 import { DateFormats, Languages, TimeFormats } from "@constants";
 import {
   changeDateFormat,
-  changeShowIconInToolbar,
+  changeShowPublicIPNotification,
   changeTheme,
   changeTimeFormat,
   changeUseSystemTheme,
@@ -35,9 +35,13 @@ import {
 } from "@reducers/settingsReducer";
 
 export const General: FC = () => {
-  const { dateFormat, timeFormat, showIconInToolbar, theme, useSystemTheme } =
-    useSelector(selectSettings);
-
+  const {
+    dateFormat,
+    timeFormat,
+    showPublicIPNotification,
+    theme,
+    useSystemTheme,
+  } = useSelector(selectSettings);
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
@@ -87,8 +91,10 @@ export const General: FC = () => {
     dispatch(changeTimeFormat(value[0] as Time));
   };
 
-  const handleShowIconInToolbarChange = ({ checked }: CheckedChangeDetails) => {
-    dispatch(changeShowIconInToolbar(checked));
+  const handleShowPublicIPNotificationChange = ({
+    checked,
+  }: CheckedChangeDetails) => {
+    dispatch(changeShowPublicIPNotification(checked));
   };
 
   return (
@@ -142,7 +148,7 @@ export const General: FC = () => {
       </Fieldset.Root>
       <Select.Root
         collection={languages}
-        defaultValue={[i18n.language]}
+        defaultValue={[i18n.resolvedLanguage ?? i18n.language]}
         multiple={false}
         onValueChange={handleLanguageChange}
       >
@@ -241,26 +247,15 @@ export const General: FC = () => {
           </Select.Positioner>
         </Portal>
       </Select.Root>
-      <Switch.Root display="flex" justifyContent="space-between" disabled>
-        <Switch.Label fontSize="sm">
-          {t("showPublicIpNotifications")}
-        </Switch.Label>
-        <Switch.HiddenInput />
-        <Switch.Control>
-          <Switch.Thumb>
-            <Switch.ThumbIndicator fallback={<HiX color="black" />}>
-              <HiCheck />
-            </Switch.ThumbIndicator>
-          </Switch.Thumb>
-        </Switch.Control>
-      </Switch.Root>
       <Switch.Root
         display="flex"
         justifyContent="space-between"
-        defaultChecked={showIconInToolbar}
-        onCheckedChange={handleShowIconInToolbarChange}
+        defaultChecked={showPublicIPNotification}
+        onCheckedChange={handleShowPublicIPNotificationChange}
       >
-        <Switch.Label fontSize="sm">{t("showIconInToolbar")}</Switch.Label>
+        <Switch.Label fontSize="sm">
+          {t("showPublicIpNotifications")}
+        </Switch.Label>
         <Switch.HiddenInput />
         <Switch.Control>
           <Switch.Thumb>

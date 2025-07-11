@@ -62,4 +62,8 @@ export const pt = {
   back: "Voltar",
   copyToClipboard: "Copiar para a área de transferência",
   copiedToClipboard: "Copiado para a área de transferência",
+  backgroundCheckInterval: "Intervalo (segundos)",
+  selectCheckInterval: "Selecionar intervalo",
+  notificationTitle: "IP Público Alterado",
+  notificationMessage: "Seu endereço IP mudou desde a última verificação.",
 };

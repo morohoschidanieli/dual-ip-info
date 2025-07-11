@@ -62,4 +62,8 @@ export const ja = {
   back: "戻る",
   copyToClipboard: "クリップボードにコピー",
   copiedToClipboard: "クリップボードにコピーされました",
+  backgroundCheckInterval: "チェック間隔（秒）",
+  selectCheckInterval: "間隔を選択",
+  notificationTitle: "パブリックIPが変更されました",
+  notificationMessage: "前回の確認以降、IPアドレスが変更されました。",
 };

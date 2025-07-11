@@ -18,8 +18,7 @@ import { ERROR_MESSAGES, Routes } from "@constants";
 import { ButtonWithTextFeedback, Header, Show } from "@components";
 import { LastIP } from "@components";
 import { insert, selectHistory } from "@reducers/historyReducer";
-import { useGetPrivateIPQuery } from "@services/privateIpService";
-import { useGetPublicIPQuery } from "@services/publicIpService";
+import { useGetPrivateIPQuery, useGetPublicIPQuery } from "@services/ipService";
 import { useGetLocationQuery } from "@services/locationService";
 import { countryCodeToFlagEmoji } from "@utils";
 import {
@@ -59,7 +58,7 @@ export const HomePage: FC = () => {
     isPrivateIPSuccess && isPublicIPSuccess && isGetLocationSuccess;
 
   useEffect(() => {
-    if (isSuccess)
+    if (isSuccess) {
       dispatch(
         insert({
           ip: {
@@ -72,6 +71,7 @@ export const HomePage: FC = () => {
           location,
         })
       );
+    }
   }, [privateIP, publicIP, location, dispatch, isSuccess]);
 
   const handleNavigateToSettings = () => {

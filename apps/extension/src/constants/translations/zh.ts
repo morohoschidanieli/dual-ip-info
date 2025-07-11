@@ -62,4 +62,8 @@ export const zh = {
   back: "返回",
   copyToClipboard: "复制到剪贴板",
   copiedToClipboard: "已复制到剪贴板",
+  backgroundCheckInterval: "检查间隔（秒）",
+  selectCheckInterval: "选择间隔",
+  notificationTitle: "公共 IP 已更改",
+  notificationMessage: "您的 IP 地址自上次检查后已更改。",
 };

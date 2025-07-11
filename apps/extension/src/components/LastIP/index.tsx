@@ -4,7 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaGlobe } from "react-icons/fa";
 import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 import { MdDeleteForever } from "react-icons/md";
-import { Box, Button, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Show,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import type { HistoryModel } from "@models";
 import { FormattedDate, FormattedTime, InfoPopover } from "@components";
 import { remove } from "@reducers/historyReducer";
@@ -44,12 +52,14 @@ export const LastIP: FC<LastIPProps> = ({ data }) => {
                 <Text>{data.ip.v4.public}</Text>
               </HStack>
 
-              <HStack>
-                <Icon>
-                  <RiGitRepositoryPrivateFill />
-                </Icon>
-                <Text>{data.ip.v4.private}</Text>
-              </HStack>
+              <Show when={data.ip.v4.private}>
+                <HStack>
+                  <Icon>
+                    <RiGitRepositoryPrivateFill />
+                  </Icon>
+                  <Text>{data.ip.v4.private}</Text>
+                </HStack>
+              </Show>
             </HStack>
           </VStack>
         </VStack>

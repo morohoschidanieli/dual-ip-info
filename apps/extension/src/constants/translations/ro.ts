@@ -63,4 +63,8 @@ export const ro = {
   back: "Înapoi",
   copyToClipboard: "Copiază în clipboard",
   copiedToClipboard: "Copiat în clipboard",
+  backgroundCheckInterval: "Interval de verificare (secunde)",
+  selectCheckInterval: "Selectează intervalul",
+  notificationTitle: "IP Public Schimbat",
+  notificationMessage: "Adresa ta IP s-a schimbat de la ultima verificare.",
 };

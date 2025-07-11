@@ -62,4 +62,8 @@ export const nl = {
   back: "Terug",
   copyToClipboard: "Kopiëren naar klembord",
   copiedToClipboard: "Gekopieerd naar klembord",
+  backgroundCheckInterval: "Interval (seconden)",
+  selectCheckInterval: "Selecteer interval",
+  notificationTitle: "Publiek IP Gewijzigd",
+  notificationMessage: "Je IP-adres is veranderd sinds de laatste controle.",
 };

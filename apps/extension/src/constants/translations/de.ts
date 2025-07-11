@@ -62,4 +62,8 @@ export const de = {
   back: "Zurück",
   copyToClipboard: "In die Zwischenablage kopieren",
   copiedToClipboard: "In die Zwischenablage kopiert",
+  backgroundCheckInterval: "Prüfintervall (Sekunden)",
+  selectCheckInterval: "Intervall wählen",
+  notificationTitle: "Öffentliche IP Geändert",
+  notificationMessage: "Deine IP-Adresse hat sich seit der letzten Überprüfung geändert.",
 };

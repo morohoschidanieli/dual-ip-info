@@ -31,12 +31,25 @@ export const localeMap: Record<string, Locale> = {
   nl,
 };
 
-export const countryCodeToFlagEmoji = (code: string | undefined): string => {
-  if (!code) {
+export const countryCodeToFlagEmoji = (
+  countryCode: string | undefined
+): string => {
+  if (!countryCode) {
     return "🗺️";
   }
 
-  return code
+  return countryCode
     .toUpperCase()
-    .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
+    .replace(/./g, (char) => String.fromCodePoint(127397 + char.charCodeAt(0)));
+};
+
+export const setCountryInChromeBadge = (
+  mode: string,
+  countryCode: string | undefined
+) => {
+  if (mode === "production" && countryCode) {
+    chrome.action.setBadgeText({
+      text: countryCodeToFlagEmoji(countryCode),
+    });
+  }
 };

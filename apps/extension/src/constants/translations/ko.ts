@@ -62,4 +62,8 @@ export const ko = {
   back: "뒤로",
   copyToClipboard: "클립보드에 복사",
   copiedToClipboard: "클립보드에 복사됨",
+  backgroundCheckInterval: "확인 간격(초)",
+  selectCheckInterval: "간격 선택",
+  notificationTitle: "공인 IP 변경됨",
+  notificationMessage: "이전 확인 이후 IP 주소가 변경되었습니다.",
 };

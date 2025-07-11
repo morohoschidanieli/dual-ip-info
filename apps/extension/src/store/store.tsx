@@ -12,23 +12,31 @@ import {
 import storage from "redux-persist/lib/storage";
 import settingsReducer from "@reducers/settingsReducer";
 import historyReducer from "@reducers/historyReducer";
-import { privateIPApi } from "@services/privateIpService";
-import { publicIPApi } from "@services/publicIpService";
+import { ipApi } from "@services/ipService";
 import { locationApi } from "@services/locationService";
-import { updateAllowDeleteFromHistory } from "@middlewares/updateAllowDeleteFromHistory";
-import { updateCanShowIPV6 } from "@middlewares/updateCanShowIPV6";
+import {
+  insertMiddleware,
+  removeMiddleware,
+} from "@middlewares/historyMiddleware";
+import { chromeStorage } from "@storages/chrome";
+
+const mode = import.meta.env.MODE;
 
 const rootReducer = combineReducers({
   settings: settingsReducer,
   history: historyReducer,
-  [privateIPApi.reducerPath]: privateIPApi.reducer,
-  [publicIPApi.reducerPath]: publicIPApi.reducer,
+  [ipApi.reducerPath]: ipApi.reducer,
   [locationApi.reducerPath]: locationApi.reducer,
 });
 
 const persistConfig = {
   key: "root",
-  storage,
+  /**
+   * chrome storage is used because in production mode, we need to have the same
+   * storage for application and for service worker(for example for checking if
+   * the setting for notification is enabled or not)
+   */
+  storage: mode === "production" ? chromeStorage : storage,
   whitelist: ["settings", "history"],
 };
 
@@ -42,10 +50,9 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     })
-      .prepend(updateAllowDeleteFromHistory.middleware)
-      .prepend(updateCanShowIPV6.middleware)
-      .concat(privateIPApi.middleware)
-      .concat(publicIPApi.middleware)
+      .prepend(removeMiddleware.middleware)
+      .prepend(insertMiddleware.middleware)
+      .concat(ipApi.middleware)
       .concat(locationApi.middleware),
 });
 

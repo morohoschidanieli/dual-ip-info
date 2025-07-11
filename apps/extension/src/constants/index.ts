@@ -15,4 +15,4 @@ export * from "./translations/pt";
 export * from "./translations/ro";
 export * from "./translations/ru";
 export * from "./translations/zh";
-export { ERROR_MESSAGES } from "./messages";
+export { ERROR_MESSAGES, LOG_MESSAGES } from "./messages";

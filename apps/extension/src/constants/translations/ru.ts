@@ -62,4 +62,8 @@ export const ru = {
   back: "Назад",
   copyToClipboard: "Скопировать в буфер обмена",
   copiedToClipboard: "Скопировано в буфер обмена",
+  backgroundCheckInterval: "Интервал (секунды)",
+  selectCheckInterval: "Выберите интервал",
+  notificationTitle: "Публичный IP Изменён",
+  notificationMessage: "Ваш IP-адрес изменился с момента последней проверки.",
 };

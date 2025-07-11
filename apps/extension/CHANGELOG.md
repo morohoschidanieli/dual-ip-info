@@ -1,5 +1,15 @@
 ## [2.0.0] - 09-07-2025
 
+- ✨ feat: detect and store selected language in chrome.storage.local for use in background notifications
+- ✨ feat: use i18n.resolvedLanguage and languageChanged listener to normalize and persist language codes (e.g. en-US → en)
+- ✨ feat: auto-sync notification language between UI and service worker via chrome.storage
+- ✨ feat: handle private IP insertion from background service worker into persisted history
+- 🔧 chore: rename background.ts to notification.ts to reflect purpose of service worker
+- 🔧 chore: restructure redux middleware to use clearer naming
+- 🔧 chore: refactor useSyncLanguage to only manage background notification localization
+- 🔧 chore: simplify and improve IP retrieval middleware using Promise.all
+- 🔧 chore: improve localStorage cleanup logic and normalize language detection
+- 🔧 chore: cleanup console.log debug output with context tags ([BG], [POPUP], etc.)
 - 🔧 chore: change icons for extension
 - 🔧 chore: modify manifest file
 - 🐞 fix: make font size smaller
