@@ -1,5 +1,5 @@
 import type { RootState } from "@store";
-import type { HistoryModel, LocationModel } from "@models";
+import type { HistoryModel, LocationAPIModel } from "@models";
 import { ERROR_MESSAGES, LOG_MESSAGES } from "@constants";
 import { i18n } from "@configurations";
 import { setCountryInChromeBadge } from "@utils";
@@ -77,7 +77,7 @@ async function init() {
   }
 }
 
-async function insertInReduxState(location: LocationModel) {
+async function insertInReduxState(location: LocationAPIModel) {
   chrome.storage.local.get("persist:root", (data) => {
     const stringifyState = data["persist:root"];
 
@@ -85,10 +85,10 @@ async function insertInReduxState(location: LocationModel) {
 
     try {
       const newIP: HistoryModel = {
+        ...location,
         id: crypto.randomUUID(),
         timestamp: Date.now(),
         ip: { v4: { public: location.ip } },
-        location,
       };
       const state = JSON.parse(stringifyState);
 
@@ -137,7 +137,7 @@ async function getReduxState(): Promise<RootState | null> {
   });
 }
 
-async function getLocation(): Promise<LocationModel> {
+async function getLocation(): Promise<LocationAPIModel> {
   console.log(LOG_MESSAGES.FETCHING_IP);
   const response = await fetch("https://ipwho.is/");
   const data = await response.json();

@@ -1,14 +1,14 @@
 import { defineConfig } from "@chakra-ui/react";
 import type { Theme } from "@models";
 
-export const themeConfiguration = (theme: Theme) =>
+export const themeConfiguration = (theme: Theme, mode: string) =>
   defineConfig({
     globalCss: {
       body: {
         margin: 0,
         display: "flex",
         placeItems: "center",
-        minWidth: "320px",
+        minHeight: mode === "production" ? "320px" : undefined,
         backgroundColor: `${theme === "dark" ? "gray.900" : "gray.100"}`,
       },
       "#root": {
@@ -17,8 +17,5 @@ export const themeConfiguration = (theme: Theme) =>
         width: "490px",
         height: "auto",
       },
-    },
-    theme: {
-      textStyles: {},
     },
   });

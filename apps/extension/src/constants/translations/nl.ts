@@ -66,4 +66,7 @@ export const nl = {
   selectCheckInterval: "Selecteer interval",
   notificationTitle: "Publiek IP Gewijzigd",
   notificationMessage: "Je IP-adres is veranderd sinds de laatste controle.",
+  ipDetectionFailedTitle: "IP-adres kon niet worden bepaald.",
+  ipDetectionFailedDescription:
+    "Controleer je internetverbinding of netwerkinstellingen.",
 };

@@ -1,6 +1,8 @@
-export interface LocationModel {
+import type { IPModel } from "@models";
+
+export interface LocationAPIModel {
   ip: string;
-  success: boolean;
+  success?: boolean;
   type?: "IPv4" | "IPv6";
   continent?: string;
   continent_code?: string;
@@ -41,4 +43,8 @@ export interface Timezone {
   offset: number;
   utc: string;
   current_time: string;
+}
+
+export interface LocationModel extends Omit<LocationAPIModel, "ip"> {
+  ip: IPModel;
 }

@@ -1,5 +1,7 @@
-## [2.0.0] - 09-07-2025
+## [2.0.0] - 015-07-2025
 
+- 🔧 chore: update translations
+- ♻️ refactor: use one query instead of three for getting location, private ip
 - ✨ feat: detect and store selected language in chrome.storage.local for use in background notifications
 - ✨ feat: use i18n.resolvedLanguage and languageChanged listener to normalize and persist language codes (e.g. en-US → en)
 - ✨ feat: auto-sync notification language between UI and service worker via chrome.storage

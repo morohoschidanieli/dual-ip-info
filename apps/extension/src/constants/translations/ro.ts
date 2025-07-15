@@ -67,4 +67,7 @@ export const ro = {
   selectCheckInterval: "Selectează intervalul",
   notificationTitle: "IP Public Schimbat",
   notificationMessage: "Adresa ta IP s-a schimbat de la ultima verificare.",
+  ipDetectionFailedTitle: "Nu s-a putut determina adresa IP.",
+  ipDetectionFailedDescription:
+    "Verifică conexiunea la internet sau setările de rețea.",
 };

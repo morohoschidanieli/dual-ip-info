@@ -65,5 +65,9 @@ export const de = {
   backgroundCheckInterval: "Prüfintervall (Sekunden)",
   selectCheckInterval: "Intervall wählen",
   notificationTitle: "Öffentliche IP Geändert",
-  notificationMessage: "Deine IP-Adresse hat sich seit der letzten Überprüfung geändert.",
+  notificationMessage:
+    "Deine IP-Adresse hat sich seit der letzten Überprüfung geändert.",
+  ipDetectionFailedTitle: "IP-Adresse konnte nicht ermittelt werden.",
+  ipDetectionFailedDescription:
+    "Überprüfe deine Internetverbindung oder Netzwerkeinstellungen.",
 };

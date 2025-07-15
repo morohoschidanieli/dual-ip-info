@@ -35,7 +35,7 @@ export const LastIP: FC<LastIPProps> = ({ data }) => {
     <Box shadow="lg" padding="2" borderRadius="lg" fontSize="sm">
       <HStack>
         <VStack>
-          <InfoPopover data={data.location} />
+          <InfoPopover data={data} />
         </VStack>
 
         <VStack width="100%" paddingY="2">
@@ -45,12 +45,14 @@ export const LastIP: FC<LastIPProps> = ({ data }) => {
               <FormattedTime timestamp={data.timestamp} />
             </HStack>
             <HStack width="100%" justifyContent="flex-start">
-              <HStack>
-                <Icon>
-                  <FaGlobe />
-                </Icon>
-                <Text>{data.ip.v4.public}</Text>
-              </HStack>
+              <Show when={data.ip.v4.public}>
+                <HStack>
+                  <Icon>
+                    <FaGlobe />
+                  </Icon>
+                  <Text>{data.ip.v4.public}</Text>
+                </HStack>
+              </Show>
 
               <Show when={data.ip.v4.private}>
                 <HStack>

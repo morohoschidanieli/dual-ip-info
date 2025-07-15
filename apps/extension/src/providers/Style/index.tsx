@@ -15,12 +15,13 @@ export interface ChakraProps {
 }
 
 export const StyleProvider: FC<ChakraProps> = ({ children }) => {
+  const mode = import.meta.env.MODE;
   const { useSystemTheme, theme } = useSelector(
     ({ settings }: RootState) => settings
   );
   const dispatch = useDispatch();
 
-  const system = createSystem(defaultConfig, themeConfiguration(theme));
+  const system = createSystem(defaultConfig, themeConfiguration(theme, mode));
 
   useEffect(() => {
     if (useSystemTheme) {

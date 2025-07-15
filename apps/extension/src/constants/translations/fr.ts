@@ -65,5 +65,9 @@ export const fr = {
   backgroundCheckInterval: "Intervalle (secondes)",
   selectCheckInterval: "Sélectionner l'intervalle",
   notificationTitle: "IP Publique Modifiée",
-  notificationMessage: "Votre adresse IP a changé depuis la dernière vérification.",
+  notificationMessage:
+    "Votre adresse IP a changé depuis la dernière vérification.",
+  ipDetectionFailedTitle: "Impossible de déterminer l'adresse IP.",
+  ipDetectionFailedDescription:
+    "Vérifiez votre connexion internet ou vos paramètres réseau.",
 };

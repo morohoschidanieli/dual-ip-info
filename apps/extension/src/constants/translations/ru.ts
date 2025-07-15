@@ -66,4 +66,7 @@ export const ru = {
   selectCheckInterval: "Выберите интервал",
   notificationTitle: "Публичный IP Изменён",
   notificationMessage: "Ваш IP-адрес изменился с момента последней проверки.",
+  ipDetectionFailedTitle: "Не удалось определить IP-адрес.",
+  ipDetectionFailedDescription:
+    "Проверьте подключение к интернету или настройки сети.",
 };

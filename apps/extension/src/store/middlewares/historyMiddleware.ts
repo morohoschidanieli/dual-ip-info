@@ -1,28 +1,26 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit";
-import { insert, remove } from "@reducers/historyReducer";
 import type { RootState } from "@store";
+import { remove } from "@reducers/historyReducer";
 import {
   changeAllowDeleteFromHistory,
   changeCanShowIPV6,
   changeShowIPV6,
   initialSettingsState,
 } from "@reducers/settingsReducer";
+import { locationApi } from "@services/locationService";
 import { setCountryInChromeBadge } from "@utils";
 
-export const insertMiddleware = createListenerMiddleware();
-export const removeMiddleware = createListenerMiddleware();
+export const locationListener = createListenerMiddleware();
+export const removeListener = createListenerMiddleware();
 
-insertMiddleware.startListening({
-  actionCreator: insert,
+locationListener.startListening({
+  matcher: locationApi.endpoints.getLocation.matchFulfilled,
   effect: async (action, listenerApi) => {
     const mode = import.meta.env.MODE;
     const hasIPv6 = Boolean(action.payload.ip.v6?.public);
 
     if (mode === "production") {
-      setCountryInChromeBadge(
-        import.meta.env.MODE,
-        action.payload.location?.country_code
-      );
+      setCountryInChromeBadge(mode, action.payload?.country_code);
     }
 
     listenerApi.dispatch(changeCanShowIPV6(hasIPv6));
@@ -33,7 +31,7 @@ insertMiddleware.startListening({
   },
 });
 
-removeMiddleware.startListening({
+removeListener.startListening({
   actionCreator: remove,
   effect: async (_action, listenerApi) => {
     const state = listenerApi.getState() as RootState;

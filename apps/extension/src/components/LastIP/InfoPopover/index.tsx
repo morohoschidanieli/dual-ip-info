@@ -5,7 +5,7 @@ import { countryCodeToFlagEmoji } from "@utils";
 import type { LocationModel } from "@models";
 
 export interface InfoPopoverProps {
-  data?: LocationModel;
+  data: LocationModel;
 }
 
 export const InfoPopover: FC<InfoPopoverProps> = ({ data }) => {
@@ -37,7 +37,7 @@ export const InfoPopover: FC<InfoPopoverProps> = ({ data }) => {
             <Popover.Arrow />
             <Popover.Body>
               <Popover.Title fontWeight="bold">
-                <Text>{`📍${data?.country}, ${data.city}, ${data.postal}`}</Text>
+                <Text>{`📍${data.country}, ${data.city}, ${data.postal}`}</Text>
               </Popover.Title>
               <Stack gap="1.5" marginTop="4">
                 <Text>{`🌍 ${t("continent")}: ${data.continent}`}</Text>

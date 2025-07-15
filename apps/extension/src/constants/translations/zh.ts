@@ -66,4 +66,6 @@ export const zh = {
   selectCheckInterval: "选择间隔",
   notificationTitle: "公共 IP 已更改",
   notificationMessage: "您的 IP 地址自上次检查后已更改。",
+  ipDetectionFailedTitle: "无法确定 IP 地址。",
+  ipDetectionFailedDescription: "请检查您的网络连接或网络设置。",
 };

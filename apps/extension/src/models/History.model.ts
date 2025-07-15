@@ -1,8 +1,6 @@
-import type { IPModel, LocationModel } from "@models";
+import type { LocationModel } from "@models";
 
-export interface HistoryModel {
+export interface HistoryModel extends LocationModel {
   id: string;
-  ip: IPModel;
   timestamp: number;
-  location?: LocationModel;
 }

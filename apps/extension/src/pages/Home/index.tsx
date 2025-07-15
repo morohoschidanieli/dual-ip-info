@@ -1,31 +1,29 @@
-import { type FC, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { type FC } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import {
   Box,
-  EmptyState,
   Heading,
   HStack,
   IconButton,
+  Show,
   Stack,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 import { FaCircleInfo } from "react-icons/fa6";
 import { RiSettings5Fill } from "react-icons/ri";
 import { ERROR_MESSAGES, Routes } from "@constants";
-import { ButtonWithTextFeedback, Header, Show } from "@components";
-import { LastIP } from "@components";
-import { insert, selectHistory } from "@reducers/historyReducer";
-import { useGetPrivateIPQuery, useGetPublicIPQuery } from "@services/ipService";
-import { useGetLocationQuery } from "@services/locationService";
-import { countryCodeToFlagEmoji } from "@utils";
+import { HomePageSkeleton, IPV4, IPV6 } from "@pages";
 import {
   selectNumberOfIPsToShow,
   selectShowIPV6,
 } from "@reducers/settingsReducer";
-import { HomePageSkeleton } from "@pages";
+import { useGetLocationQuery } from "@services/locationService";
+import { Header } from "@components";
+import { LastIP } from "@components";
+import { selectHistory } from "@reducers/historyReducer";
+import { countryCodeToFlagEmoji } from "@utils";
 
 export const HomePage: FC = () => {
   const history = useSelector(selectHistory);
@@ -33,46 +31,9 @@ export const HomePage: FC = () => {
   const numberOfIPsToShow = useSelector(selectNumberOfIPsToShow);
 
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {
-    data: privateIP,
-    isLoading: isLoadingPrivateIP,
-    isSuccess: isPrivateIPSuccess,
-  } = useGetPrivateIPQuery();
-  const {
-    data: publicIP,
-    isLoading: isLoadingPublicIP,
-    isSuccess: isPublicIPSuccess,
-  } = useGetPublicIPQuery();
-  const {
-    data: location,
-    isLoading: isGetLocationLoading,
-    isSuccess: isGetLocationSuccess,
-  } = useGetLocationQuery();
-
-  const isLoading =
-    isLoadingPrivateIP || isLoadingPublicIP || isGetLocationLoading;
-  const isSuccess =
-    isPrivateIPSuccess && isPublicIPSuccess && isGetLocationSuccess;
-
-  useEffect(() => {
-    if (isSuccess) {
-      dispatch(
-        insert({
-          ip: {
-            v4: {
-              private: privateIP?.v4,
-              public: publicIP?.v4 ?? location?.ip,
-            },
-            v6: { private: privateIP?.v6, public: publicIP?.v6 },
-          },
-          location,
-        })
-      );
-    }
-  }, [privateIP, publicIP, location, dispatch, isSuccess]);
+  const { data, isLoading } = useGetLocationQuery();
 
   const handleNavigateToSettings = () => {
     navigate(Routes.settings, { replace: true });
@@ -104,12 +65,10 @@ export const HomePage: FC = () => {
     <>
       <Header>
         <Heading size="lg">
-          <Show when={location !== undefined}>
+          <Show when={data}>
             <HStack>
-              <Text>
-                {countryCodeToFlagEmoji(location?.country_code ?? "en")}
-              </Text>
-              <Text> {`${location?.country}, ${location?.city}`}</Text>
+              <Text>{countryCodeToFlagEmoji(data?.country_code ?? "en")}</Text>
+              <Text> {`${data?.country}, ${data?.city}`}</Text>
             </HStack>
           </Show>
         </Heading>
@@ -142,50 +101,20 @@ export const HomePage: FC = () => {
           gap="3"
           fontSize="sm"
         >
-          <Show when={!showIPV6}>
-            <Stack>
-              <Text fontWeight="bold">{`${t("yourPublicIP")}: `}</Text>
-              <ButtonWithTextFeedback
-                title={t("copyToClipboard")}
-                width="100%"
-                loading={isLoading}
-                feedback={`${t("copiedToClipboard")} 🚀`}
-                onClick={() =>
-                  handleCopyToClipboard(publicIP?.v4 ?? location?.ip)
-                }
-              >
-                {publicIP?.v4 ?? location?.ip}
-              </ButtonWithTextFeedback>
-            </Stack>
-          </Show>
-          <Show when={showIPV6}>
-            <Stack>
-              <Text fontWeight="bold">{`${t("yourPublicIPv6")}: `}</Text>
-              <ButtonWithTextFeedback
-                title={t("copyToClipboard")}
-                width="100%"
-                loading={isLoading}
-                feedback={`${t("copiedToClipboard")} 🚀`}
-                onClick={() => handleCopyToClipboard(publicIP?.v6)}
-              >
-                {publicIP?.v6}
-              </ButtonWithTextFeedback>
-            </Stack>
-          </Show>
-
-          <Show when={!showIPV6}>
-            <Stack>
-              <Text fontWeight="bold">{`${t("yourPrivateIP")}: `}</Text>
-              <ButtonWithTextFeedback
-                title={t("copyToClipboard")}
-                width="100%"
-                loading={isLoading}
-                feedback={`${t("copiedToClipboard")} 🚀`}
-                onClick={() => handleCopyToClipboard(privateIP?.v4)}
-              >
-                {privateIP?.v4}
-              </ButtonWithTextFeedback>
-            </Stack>
+          <Show
+            when={showIPV6}
+            fallback={
+              <IPV4
+                publicIP={data?.ip.v4.public}
+                privateIP={data?.ip.v4.private}
+                onCopyToClipboard={handleCopyToClipboard}
+              />
+            }
+          >
+            <IPV6
+              publicIP={data?.ip.v6?.public}
+              onCopyToClipboard={handleCopyToClipboard}
+            />
           </Show>
         </Box>
         <Box
@@ -196,22 +125,12 @@ export const HomePage: FC = () => {
           fontSize="sm"
         >
           <Stack>
-            <Text fontWeight="bold">{`${t("lastIPs")}: `}</Text>
-            <Show when={!history.length}>
-              <EmptyState.Root>
-                <EmptyState.Content>
-                  <VStack textAlign="center">
-                    <EmptyState.Title>{t("emptyIpTitle")}</EmptyState.Title>
-                    <EmptyState.Description>
-                      {t("emptyIpDescription")}
-                    </EmptyState.Description>
-                  </VStack>
-                </EmptyState.Content>
-              </EmptyState.Root>
+            <Show when={!!history.length}>
+              <Text fontWeight="bold">{`${t("lastIPs")}: `}</Text>
+              {history.slice(0, numberOfIPsToShow).map((data) => (
+                <LastIP key={data.id} data={data} />
+              ))}
             </Show>
-            {history.slice(0, numberOfIPsToShow).map((data) => (
-              <LastIP key={data.id} data={data} />
-            ))}
           </Stack>
         </Box>
       </Box>

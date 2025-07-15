@@ -5,7 +5,7 @@ export { LastIP } from "./LastIP";
 export { LastIPSkeleton } from "./LastIP/Skeleton";
 export { FormattedDate } from "./FormattedDate";
 export { FormattedTime } from "./FormattedTime";
-export { Show } from "./Show";
 export { InfoPopover } from "./LastIP/InfoPopover";
 export { ButtonWithTextFeedback } from "./ButtonWithTextFeedback";
 export { InfoTip } from "./ui/toggle-tip";
+export { NoIPAvailable } from "./NoIPAvailable";

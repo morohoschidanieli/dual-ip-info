@@ -12,20 +12,18 @@ import {
 import storage from "redux-persist/lib/storage";
 import settingsReducer from "@reducers/settingsReducer";
 import historyReducer from "@reducers/historyReducer";
-import { ipApi } from "@services/ipService";
-import { locationApi } from "@services/locationService";
 import {
-  insertMiddleware,
-  removeMiddleware,
+  locationListener,
+  removeListener,
 } from "@middlewares/historyMiddleware";
 import { chromeStorage } from "@storages/chrome";
+import { locationApi } from "@services/locationService";
 
 const mode = import.meta.env.MODE;
 
 const rootReducer = combineReducers({
   settings: settingsReducer,
   history: historyReducer,
-  [ipApi.reducerPath]: ipApi.reducer,
   [locationApi.reducerPath]: locationApi.reducer,
 });
 
@@ -50,9 +48,8 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     })
-      .prepend(removeMiddleware.middleware)
-      .prepend(insertMiddleware.middleware)
-      .concat(ipApi.middleware)
+      .prepend(removeListener.middleware)
+      .prepend(locationListener.middleware)
       .concat(locationApi.middleware),
 });
 

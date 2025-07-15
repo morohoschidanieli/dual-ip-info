@@ -66,4 +66,7 @@ export const pl = {
   selectCheckInterval: "Wybierz interwał",
   notificationTitle: "Zmieniono Publiczny IP",
   notificationMessage: "Twój adres IP zmienił się od ostatniego sprawdzenia.",
+  ipDetectionFailedTitle: "Nie można ustalić adresu IP.",
+  ipDetectionFailedDescription:
+    "Sprawdź połączenie z internetem lub ustawienia sieciowe.",
 };

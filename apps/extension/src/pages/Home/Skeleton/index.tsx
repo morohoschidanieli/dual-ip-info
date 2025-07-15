@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { Skeleton, SkeletonText, VStack } from "@chakra-ui/react";
-import { HeaderSkeleton, LastIPSkeleton, Show } from "@components";
+import { Show, Skeleton, SkeletonText, VStack } from "@chakra-ui/react";
+import { HeaderSkeleton, LastIPSkeleton } from "@components";
 
 export interface HomePageSkeletonProps {
   isIPV6?: boolean;

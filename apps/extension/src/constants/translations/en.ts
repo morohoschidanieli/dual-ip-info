@@ -66,4 +66,7 @@ export const en = {
   selectCheckInterval: "Select interval",
   notificationTitle: "Public IP Changed",
   notificationMessage: "Your IP has changed since last check.",
+  ipDetectionFailedTitle: "Could not determine IP address.",
+  ipDetectionFailedDescription:
+    "Check your internet connection or network settings.",
 };

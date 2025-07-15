@@ -1,4 +1,6 @@
 export { HomePage } from "./Home";
+export { IPV4 } from "./Home/IPV4";
+export { IPV6 } from "./Home/IPV6";
 export { HomePageSkeleton } from "./Home/Skeleton";
 export { InfoPage } from "./Info";
 export { SettingsPage } from "./Settings";
