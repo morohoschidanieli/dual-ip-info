@@ -69,4 +69,5 @@ export const ja = {
   ipDetectionFailedTitle: "IPアドレスを特定できませんでした。",
   ipDetectionFailedDescription:
     "インターネット接続またはネットワーク設定を確認してください。",
+  checkIPInBackground: "バックグラウンドでIPの変更を確認する",
 };

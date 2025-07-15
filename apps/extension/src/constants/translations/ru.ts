@@ -69,4 +69,5 @@ export const ru = {
   ipDetectionFailedTitle: "Не удалось определить IP-адрес.",
   ipDetectionFailedDescription:
     "Проверьте подключение к интернету или настройки сети.",
+  checkIPInBackground: "Проверять изменения IP в фоновом режиме",
 };

@@ -68,4 +68,5 @@ export const ko = {
   notificationMessage: "이전 확인 이후 IP 주소가 변경되었습니다.",
   ipDetectionFailedTitle: "IP 주소를 확인할 수 없습니다.",
   ipDetectionFailedDescription: "인터넷 연결 또는 네트워크 설정을 확인하세요.",
+  checkIPInBackground: "백그라운드에서 IP 변경 확인",
 };

@@ -31,14 +31,14 @@ export const History: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const historyOptions = createListCollection<3 | 6>({
-    items: [3, 6],
+  const historyOptions = createListCollection<3 | 6 | 9>({
+    items: [3, 6, 9],
     itemToString: (num) => num.toString(),
     itemToValue: (num) => num.toString(),
   });
 
   const handleNumberOfIPsToShowChange = ({ value }: ValueChangeDetails) => {
-    dispatch(changeNumberOfIPsToShow(value[0] as unknown as 3 | 6));
+    dispatch(changeNumberOfIPsToShow(value[0] as unknown as 3 | 6 | 9));
   };
 
   const handleAllowDeleteFromHistoryChange = ({

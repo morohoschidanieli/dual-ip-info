@@ -69,4 +69,5 @@ export const en = {
   ipDetectionFailedTitle: "Could not determine IP address.",
   ipDetectionFailedDescription:
     "Check your internet connection or network settings.",
+  checkIPInBackground: "Check for IP changes in the background",
 };

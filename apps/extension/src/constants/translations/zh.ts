@@ -68,4 +68,5 @@ export const zh = {
   notificationMessage: "您的 IP 地址自上次检查后已更改。",
   ipDetectionFailedTitle: "无法确定 IP 地址。",
   ipDetectionFailedDescription: "请检查您的网络连接或网络设置。",
+  checkIPInBackground: "在后台检查 IP 更改",
 };

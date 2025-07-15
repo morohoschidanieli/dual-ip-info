@@ -26,6 +26,7 @@ import type {
 } from "@models";
 import { DateFormats, Languages, TimeFormats } from "@constants";
 import {
+  changeCheckIPInBackground,
   changeDateFormat,
   changeShowPublicIPNotification,
   changeTheme,
@@ -39,6 +40,7 @@ export const General: FC = () => {
     dateFormat,
     timeFormat,
     showPublicIPNotification,
+    checkIPInBackground,
     theme,
     useSystemTheme,
   } = useSelector(selectSettings);
@@ -95,6 +97,12 @@ export const General: FC = () => {
     checked,
   }: CheckedChangeDetails) => {
     dispatch(changeShowPublicIPNotification(checked));
+  };
+
+  const handleCheckIPInBackgroundChange = ({
+    checked,
+  }: CheckedChangeDetails) => {
+    dispatch(changeCheckIPInBackground(checked));
   };
 
   return (
@@ -256,6 +264,23 @@ export const General: FC = () => {
         <Switch.Label fontSize="sm">
           {t("showPublicIpNotifications")}
         </Switch.Label>
+        <Switch.HiddenInput />
+        <Switch.Control>
+          <Switch.Thumb>
+            <Switch.ThumbIndicator fallback={<HiX color="black" />}>
+              <HiCheck />
+            </Switch.ThumbIndicator>
+          </Switch.Thumb>
+        </Switch.Control>
+      </Switch.Root>
+      <Switch.Root
+        display="flex"
+        justifyContent="space-between"
+        disabled={showPublicIPNotification === true}
+        checked={checkIPInBackground}
+        onCheckedChange={handleCheckIPInBackgroundChange}
+      >
+        <Switch.Label fontSize="sm">{t("checkIPInBackground")}</Switch.Label>
         <Switch.HiddenInput />
         <Switch.Control>
           <Switch.Thumb>

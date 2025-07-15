@@ -70,4 +70,5 @@ export const fr = {
   ipDetectionFailedTitle: "Impossible de déterminer l'adresse IP.",
   ipDetectionFailedDescription:
     "Vérifiez votre connexion internet ou vos paramètres réseau.",
+  checkIPInBackground: "Vérifier les changements d’IP en arrière-plan",
 };

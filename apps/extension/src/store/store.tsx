@@ -15,7 +15,8 @@ import historyReducer from "@reducers/historyReducer";
 import {
   locationListener,
   removeListener,
-} from "@middlewares/historyMiddleware";
+} from "@middlewares/historyMiddlewares";
+import { settingsListener } from "@middlewares/settingsMiddlewares";
 import { chromeStorage } from "@storages/chrome";
 import { locationApi } from "@services/locationService";
 
@@ -49,6 +50,7 @@ export const store = configureStore({
       },
     })
       .prepend(removeListener.middleware)
+      .prepend(settingsListener.middleware)
       .prepend(locationListener.middleware)
       .concat(locationApi.middleware),
 });

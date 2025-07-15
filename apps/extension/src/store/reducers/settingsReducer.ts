@@ -8,6 +8,7 @@ export const initialSettingsState: SettingsModel = {
   showIPV6: false,
   canShowIPV6: false,
   showPublicIPNotification: false,
+  checkIPInBackground: false,
   numberOfIPsToShow: 3,
   allowDeleteFromHistory: false,
   dateFormat: "EEEE, d MMMM yyyy",
@@ -41,8 +42,11 @@ export const settingsSlice = createSlice({
     changeShowPublicIPNotification: (state, action: PayloadAction<boolean>) => {
       state.showPublicIPNotification = action.payload;
     },
-    changeNumberOfIPsToShow: (state, action: PayloadAction<3 | 6>) => {
+    changeNumberOfIPsToShow: (state, action: PayloadAction<3 | 6 | 9>) => {
       state.numberOfIPsToShow = action.payload;
+    },
+    changeCheckIPInBackground: (state, action: PayloadAction<boolean>) => {
+      state.checkIPInBackground = action.payload;
     },
     changeDateFormat: (state, action: PayloadAction<Date>) => {
       state.dateFormat = action.payload;
@@ -70,6 +74,7 @@ export const {
   changeTimeFormat,
   changeAllowDeleteFromHistory,
   changeLanguage,
+  changeCheckIPInBackground,
 } = settingsSlice.actions;
 
 export const selectSettings = ({ settings }: RootState) => settings;

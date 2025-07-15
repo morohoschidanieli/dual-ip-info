@@ -70,4 +70,5 @@ export const ro = {
   ipDetectionFailedTitle: "Nu s-a putut determina adresa IP.",
   ipDetectionFailedDescription:
     "Verifică conexiunea la internet sau setările de rețea.",
+  checkIPInBackground: "Verifică schimbările de IP în fundal",
 };

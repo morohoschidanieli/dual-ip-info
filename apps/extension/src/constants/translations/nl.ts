@@ -69,4 +69,5 @@ export const nl = {
   ipDetectionFailedTitle: "IP-adres kon niet worden bepaald.",
   ipDetectionFailedDescription:
     "Controleer je internetverbinding of netwerkinstellingen.",
+  checkIPInBackground: "Controleer IP-wijzigingen op de achtergrond",
 };

@@ -69,4 +69,5 @@ export const pl = {
   ipDetectionFailedTitle: "Nie można ustalić adresu IP.",
   ipDetectionFailedDescription:
     "Sprawdź połączenie z internetem lub ustawienia sieciowe.",
+  checkIPInBackground: "Sprawdzaj zmiany IP w tle",
 };

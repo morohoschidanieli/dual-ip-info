@@ -69,4 +69,5 @@ export const es = {
   ipDetectionFailedTitle: "No se pudo determinar la dirección IP.",
   ipDetectionFailedDescription:
     "Verifica tu conexión a internet o los ajustes de red.",
+  checkIPInBackground: "Comprobar cambios de IP en segundo plano",
 };

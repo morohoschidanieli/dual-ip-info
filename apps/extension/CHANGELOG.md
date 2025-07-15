@@ -1,5 +1,6 @@
 ## [2.0.0] - 015-07-2025
 
+- ✨ feat: add new setting(Check for IP changes in the background)
 - 🔧 chore: update translations
 - ♻️ refactor: use one query instead of three for getting location, private ip
 - ✨ feat: detect and store selected language in chrome.storage.local for use in background notifications

@@ -9,8 +9,9 @@ export interface SettingsModel {
   showIPV6: boolean;
   canShowIPV6: boolean;
   showPublicIPNotification: boolean;
-  numberOfIPsToShow: 3 | 6;
+  numberOfIPsToShow: 3 | 6 | 9;
   allowDeleteFromHistory: boolean;
+  checkIPInBackground: boolean;
   dateFormat: Date;
   timeFormat: Time;
 }

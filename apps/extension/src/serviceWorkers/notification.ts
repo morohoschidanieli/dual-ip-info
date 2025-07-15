@@ -27,7 +27,7 @@ async function handleNotification({ name }: chrome.alarms.Alarm) {
         i18n.changeLanguage(state.settings.language);
       }
 
-      if (settings.showPublicIPNotification && !isExtensionOpen) {
+      if (settings.checkIPInBackground && !isExtensionOpen) {
         const location = await getLocation();
 
         if (initialIP !== location.ip) {
@@ -36,13 +36,18 @@ async function handleNotification({ name }: chrome.alarms.Alarm) {
           insertInReduxState(location);
           setCountryInChromeBadge(import.meta.env.MODE, location.country_code);
 
-          chrome.notifications.create(`change-ip-notification-${Date.now()}`, {
-            type: "basic",
-            iconUrl: "icons/icon128.png",
-            title: `${i18n.t("notificationTitle")}`,
-            message: `${i18n.t("notificationMessage")}`,
-            priority: 2,
-          });
+          if (settings.showPublicIPNotification) {
+            chrome.notifications.create(
+              `change-ip-notification-${Date.now()}`,
+              {
+                type: "basic",
+                iconUrl: "icons/icon128.png",
+                title: `${i18n.t("notificationTitle")}`,
+                message: `${i18n.t("notificationMessage")}`,
+                priority: 2,
+              }
+            );
+          }
         }
 
         initialIP = location.ip;
