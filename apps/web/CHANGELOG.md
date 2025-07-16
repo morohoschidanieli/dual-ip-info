@@ -1,5 +1,6 @@
 ## [1.0.0] - 16-07-2025
 
+- ✨ feat: add meta tags for index.html
 - ✨ feat: add Features section
 - ✨ feat: add Reviews section
 - ✨ feat: add Description section
