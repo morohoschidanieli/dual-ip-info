@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { useNavigate } from "react-router";
 import {
   Box,
-  Button,
   Heading,
   HStack,
   Icon,
@@ -12,10 +11,10 @@ import {
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { FaArrowLeft } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
 import { FiInfo } from "react-icons/fi";
 import packageJSON from "@root/package.json";
 import { Routes } from "@constants";
+import { BuyMeACoffeeButton, GitHubButton } from "@shared/components";
 import { Header } from "@components";
 
 export const InfoPage: FC = () => {
@@ -72,37 +71,11 @@ export const InfoPage: FC = () => {
         </Box>
         <Box>
           <HStack align="start" mt={4}>
-            <Link
-              width="100%"
-              href={VITE_GITHUB_URL}
-              target="_blank"
-              variant="plain"
-            >
-              <Button width="100%" size="sm">
-                <Icon>
-                  <FaGithub />
-                </Icon>
-                {t("viewOnGitHub")}
-              </Button>
-            </Link>
-            <Link
-              width="100%"
-              href={VITE_BUY_ME_A_COFFEE_URL}
-              target="_blank"
-              variant="plain"
-            >
-              <Button
-                width="100%"
-                size="sm"
-                backgroundColor="yellow.300"
-                color="black"
-              >
-                <span role="img" aria-label="coffee">
-                  ☕
-                </span>
-                {t("buyMeACoffee")}
-              </Button>
-            </Link>
+            <GitHubButton url={VITE_GITHUB_URL} text={t("viewOnGitHub")} />
+            <BuyMeACoffeeButton
+              url={VITE_BUY_ME_A_COFFEE_URL}
+              text={t("buyMeACoffee")}
+            />
           </HStack>
         </Box>
       </Box>

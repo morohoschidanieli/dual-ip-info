@@ -8,6 +8,7 @@
     "erasableSyntaxOnly": false,
     "paths": {
       "@root/*": ["./*"],
+      "@shared/*": ["../../packages/shared/*"],
       "@constants": ["./src/constants"],
       "@models": ["./src/models"],
       "@providers": ["./src/providers"],

@@ -1,4 +1,20 @@
 {
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "erasableSyntaxOnly": false,
+    "paths": {
+      "@components": ["./src/components"],
+      "@constants": ["./src/constants"],
+      "@assets/*": ["./src/assets/*"],
+      "@providers": ["./src/providers"],
+      "@sections": ["./src/sections"],
+      "@models": ["./src/models"],
+      "@shared/*": ["../../packages/shared/*"]
+    }
+  },
   "include": ["src"]
 }
