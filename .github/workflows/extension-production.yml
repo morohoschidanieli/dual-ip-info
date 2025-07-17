@@ -35,7 +35,6 @@ jobs:
 
       - name: Lint
         run: npm run lint:extension
-        working-directory: ./apps/extension
 
   unit-tests:
     name: Unit Tests
@@ -57,6 +56,13 @@ jobs:
       - unit-tests
       - lint
     runs-on: ubuntu-latest
+    env:
+      VITE_APP_TITLE: ${{ vars.VITE_APP_TITLE }}
+      VITE_EXTENSION_URL: ${{ vars.VITE_EXTENSION_URL }}
+      VITE_BUY_ME_A_COFFEE_URL: ${{ vars.VITE_BUY_ME_A_COFFEE_URL }}
+      VITE_GITHUB_URL: ${{ vars.VITE_GITHUB_URL}}
+      VITE_CHANGELOG_URL: ${{ vars.VITE_CHANGELOG_URL }}
+      VITE_PERSONAL_WEBSITE_URL: ${{ vars.VITE_PERSONAL_WEBSITE_URL }}
 
     steps:
       - uses: actions/checkout@v4
@@ -96,5 +102,12 @@ jobs:
         with:
           name: extension-zip
 
-      - name: Deploy
-        run: echo "🚀 Deploy logic goes here!"
+      - name: Upload to Chrome Web Store
+        uses: Passiverecords/chrome-extension-upload-action@v3
+        with:
+          extension-id: ${{ secrets.CHROME_EXTENSION_ID }}
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          zip-path: extension-output.zip
+4/1AVMBsJgOmv_Urpe7Yx9Ds9YKQXJDmnLWpqURYaWKCwQAd5Ywz20o5_ATgJ4

@@ -28,7 +28,6 @@ jobs:
 
       - name: Lint
         run: npm run lint:extension
-        working-directory: ./apps/extension
 
   unit-tests:
     name: Unit Tests

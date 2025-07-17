@@ -30,7 +30,6 @@ jobs:
 
       - name: Lint
         run: npm run lint:web
-        working-directory: ./apps/web
 
   unit-tests:
     name: Unit Tests
@@ -46,19 +45,45 @@ jobs:
         run: npm run test
         working-directory: ./apps/web
 
-  build:
-    name: Build
+  deploy:
+    name: Deploy
     needs:
       - unit-tests
       - lint
 
     runs-on: ubuntu-latest
 
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+
+    env:
+      VITE_APP_TITLE: ${{ vars.VITE_APP_TITLE }}
+      VITE_EXTENSION_URL: ${{ vars.VITE_EXTENSION_URL }}
+      VITE_BUY_ME_A_COFFEE_URL: ${{ vars.VITE_BUY_ME_A_COFFEE_URL }}
+      VITE_GITHUB_URL: ${{ vars.VITE_GITHUB_URL}}
+      VITE_CHANGELOG_URL: ${{ vars.VITE_CHANGELOG_URL }}
+      VITE_PERSONAL_WEBSITE_URL: ${{ vars.VITE_PERSONAL_WEBSITE_URL }}
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Install dependencies
         uses: ./.github/actions/install-dependencies
 
       - name: Build
         run: npm run build
         working-directory: ./apps/web
+
+      - name: Upload to GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./apps/web/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

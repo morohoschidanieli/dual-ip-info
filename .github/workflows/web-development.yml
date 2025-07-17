@@ -28,7 +28,6 @@ jobs:
 
       - name: Lint
         run: npm run lint:web
-        working-directory: ./apps/web
 
   unit-tests:
     name: Unit Tests
