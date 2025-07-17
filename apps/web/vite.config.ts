@@ -21,5 +21,5 @@ export default defineConfig({
       ],
     }),
   ],
-  base: "/dual-ip-info/",
+  base: "/",
 });
