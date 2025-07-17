@@ -100,13 +100,13 @@ jobs:
       - name: Download zip artifact
         uses: actions/download-artifact@v4
         with:
-          name: extension-zip
+          name: extension-output.zip
 
-      - name: Upload to Chrome Web Store
-        uses: Passiverecords/chrome-extension-upload-action@v3
+      - name: Upload & release
+        uses: mnao305/chrome-extension-upload@v5.0.0
         with:
+          file-path: extension-output.zip
           extension-id: ${{ secrets.CHROME_EXTENSION_ID }}
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
-          zip-path: extension-output.zip
