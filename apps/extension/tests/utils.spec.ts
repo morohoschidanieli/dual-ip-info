@@ -45,7 +45,6 @@ describe("countryCodeToFlagEmoji", () => {
   });
 
   it("should return placeholder characters for invalid input", () => {
-    // 1-char or invalid length string
     expect(countryCodeToFlagEmoji("X")).toHaveLength(2);
     expect(countryCodeToFlagEmoji("XYZ")).toHaveLength(6); // unexpected length
   });
