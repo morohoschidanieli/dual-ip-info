@@ -1,5 +1,6 @@
 ## [1.0.0] - 16-07-2025
 
+- ✨ feat: add envs in github actions
 - ✨ feat: add meta tags for index.html
 - ✨ feat: add Features section
 - ✨ feat: add Reviews section
