@@ -5,13 +5,7 @@
   "author": "Daniel Morohoschi",
   "homepage_url": "https://morohoschidanieliosif.me/",
   "description": "View public & private IPs with location, history, themes & alerts. Lightweight and privacy-friendly.",
-  "permissions": [
-    "storage",
-    "contextMenus",
-    "scripting",
-    "notifications",
-    "alarms"
-  ],
+  "permissions": ["storage", "notifications", "alarms"],
   "host_permissions": ["https://ipwho.is/"],
   "background": {
     "service_worker": "notification.js",
