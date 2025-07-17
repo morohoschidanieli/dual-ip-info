@@ -76,14 +76,14 @@ jobs:
       - name: Zip build output
         uses: vimtor/action-zip@v1.2
         with:
-          files: apps/extension/dist/ apps/extension/manifest.json
+          files: apps/extension/dist/
           recursive: false
-          dest: extension-output.zip
+          dest: apps/extension/extension-output.zip
 
       - name: Upload zip as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: extension-zip
+          name: extension-output.zip
           path: apps/extension/extension-output.zip
   deploy:
     name: Deploy to Chrome Extension
@@ -110,4 +110,3 @@ jobs:
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
           zip-path: extension-output.zip
-4/1AVMBsJgOmv_Urpe7Yx9Ds9YKQXJDmnLWpqURYaWKCwQAd5Ywz20o5_ATgJ4

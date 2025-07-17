@@ -15,7 +15,6 @@ export interface ButtonWithTextFeedbackProps
 
 export const ButtonWithTextFeedback = (props: ButtonWithTextFeedbackProps) => {
   const [showFeedback, setShowFeedback] = useState(false);
-
   const { duration = 1000, children, feedback = children, onClick } = props;
 
   useEffect(() => {
