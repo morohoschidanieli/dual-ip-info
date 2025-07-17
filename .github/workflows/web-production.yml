@@ -3,7 +3,7 @@ name: Web - production
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - apps/web/**
   workflow_dispatch:

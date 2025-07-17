@@ -3,7 +3,7 @@ name: Extension - production
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - apps/extension/**
   workflow_dispatch:
