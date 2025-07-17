@@ -20,4 +20,6 @@ export const LOG_MESSAGES = {
   IP_CHANGED: (ip: string) => `[LOG]: IP CHANGED: ${ip}`,
   LANGUAGE_CHANGED: (language?: string) =>
     `[LOG]: LANGUAGE CHANGED: ${language}`,
+  SKIP: (idleState: chrome.idle.IdleState) =>
+    `[LOG]: SKIPPED IP CHECK: SYSTEM IS ${idleState} `,
 };

@@ -1,11 +1,11 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "manifest_version": 3,
   "name": "Dual IP Info",
   "author": "Daniel Morohoschi",
   "homepage_url": "https://morohoschidanieliosif.me/",
   "description": "View public & private IPs with location, history, themes & alerts. Lightweight and privacy-friendly.",
-  "permissions": ["storage", "notifications", "alarms"],
+  "permissions": ["storage", "notifications", "alarms", "idle"],
   "host_permissions": ["https://ipwho.is/"],
   "background": {
     "service_worker": "notification.js",
