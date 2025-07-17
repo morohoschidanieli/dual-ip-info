@@ -1,0 +1,29 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "erasableSyntaxOnly": false,
+    "paths": {
+      "@root/*": ["./*"],
+      "@shared/*": ["../../packages/shared/*"],
+      "@constants": ["./src/constants"],
+      "@models": ["./src/models"],
+      "@providers": ["./src/providers"],
+      "@components": ["./src/components"],
+      "@pages": ["./src/pages"],
+      "@configurations": ["./src/configurations"],
+      "@middlewares/*": ["./src/store/middlewares/*"],
+      "@store": ["./src/store/store"],
+      "@store/*": ["./src/store/store/*"],
+      "@reducers/*": ["./src/store/reducers/*"],
+      "@storages/*": ["./src/store/storages/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"],
+      "@utils": ["./src/utils"]
+    }
+  },
+  "include": ["src"]
+}

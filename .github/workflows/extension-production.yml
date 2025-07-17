@@ -1,0 +1,113 @@
+name: Extension - production
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - apps/extension/**
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Confirm deployment to production?"
+        required: true
+        type: boolean
+
+jobs:
+  install-dependencies:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+  lint:
+    name: Run lint
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Lint
+        run: npm run lint:extension
+
+  unit-tests:
+    name: Unit Tests
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Test
+        run: npm run test
+        working-directory: ./apps/extension
+
+  build:
+    name: Build
+    needs:
+      - unit-tests
+      - lint
+    runs-on: ubuntu-latest
+    env:
+      VITE_APP_TITLE: ${{ vars.VITE_APP_TITLE }}
+      VITE_EXTENSION_URL: ${{ vars.VITE_EXTENSION_URL }}
+      VITE_BUY_ME_A_COFFEE_URL: ${{ vars.VITE_BUY_ME_A_COFFEE_URL }}
+      VITE_GITHUB_URL: ${{ vars.VITE_GITHUB_URL}}
+      VITE_CHANGELOG_URL: ${{ vars.VITE_CHANGELOG_URL }}
+      VITE_PERSONAL_WEBSITE_URL: ${{ vars.VITE_PERSONAL_WEBSITE_URL }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Build
+        run: npm run build
+        working-directory: ./apps/extension
+
+      - name: Zip build output
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: apps/extension/dist/ apps/extension/manifest.json
+          recursive: false
+          dest: extension-output.zip
+
+      - name: Upload zip as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-zip
+          path: apps/extension/extension-output.zip
+  deploy:
+    name: Deploy to Chrome Extension
+    needs:
+      - unit-tests
+      - lint
+      - build
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'true'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download zip artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: extension-zip
+
+      - name: Upload to Chrome Web Store
+        uses: Passiverecords/chrome-extension-upload-action@v3
+        with:
+          extension-id: ${{ secrets.CHROME_EXTENSION_ID }}
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          zip-path: extension-output.zip
+4/1AVMBsJgOmv_Urpe7Yx9Ds9YKQXJDmnLWpqURYaWKCwQAd5Ywz20o5_ATgJ4
