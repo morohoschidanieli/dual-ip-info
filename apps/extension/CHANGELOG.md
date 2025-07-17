@@ -1,5 +1,6 @@
 ## [2.0.0] - 015-07-2025
 
+- ♻️ refactor: change manifest description
 - ✨ chore: update web github actions to use github pages on deploy
 - ✨ feat: add envs in github actions
 - 🔧 chore: update .env to use shared one

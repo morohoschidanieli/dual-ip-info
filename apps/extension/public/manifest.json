@@ -4,7 +4,7 @@
   "name": "Dual IP Info",
   "author": "Daniel Morohoschi",
   "homepage_url": "https://morohoschidanieliosif.me/",
-  "description": "Quickly check your public and private IP addresses with location info, right from your browser. Get real-time updates, history with delete options, and smart notifications when your IP changes. Customize your experience with dark/light/system theme, language support, and flexible date/time formats. Lightweight, private, and built for clarity and control.",
+  "description": "View public & private IPs with location, history, themes & alerts. Lightweight and privacy-friendly.",
   "permissions": [
     "storage",
     "contextMenus",
