@@ -1,12 +1,5 @@
 import type { FC } from "react";
-import {
-  Box,
-  Text,
-  Heading,
-  HStack,
-  RatingGroup,
-  VStack,
-} from "@chakra-ui/react";
+import { Text, Heading, HStack, RatingGroup, VStack } from "@chakra-ui/react";
 import type { ReviewModel } from "@models";
 
 export interface ReviewProps {
@@ -19,24 +12,22 @@ export const Review: FC<ReviewProps> = ({ data }) => {
   };
 
   return (
-    <Box
+    <VStack
       width="sm"
       minHeight="10px"
-      maxHeight="180px"
       padding="4"
-      height="100%"
+      justifyContent="flex-start"
+      alignItems="flex-start"
     >
-      <VStack justifyContent="flex-start" alignItems="flex-start" height="100%">
-        <HStack>
-          <Heading>{`${data.lastName} ${getFirstLetter(data.firstName)}`}</Heading>
-          <RatingGroup.Root readOnly defaultValue={data.rating} size="sm">
-            <RatingGroup.HiddenInput />
-            <RatingGroup.Control />
-          </RatingGroup.Root>
-        </HStack>
+      <HStack>
+        <Heading>{`${data.lastName} ${getFirstLetter(data.firstName)}`}</Heading>
+        <RatingGroup.Root readOnly defaultValue={data.rating} size="sm">
+          <RatingGroup.HiddenInput />
+          <RatingGroup.Control />
+        </RatingGroup.Root>
+      </HStack>
 
-        <Text fontSize="sm">{data.review}</Text>
-      </VStack>
-    </Box>
+      <Text fontSize="sm">{data.review}</Text>
+    </VStack>
   );
 };

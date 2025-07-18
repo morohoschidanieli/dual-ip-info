@@ -1,5 +1,6 @@
 ## [1.0.0] - 18-07-2025
 
+- 🔧 chore: update margins and paddings
 - 🔧 chore: update logo
 - 🔧 chore: add html for google site verification
 - 🔧 chore: update vite base for custom domain

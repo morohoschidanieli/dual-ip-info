@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import { FaChrome } from "react-icons/fa";
 import {
-  Box,
   Button,
   Icon,
   Image,
@@ -20,41 +19,39 @@ export const Description: FC = () => {
     import.meta.env;
 
   return (
-    <Box paddingY="10" paddingX="10" maxWidth="2xl">
-      <VStack gap="8">
-        <Image width="auto" src={LogoSRC} />
-        <Text textAlign="center" fontSize="xl">
-          {en.description}
-        </Text>
+    <VStack gap="8">
+      <Image width="auto" src={LogoSRC} />
+      <Text textAlign="center" fontSize="xl" maxWidth="xl">
+        {en.description}
+      </Text>
 
-        <Image shadow="xl" width="auto" borderRadius="2xl" src={AppSRC} />
+      <Image shadow="xl" width="auto" borderRadius="2xl" src={AppSRC} />
 
-        <Stack
-          direction={{ base: "column", md: "row" }}
-          width={{ base: "full", md: "initial" }}
-        >
-          <Link href={VITE_EXTENSION_URL} target="_blank" variant="plain">
-            <Button borderRadius="xl" size="lg" width="100%">
-              <Icon>
-                <FaChrome />
-              </Icon>
-              {en.addToChrome}
-            </Button>
-          </Link>
-          <GitHubButton
-            url={VITE_GITHUB_URL}
-            borderRadius="xl"
-            text={en.viewOnGitHub}
-            size="lg"
-          />
-          <BuyMeACoffeeButton
-            url={VITE_BUY_ME_A_COFFEE_URL}
-            text={en.buyMeACoffee}
-            size="lg"
-            borderRadius="xl"
-          />
-        </Stack>
-      </VStack>
-    </Box>
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        width={{ base: "full", md: "initial" }}
+      >
+        <Link href={VITE_EXTENSION_URL} target="_blank" variant="plain">
+          <Button borderRadius="xl" size="lg" width="100%">
+            <Icon>
+              <FaChrome />
+            </Icon>
+            {en.addToChrome}
+          </Button>
+        </Link>
+        <GitHubButton
+          url={VITE_GITHUB_URL}
+          borderRadius="xl"
+          text={en.viewOnGitHub}
+          size="lg"
+        />
+        <BuyMeACoffeeButton
+          url={VITE_BUY_ME_A_COFFEE_URL}
+          text={en.buyMeACoffee}
+          size="lg"
+          borderRadius="xl"
+        />
+      </Stack>
+    </VStack>
   );
 };

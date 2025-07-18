@@ -8,8 +8,13 @@ import { Footer } from "@components";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <StyleProvider>
-      <Stack gap="10">
-        <VStack width="full" gap="4" justifyContent="center">
+      <Stack>
+        <VStack
+          gap="10"
+          padding={{ base: "2", md: "10" }}
+          alignSelf="center"
+          maxWidth="5xl"
+        >
           <Description />
           <Features />
           <Reviews />
