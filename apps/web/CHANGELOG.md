@@ -1,5 +1,6 @@
-## [1.0.0] - 16-07-2025
+## [1.0.0] - 18-07-2025
 
+- 🔧 chore: add html for google site verification
 - 🔧 chore: update vite base for custom domain
 - 🔧 chore: update pages artifact to v4
 - ✨ feat: add envs in github actions

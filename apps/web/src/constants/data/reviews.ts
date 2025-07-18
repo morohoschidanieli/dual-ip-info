@@ -4,29 +4,28 @@ export const REVIEWS: ReviewModel[] = [
   {
     firstName: "Stoica",
     lastName: "Lavinia",
-    rating: 1,
+    rating: 5,
     review:
-      "View both your public and private IP addresses as soon as you open the extension — no clicks needed.",
-  },
-  {
-    firstName: "Morohoschi",
-    lastName: "Daniel",
-    rating: 2,
-    review:
-      "View both your public and private IP addresses as soon as you open the extension — no clicks needed.",
+      "Love it! Clean interface, IP history tracking is a nice touch. Notifications are timely and helpful. Perfect for remote work setups.",
   },
   {
     firstName: "Apostoaie",
     lastName: "Alexandru",
-    rating: 3,
+    rating: 5,
     review:
-      "View both your public and private IP addresses as soon as you open the extension — no clicks needed.",
+      "Great and useful extension for increased productivity when working!",
   },
   {
-    firstName: "Morohsochi",
+    firstName: "Morohoschi",
     lastName: "Camelia",
-    rating: 4,
+    rating: 5,
     review:
-      "View both your public and private IP addresses as soon as you open the extension — no clicks needed.",
+      "Really useful extension — helps me keep track of my public IP, especially when using a VPN. I like that it notifies me only when there's a change, and doesn't bother me when I'm idle. Clean and simple UI too. Nice work!",
+  },
+  {
+    firstName: "Motofelea",
+    lastName: "Emanuel",
+    rating: 5,
+    review: "A great app by a great dev!",
   },
 ];

@@ -8,7 +8,13 @@ export const Reviews: FC = () => {
     <Flex wrap="wrap">
       <VStack>
         <Heading size="3xl">{en.reviews}</Heading>
-        <HStack gap="6" maxWidth="5xl" wrap="wrap" justifyContent="center">
+        <HStack
+          gap="6"
+          maxWidth="5xl"
+          wrap="wrap"
+          justifyContent="center"
+          align="stretch"
+        >
           {REVIEWS.map((review) => (
             <Review
               key={`${review.firstName}-${review.lastName}`}

@@ -19,8 +19,14 @@ export const Review: FC<ReviewProps> = ({ data }) => {
   };
 
   return (
-    <Box width="sm" minHeight="10px" padding="4">
-      <VStack justifyContent="flex-start" alignItems="flex-start">
+    <Box
+      width="sm"
+      minHeight="10px"
+      maxHeight="180px"
+      padding="4"
+      height="100%"
+    >
+      <VStack justifyContent="flex-start" alignItems="flex-start" height="100%">
         <HStack>
           <Heading>{`${data.lastName} ${getFirstLetter(data.firstName)}`}</Heading>
           <RatingGroup.Root readOnly defaultValue={data.rating} size="sm">
