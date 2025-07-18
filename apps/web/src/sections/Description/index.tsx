@@ -10,7 +10,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import LogoSRC from "@assets/logo.png";
+import LogoSRC from "@assets/logo_with_text_below.svg";
 import AppSRC from "@assets/app.png";
 import { en } from "@constants";
 import { BuyMeACoffeeButton, GitHubButton } from "@shared/components";

@@ -1,5 +1,6 @@
 ## [2.0.1] - 17-07-2025
 
+- 🔧 chore: update logos(manifest and application)
 - 🔧 chore: update changelog and version
 - 🐞 fix: sending notifications even if ip is not changed
 - ♻️ refactor: background script for checking ip in background
