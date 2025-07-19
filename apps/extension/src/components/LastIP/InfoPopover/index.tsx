@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Popover, Portal, Stack, Text } from "@chakra-ui/react";
-import { countryCodeToFlagEmoji } from "@utils";
 import type { LocationModel } from "@models";
+import { Flag } from "@components";
 
 export interface InfoPopoverProps {
   data: LocationModel;
@@ -19,7 +19,7 @@ export const InfoPopover: FC<InfoPopoverProps> = ({ data }) => {
         disabled
         title={t("noCountryDetected")}
       >
-        <Text>{countryCodeToFlagEmoji(undefined)}</Text>
+        <Flag code="xx" />
       </Button>
     );
   }
@@ -28,7 +28,7 @@ export const InfoPopover: FC<InfoPopoverProps> = ({ data }) => {
     <Popover.Root lazyMount unmountOnExit positioning={{ placement: "right" }}>
       <Popover.Trigger asChild>
         <Button variant="plain" fontSize="4xl" title={t("showInfo")}>
-          {countryCodeToFlagEmoji(data.country_code)}
+          <Flag code={data.country_code} />
         </Button>
       </Popover.Trigger>
       <Portal>

@@ -7,6 +7,7 @@ import {
   StyleProvider,
 } from "@providers";
 import { RouterProvider } from "react-router";
+import "flag-icons/css/flag-icons.min.css";
 import { routes } from "./routes";
 
 createRoot(document.getElementById("root")!).render(

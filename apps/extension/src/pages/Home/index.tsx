@@ -20,10 +20,9 @@ import {
   selectShowIPV6,
 } from "@reducers/settingsReducer";
 import { useGetLocationQuery } from "@services/locationService";
-import { Header } from "@components";
+import { Flag, Header } from "@components";
 import { LastIP } from "@components";
 import { selectHistory } from "@reducers/historyReducer";
-import { countryCodeToFlagEmoji } from "@utils";
 
 export const HomePage: FC = () => {
   const history = useSelector(selectHistory);
@@ -67,7 +66,7 @@ export const HomePage: FC = () => {
         <Heading size="lg">
           <Show when={data}>
             <HStack>
-              <Text>{countryCodeToFlagEmoji(data?.country_code ?? "en")}</Text>
+              <Flag code={data?.country_code} />
               <Text> {`${data?.country}, ${data?.city}`}</Text>
             </HStack>
           </Show>

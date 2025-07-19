@@ -1,3 +1,7 @@
+## [2.0.2] - 19-07-2025
+
+- ♻️ refactor: use svg images for flags instead of emoji(system support)
+
 ## [2.0.1] - 17-07-2025
 
 - 🔧 chore: update logos(manifest and application)

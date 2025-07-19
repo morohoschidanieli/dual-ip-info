@@ -9,3 +9,4 @@ export { InfoPopover } from "./LastIP/InfoPopover";
 export { ButtonWithTextFeedback } from "./ButtonWithTextFeedback";
 export { InfoTip } from "./ui/toggle-tip";
 export { NoIPAvailable } from "./NoIPAvailable";
+export { Flag } from "./Flag";

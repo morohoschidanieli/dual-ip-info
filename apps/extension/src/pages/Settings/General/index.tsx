@@ -7,6 +7,7 @@ import {
   Box,
   createListCollection,
   Fieldset,
+  Flex,
   Heading,
   HStack,
   Icon,
@@ -34,6 +35,8 @@ import {
   changeUseSystemTheme,
   selectSettings,
 } from "@reducers/settingsReducer";
+import { SelectValue } from "./SelectValue";
+import { Flag } from "@components";
 
 export const General: FC = () => {
   const {
@@ -69,7 +72,7 @@ export const General: FC = () => {
 
   const languages = createListCollection({
     items: Languages,
-    itemToString: (language) => `${language.flag} ${t(`${language.name}`)}`,
+    itemToString: (language) => ` ${t(`${language.name}`)}`,
     itemToValue: (language) => language.value,
   });
 
@@ -164,7 +167,7 @@ export const General: FC = () => {
         <Select.Label fontSize="sm">{t("language")}</Select.Label>
         <Select.Control>
           <Select.Trigger>
-            <Select.ValueText placeholder={t("selectLanguage")} />
+            <SelectValue />
           </Select.Trigger>
           <Select.IndicatorGroup>
             <Select.Indicator />
@@ -173,10 +176,18 @@ export const General: FC = () => {
         <Portal>
           <Select.Positioner>
             <Select.Content>
-              {languages.items.map(({ value, flag, name }) => (
+              {languages.items.map(({ value, flagCode, name }) => (
                 <Select.Item item={value} key={value}>
-                  {flag}
-                  {t(`${name}`)}
+                  <Flex
+                    alignItems="center"
+                    direction="row"
+                    justifyContent="center"
+                    gap="2"
+                  >
+                    <Flag code={flagCode} fontSize="sm" />
+                    {name}
+                  </Flex>
+
                   <Select.ItemIndicator />
                 </Select.Item>
               ))}
