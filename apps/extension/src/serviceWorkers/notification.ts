@@ -114,3 +114,4 @@ async function init() {
     console.error(`${ERROR_MESSAGES.GET_PUBLIC_IP}: ${error}`);
   }
 }
+

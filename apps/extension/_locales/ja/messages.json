@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info",
+    "description": "extension name"
+  },
+  "extensionDesc": {
+    "message": "位置情報、履歴、テーマ、アラート付きでパブリックおよびプライベートIPを表示。軽量かつプライバシーに配慮。",
+    "description": "extension description"
+  }
+}

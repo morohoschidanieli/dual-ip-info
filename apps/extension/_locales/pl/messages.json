@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info",
+    "description": "extension name"
+  },
+  "extensionDesc": {
+    "message": "Wyświetlaj publiczne i prywatne adresy IP wraz z lokalizacją, historią, motywami i powiadomieniami. Lekka i przyjazna dla prywatności.",
+    "description": "extension description"
+  }
+}

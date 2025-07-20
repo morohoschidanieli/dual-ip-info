@@ -1,10 +1,11 @@
 {
-  "version": "2.0.2",
+  "version": "2.1.0",
   "manifest_version": 3,
-  "name": "Dual IP Info",
+  "name": "__MSG_extensionName__",
   "author": "Daniel Morohoschi",
+  "default_locale": "en",
   "homepage_url": "https://morohoschidanieliosif.me/",
-  "description": "View public & private IPs with location, history, themes & alerts. Lightweight and privacy-friendly.",
+  "description": "__MSG_extensionDesc__",
   "permissions": ["storage", "notifications", "alarms", "idle"],
   "host_permissions": ["https://ipwho.is/"],
   "background": {
@@ -13,14 +14,14 @@
   },
   "action": {
     "default_popup": "./index.html",
-    "default_icon": "icons/icon128.png",
+    "default_icon": "assets/icons/icon128.png",
     "default_title": "Dual IP Info"
   },
 
   "icons": {
-    "16": "icons/icon16.png",
-    "32": "icons/icon32.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
   }
 }

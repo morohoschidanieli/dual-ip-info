@@ -17,6 +17,14 @@ export default defineConfig({
           src: resolve(__dirname, "../../packages/shared/assets/favicon.png"),
           dest: "",
         },
+        {
+          src: resolve(__dirname, "./_locales"),
+          dest: "",
+        },
+        {
+          src: resolve(__dirname, "./src/assets"),
+          dest: "",
+        },
       ],
     }),
   ],

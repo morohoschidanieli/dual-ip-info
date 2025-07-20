@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info",
+    "description": "extension name"
+  },
+  "extensionDesc": {
+    "message": "Vizualizează IP-uri publice și private cu localizare, istoric, teme și alerte. Ușoară și prietenoasă cu confidențialitatea.",
+    "description": "extension description"
+  }
+}

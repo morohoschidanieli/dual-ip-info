@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info",
+    "description": "extension name"
+  },
+  "extensionDesc": {
+    "message": "위치, 기록, 테마 및 알림과 함께 공용 및 사설 IP를 표시합니다. 가볍고 개인정보를 보호합니다.",
+    "description": "extension description"
+  }
+}

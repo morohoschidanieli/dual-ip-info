@@ -70,8 +70,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Build
-        run: npm run build
-        working-directory: ./apps/extension
+        run: npm run build:extension:chrome
 
       - name: Zip build output
         uses: vimtor/action-zip@v1.2

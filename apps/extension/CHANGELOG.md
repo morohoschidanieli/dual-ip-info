@@ -1,6 +1,12 @@
+## [2.1.0] - 20-07-2025
+
+- 🔧 chore: update extension github actions
+- ♻️ refactor: modify build command and adds assets folder to dist
+- ✨ feat: add `_locales` folder for internationalization (i18n) of extension title and description in 13 languages
+
 ## [2.0.2] - 19-07-2025
 
-- ♻️ refactor: use svg images for flags instead of emoji(system support)
+- ♻️ refactor: use svg images for flags instead of emojis (system support)
 
 ## [2.0.1] - 17-07-2025
 
@@ -13,7 +19,7 @@
 
 - 🔧 chore: update manifest.json permission
 - ♻️ refactor: change manifest description
-- ✨ chore: update web github actions to use github pages on deploy
+- 🔧 chore: update web github actions to use github pages on deploy
 - ✨ feat: add envs in github actions
 - 🔧 chore: update .env to use shared one
 - ✨ feat: add new setting(Check for IP changes in the background)

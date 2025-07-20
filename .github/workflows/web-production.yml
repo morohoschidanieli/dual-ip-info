@@ -76,8 +76,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Build
-        run: npm run build
-        working-directory: ./apps/web
+        run: npm run build:web
 
       - name: Upload to GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
