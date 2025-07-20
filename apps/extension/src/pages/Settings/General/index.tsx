@@ -176,7 +176,7 @@ export const General: FC = () => {
         <Portal>
           <Select.Positioner>
             <Select.Content>
-              {languages.items.map(({ value, flagCode, name }) => (
+              {languages.items.map(({ value, flagCode }) => (
                 <Select.Item item={value} key={value}>
                   <Flex
                     alignItems="center"
@@ -185,7 +185,7 @@ export const General: FC = () => {
                     gap="2"
                   >
                     <Flag code={flagCode} fontSize="sm" />
-                    {name}
+                    {t(`languages.${value}`)}
                   </Flex>
 
                   <Select.ItemIndicator />

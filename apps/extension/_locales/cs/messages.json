@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info – Úplná kontrola nad vaší sítí",
+    "description": "název rozšíření"
+  },
+  "extensionDesc": {
+    "message": "Zobrazujte veřejné a soukromé IP adresy s lokalizací, historií, motivy a upozorněními. Lehký a přívětivý k soukromí.",
+    "description": "popis rozšíření"
+  }
+}

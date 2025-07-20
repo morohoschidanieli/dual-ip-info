@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info – Teljes irányítás a hálózatod felett",
+    "description": "kiterjesztés neve"
+  },
+  "extensionDesc": {
+    "message": "Nyilvános és privát IP-címek megtekintése helymeghatározással, előzményekkel, témákkal és értesítésekkel. Könnyű és adatvédelem-barát.",
+    "description": "kiterjesztés leírása"
+  }
+}

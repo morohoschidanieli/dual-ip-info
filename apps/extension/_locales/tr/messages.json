@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Dual IP Info – Ağınız Üzerinde Tam Kontrol",
+    "description": "uzantı adı"
+  },
+  "extensionDesc": {
+    "message": "Genel ve özel IP adreslerini konum, geçmiş, temalar ve uyarılarla görüntüleyin. Hafif ve gizlilik dostudur.",
+    "description": "uzantı açıklaması"
+  }
+}

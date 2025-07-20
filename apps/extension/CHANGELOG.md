@@ -1,3 +1,7 @@
+## [2.2.0] - 20-07-2025
+
+- ✨ feat: add translations for arabic, czech, hindi, hungarian, turkey and ukrainian
+
 ## [2.1.1] - 20-07-2025
 
 - 🔧 chore: update application title

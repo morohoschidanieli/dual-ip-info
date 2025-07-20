@@ -14,4 +14,10 @@ export const Languages: LanguageModel[] = [
   { name: "中文", value: "zh", flagCode: "cn" },
   { name: "日本語", value: "ja", flagCode: "jp" },
   { name: "한국어", value: "ko", flagCode: "kr" },
+  { name: "Türkçe", value: "tr", flagCode: "tr" },
+  { name: "Українська", value: "uk", flagCode: "ua" },
+  { name: "العربية", value: "ar", flagCode: "sa" },
+  { name: "हिन्दी", value: "hi", flagCode: "in" },
+  { name: "Čeština", value: "cs", flagCode: "cz" },
+  { name: "Magyar", value: "hu", flagCode: "hu" },
 ];

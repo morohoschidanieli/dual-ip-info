@@ -65,7 +65,7 @@ async function handleNotification({ name }: chrome.alarms.Alarm) {
         if (settings.showPublicIPNotification) {
           chrome.notifications.create(`change-ip-notification-${Date.now()}`, {
             type: "basic",
-            iconUrl: "icons/icon128.png",
+            iconUrl: "assets/icons/icon128.png",
             title: `${i18n.t("notificationTitle")}`,
             message: `${i18n.t("notificationMessage")}`,
             priority: 2,
@@ -114,4 +114,3 @@ async function init() {
     console.error(`${ERROR_MESSAGES.GET_PUBLIC_IP}: ${error}`);
   }
 }
-

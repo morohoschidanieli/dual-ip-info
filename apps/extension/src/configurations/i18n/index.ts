@@ -2,10 +2,14 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import {
+  ar,
+  cs,
   de,
   en,
   es,
   fr,
+  hi,
+  hu,
   it,
   ja,
   ko,
@@ -15,6 +19,8 @@ import {
   pt,
   ro,
   ru,
+  tr,
+  uk,
   zh,
 } from "@constants";
 
@@ -44,6 +50,12 @@ i18n
       zh: { translation: zh },
       ja: { translation: ja },
       ko: { translation: ko },
+      cs: { translation: cs },
+      hu: { translation: hu },
+      hi: { translation: hi },
+      ar: { translation: ar },
+      tr: { translation: tr },
+      uk: { translation: uk },
     },
   });
 
