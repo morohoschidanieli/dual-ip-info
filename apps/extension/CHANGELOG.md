@@ -1,3 +1,7 @@
+## [2.1.1] - 20-07-2025
+
+- 🔧 chore: update application title
+
 ## [2.1.0] - 20-07-2025
 
 - 🔧 chore: update extension github actions
