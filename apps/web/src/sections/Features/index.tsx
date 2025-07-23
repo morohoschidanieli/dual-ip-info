@@ -5,16 +5,11 @@ import { Feature } from "@components";
 
 export const Features: FC = () => {
   return (
-    <VStack gap="6">
+    <VStack gap="10">
       <Heading size="3xl">{en.features}</Heading>
-      <HStack gap="6" wrap="wrap" justifyContent="center">
-        {FEATURES.map(({ title, description, icon }, index) => (
-          <Feature
-            key={index}
-            title={title}
-            description={description}
-            icon={icon}
-          />
+      <HStack gap="8" wrap="wrap" justifyContent="center">
+        {FEATURES.map((data, index) => (
+          <Feature key={index} data={data} />
         ))}
       </HStack>
     </VStack>

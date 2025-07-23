@@ -1,26 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Stack, VStack } from "@chakra-ui/react";
-import { Description, Features, Reviews } from "@sections";
-import { StyleProvider } from "@providers";
-import { Footer } from "@components";
+import "@fontsource/encode-sans-semi-expanded/100.css";
+import "@fontsource/encode-sans-semi-expanded/200.css";
+import "@fontsource/encode-sans-semi-expanded/300.css";
+import "@fontsource/encode-sans-semi-expanded/400.css";
+import "@fontsource/encode-sans-semi-expanded/500.css";
+import "@fontsource/encode-sans-semi-expanded/600.css";
+import "@fontsource/encode-sans-semi-expanded/700.css";
+import "@fontsource/encode-sans-semi-expanded/800.css";
+import { App } from "./App";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <StyleProvider>
-      <Stack>
-        <VStack
-          gap="10"
-          padding={{ base: "2", md: "10" }}
-          alignSelf="center"
-          maxWidth="5xl"
-        >
-          <Description />
-          <Features />
-          <Reviews />
-        </VStack>
-        <Footer />
-      </Stack>
-    </StyleProvider>
+    <App />
   </StrictMode>
 );

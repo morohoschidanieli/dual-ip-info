@@ -7,7 +7,9 @@
     "skipLibCheck": true,
     "erasableSyntaxOnly": false,
     "paths": {
+      "@root/*": ["./*"],
       "@components": ["./src/components"],
+      "@pages": ["./src/pages"],
       "@constants": ["./src/constants"],
       "@assets/*": ["./src/assets/*"],
       "@providers": ["./src/providers"],

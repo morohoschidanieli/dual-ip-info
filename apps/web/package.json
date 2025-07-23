@@ -1,11 +1,14 @@
 {
   "name": "web",
   "private": true,
-  "version": "1.0.0",
-  "author": "Daniel Morohoschi",
+  "version": "2.0.0",
+  "author": {
+    "name": "Daniel Morohoschi",
+    "email": "mdi.contact.dev@gmail.com"
+  },
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "test": "vitest",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

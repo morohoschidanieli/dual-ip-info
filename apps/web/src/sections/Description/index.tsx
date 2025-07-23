@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import { FaChrome } from "react-icons/fa";
 import {
   Button,
@@ -9,10 +9,10 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import LogoSRC from "@assets/logo_with_text_below.svg";
-import AppSRC from "@assets/app.png";
-import { en } from "@constants";
+import { Header } from "@components";
 import { BuyMeACoffeeButton, GitHubButton } from "@shared/components";
+import ApplicationSRC from "@assets/application_screenshot.png";
+import { en } from "@constants";
 
 export const Description: FC = () => {
   const { VITE_BUY_ME_A_COFFEE_URL, VITE_GITHUB_URL, VITE_EXTENSION_URL } =
@@ -20,12 +20,17 @@ export const Description: FC = () => {
 
   return (
     <VStack gap="8">
-      <Image width="auto" src={LogoSRC} />
+      <Header />
       <Text textAlign="center" fontSize="xl" maxWidth="xl">
         {en.description}
       </Text>
 
-      <Image shadow="xl" width="auto" borderRadius="2xl" src={AppSRC} />
+      <Image
+        width="auto"
+        borderRadius="2xl"
+        src={ApplicationSRC}
+        alt="Application screenshot"
+      />
 
       <Stack
         direction={{ base: "column", md: "row" }}

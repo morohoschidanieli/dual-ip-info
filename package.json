@@ -53,6 +53,7 @@
   "dependencies": {
     "@chakra-ui/react": "3.21.1",
     "@emotion/react": "11.14.0",
+    "@fontsource/encode-sans-semi-expanded": "5.2.6",
     "@reduxjs/toolkit": "2.8.2",
     "@types/react": "19.1.8",
     "date-fns": "4.1.0",

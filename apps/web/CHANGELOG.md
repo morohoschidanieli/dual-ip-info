@@ -1,3 +1,18 @@
+## [2.0.0] - 23-07-2025
+
+- ✨ feat: add new site design with background pattern and responsive layout
+- ✨ feat: add Footer section with external links and app info
+- ✨ feat: add Privacy Policy page with structured i18n content
+- ✨ feat: add About Privacy section with icons and responsive cards
+- ✨ feat: extract privacy content into `en.ts` translation file
+- ✨ feat: map privacy sections dynamically in PrivacyPage
+- ✨ feat: add section containers for Contribute and Donate
+- 🔧 chore: restructure StyleProvider using Chakra `createSystem`
+- 🔧 chore: separate theme logic into `@theme/system.ts`
+- 🔧 chore: remove invalid Theme wrapper and fix fast-refresh error
+- 🔧 chore: optimize layout with consistent Flex + Box structure
+- 🔧 chore: update font setup with `Encode Sans Semi Expanded`
+
 ## [1.0.0] - 18-07-2025
 
 - 🔧 chore: update margins and paddings

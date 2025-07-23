@@ -1,7 +1,10 @@
 {
   "name": "extension",
   "private": true,
-  "author": "Daniel Morohoschi",
+  "author": {
+    "name": "Daniel Morohoschi",
+    "email": "mdi.contact.dev@gmail.com"
+  },
   "version": "2.2.0",
   "type": "module",
   "scripts": {

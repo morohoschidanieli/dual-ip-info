@@ -1,8 +1,9 @@
 import type { IconType } from "react-icons/lib";
 
-export interface FeatureModel {
+export interface PrivacyCardModel {
   title: string;
-  description: string;
+  content: string;
   icon: IconType;
-  color?: string;
+  bg: string;
+  color: string;
 }

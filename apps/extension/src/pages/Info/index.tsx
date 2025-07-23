@@ -65,7 +65,7 @@ export const InfoPage: FC = () => {
               variant="plain"
               fontWeight="semibold"
             >
-              {packageJSON.author}
+              {packageJSON.author.name}
             </Link>
           </Text>
         </Box>
