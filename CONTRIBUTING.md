@@ -19,25 +19,29 @@ We use **conventional commits** with **emojis** to keep the commit history clean
 
 ### Recommended format:
 
-`<emoji> <type>: short description`
+`[app-name] <emoji> <type>: short description`
 
+For example, if you're modifying the `web` or `extension` applicaiton, prepend the commit message with its name in square brackets:
 
 ### Examples:
 
-- ✨ feat: add user login form with validation  
-- 🐛 fix: correct navbar layout on mobile devices  
-- 📚 docs: update README with setup instructions  
-- 🔧 chore: update dependencies in shared-utils  
+- `[web] ✨ feat: add user login form with validation`  
+- `[extension] 🐛 fix: correct token refresh issue`  
+- `[extension] 📚 docs: update README with setup instructions`  
+- `[web] 🔧 chore: update lodash dependency`
+
+This prefix helps identify **which app** the change belongs to, which is especially important in a monorepo setup.
+
 
 ### Common commit types:
 
-- 🎉 `feat`: A new feature  
-- 🐛 `fix`: A bug fix  
-- 🔧 `chore`: Maintenance (e.g., dependency updates)  
-- 📚 `docs`: Documentation changes  
-- ♻️ `refactor`: Code changes without changing behavior  
-- ✅ `test`: Adding or updating tests  
-- 💄 `style`: Formatting, spacing, etc. (no code logic changes)  
+- `[web] 🎉 feat`: A new feature  
+- `[web] 🐛 fix`: A bug fix  
+- `[extension] 🔧 chore`: Maintenance (e.g., dependency updates)  
+- `[extension] 📚 docs`: Documentation changes  
+- `[extension] ♻️ refactor`: Code changes without changing behavior  
+- `[web] ✅ test`: Adding or updating tests  
+- `[web]💄 style`: Formatting, spacing, etc. (no code logic changes)  
 
 ---
 
@@ -123,4 +127,3 @@ Each app/package manages its own version.
 
 ## 🙌 Thank You!
 We appreciate every contribution. Whether it's your first PR or you're a regular collaborator, your effort helps improve this project for everyone.
-
