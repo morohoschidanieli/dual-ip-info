@@ -47,3 +47,13 @@ These examples help keep commits clear and understandable.
 - ✨ feat: added new homepage design
 - 🐛 fix: fixed login issue
 ```
+
+## 🤝 Want to Contribute?
+
+Please read our [Contribution Guide](CONTRIBUTING.md) for detailed instructions on:
+
+- Commit conventions
+- Versioning & changelogs
+- Code style
+- Pull request requirements
+
