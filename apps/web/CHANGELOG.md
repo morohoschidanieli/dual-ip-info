@@ -1,5 +1,6 @@
 ## [2.0.1] - 19-08-2025
 
+- ✨ feat: integrate Google Analytics
 - 🔧 chore: use local Encode Sans Semi Expanded font instead of `fontsource-variable` package
 
 ## [2.0.0] - 23-07-2025
