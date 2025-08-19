@@ -1,0 +1,48 @@
+/*
+    Encode Sans Semi Expanded
+*/
+
+@font-face {
+  font-family: "Encode Sans Semi Expanded";
+  src: url("../assets/fonts/EncodeSansSemiExpanded/EncodeSansSemiExpanded-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Encode Sans Semi Expanded";
+  src: url("../assets/fonts/EncodeSansSemiExpanded/EncodeSansSemiExpanded-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Encode Sans Semi Expanded";
+  src: url("../assets/fonts/EncodeSansSemiExpanded/EncodeSansSemiExpanded-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Encode Sans Semi Expanded";
+  src: url("../assets/fonts/EncodeSansSemiExpanded/EncodeSansSemiExpanded-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Encode Sans Semi Expanded";
+  src: url("../assets/fonts/EncodeSansSemiExpanded/EncodeSansSemiExpanded-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}

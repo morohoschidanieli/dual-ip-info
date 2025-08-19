@@ -1,3 +1,7 @@
+## [2.0.1] - 19-08-2025
+
+- 🔧 chore: use local Encode Sans Semi Expanded font instead of `fontsource-variable` package
+
 ## [2.0.0] - 23-07-2025
 
 - ✨ feat: add new site design with background pattern and responsive layout

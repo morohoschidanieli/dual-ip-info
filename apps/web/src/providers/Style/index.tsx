@@ -10,8 +10,10 @@ const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       fonts: {
-        heading: { value: `'Encode Sans Semi Expanded', sans-serif` },
-        body: { value: `'Encode Sans Semi Expanded', sans-serif` },
+        heading: {
+          value: "'Encode Sans Semi Expanded', system-ui, sans-serif",
+        },
+        body: { value: "'Encode Sans Semi Expanded', system-ui, sans-serif" },
       },
     },
   },
