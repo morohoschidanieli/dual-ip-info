@@ -1,10 +1,10 @@
-import { createBrowserRouter } from "react-router";
+import { createHashRouter } from "react-router";
 import { Routes } from "@constants";
 import { HomePage, NotFoundPage, PrivacyPage, Root } from "@pages";
 
 const { root, privacy, any } = Routes;
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: root,
     Component: Root,

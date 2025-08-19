@@ -1,5 +1,6 @@
 ## [2.0.1] - 19-08-2025
 
+- 🔧 chore: use `createHashRouter` instead of `createBrowserRouter` to avoid 404 error code while refreshing on a specific route
 - ✨ feat: integrate Google Analytics
 - 🔧 chore: use local Encode Sans Semi Expanded font instead of `fontsource-variable` package
 
