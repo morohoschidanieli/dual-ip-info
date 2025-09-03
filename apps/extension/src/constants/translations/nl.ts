@@ -68,7 +68,7 @@ export const nl = {
   back: "Terug",
   copyToClipboard: "Kopiëren naar klembord",
   copiedToClipboard: "Gekopieerd naar klembord",
-  backgroundCheckInterval: "Interval (seconden)",
+  backgroundCheckInterval: "Frequentie van achtergrondcontroles",
   selectCheckInterval: "Selecteer interval",
   notificationTitle: "Publiek IP Gewijzigd",
   notificationMessage: "Je IP-adres is veranderd sinds de laatste controle.",
@@ -76,4 +76,10 @@ export const nl = {
   ipDetectionFailedDescription:
     "Controleer je internetverbinding of netwerkinstellingen.",
   checkIPInBackground: "Controleer IP-wijzigingen op de achtergrond",
+  checkIPInBackgroundInfo:
+    "Deze optie is alleen actief als de bovenstaande optie is ingeschakeld.",
+  minute: "Minuut",
+  minutes: "Minuten",
+  second: "Seconde",
+  seconds: "Seconden",
 };

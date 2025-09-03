@@ -68,7 +68,7 @@ export const de = {
   back: "Zurück",
   copyToClipboard: "In die Zwischenablage kopieren",
   copiedToClipboard: "In die Zwischenablage kopiert",
-  backgroundCheckInterval: "Prüfintervall (Sekunden)",
+  backgroundCheckInterval: "Häufigkeit der Hintergrundüberprüfungen",
   selectCheckInterval: "Intervall wählen",
   notificationTitle: "Öffentliche IP Geändert",
   notificationMessage:
@@ -77,4 +77,10 @@ export const de = {
   ipDetectionFailedDescription:
     "Überprüfe deine Internetverbindung oder Netzwerkeinstellungen.",
   checkIPInBackground: "Überprüfe IP-Änderungen im Hintergrund",
+  checkIPInBackgroundInfo:
+    "Diese Option ist nur aktiv, wenn die obige Option aktiviert ist.",
+  minute: "Minute",
+  minutes: "Minuten",
+  second: "Sekunde",
+  seconds: "Sekunden",
 };

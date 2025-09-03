@@ -69,7 +69,7 @@ export const ru = {
   back: "Назад",
   copyToClipboard: "Скопировать в буфер обмена",
   copiedToClipboard: "Скопировано в буфер обмена",
-  backgroundCheckInterval: "Интервал (секунды)",
+  backgroundCheckInterval: "Частота фоновых проверок",
   selectCheckInterval: "Выберите интервал",
   notificationTitle: "Публичный IP Изменён",
   notificationMessage: "Ваш IP-адрес изменился с момента последней проверки.",
@@ -77,4 +77,10 @@ export const ru = {
   ipDetectionFailedDescription:
     "Проверьте подключение к интернету или настройки сети.",
   checkIPInBackground: "Проверять изменения IP в фоновом режиме",
+  checkIPInBackgroundInfo:
+    "Этот параметр активен только при включении вышеуказанного параметра.",
+  minute: "Минута",
+  minutes: "Минуты",
+  second: "Секунда",
+  seconds: "Секунды",
 };

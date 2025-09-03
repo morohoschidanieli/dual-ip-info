@@ -68,7 +68,7 @@ export const cs = {
   back: "Zpět",
   copyToClipboard: "Kopírovat do schránky",
   copiedToClipboard: "Zkopírováno do schránky",
-  backgroundCheckInterval: "Interval kontroly (vteřiny)",
+  backgroundCheckInterval: "Frekvence kontrol na pozadí",
   selectCheckInterval: "Vyberte interval",
   notificationTitle: "Veřejná IP byla změněna",
   notificationMessage: "Vaše IP adresa se od poslední kontroly změnila.",
@@ -76,4 +76,10 @@ export const cs = {
   ipDetectionFailedDescription:
     "Zkontrolujte své internetové připojení nebo nastavení sítě.",
   checkIPInBackground: "Kontrolovat změny IP na pozadí",
+  checkIPInBackgroundInfo:
+    "Tato možnost je aktivní pouze v případě, že je povolena výše uvedená možnost.",
+  minute: "Minuta",
+  minutes: "Minuty",
+  second: "Sekunda",
+  seconds: "Sekundy",
 };

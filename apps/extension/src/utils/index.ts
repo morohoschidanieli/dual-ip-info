@@ -137,3 +137,23 @@ export async function insertInReduxState(location: LocationAPIModel) {
     }
   });
 }
+
+export function parseStringToRootState(object?: string) {
+  if (!object) {
+    return null;
+  }
+
+  const state: Partial<RootState> = {};
+  const parsed = JSON.parse(object);
+
+  Object.keys(parsed).forEach((key) => {
+    try {
+      state[key as keyof RootState] = JSON.parse(parsed[key]);
+    } catch (error) {
+      console.warn(`${ERROR_MESSAGES.PARSE(key)}:`, error);
+      state[key as keyof RootState] = parsed[key];
+    }
+  });
+
+  return state;
+}

@@ -13,6 +13,7 @@ export const initialSettingsState: SettingsModel = {
   allowDeleteFromHistory: false,
   dateFormat: "EEEE, d MMMM yyyy",
   timeFormat: "HH:mm:ss",
+  checkInterval: 60,
 };
 
 export const settingsSlice = createSlice({
@@ -60,6 +61,9 @@ export const settingsSlice = createSlice({
     changeLanguage: (state, action: PayloadAction<string>) => {
       state.language = action.payload;
     },
+    changeCheckInterval: (state, action: PayloadAction<number>) => {
+      state.checkInterval = action.payload;
+    },
   },
 });
 
@@ -75,6 +79,7 @@ export const {
   changeAllowDeleteFromHistory,
   changeLanguage,
   changeCheckIPInBackground,
+  changeCheckInterval,
 } = settingsSlice.actions;
 
 export const selectSettings = ({ settings }: RootState) => settings;

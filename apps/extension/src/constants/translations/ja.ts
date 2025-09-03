@@ -68,7 +68,7 @@ export const ja = {
   back: "戻る",
   copyToClipboard: "クリップボードにコピー",
   copiedToClipboard: "クリップボードにコピーされました",
-  backgroundCheckInterval: "チェック間隔（秒）",
+  backgroundCheckInterval: "バックグラウンドチェックの頻度",
   selectCheckInterval: "間隔を選択",
   notificationTitle: "パブリックIPが変更されました",
   notificationMessage: "前回の確認以降、IPアドレスが変更されました。",
@@ -76,4 +76,10 @@ export const ja = {
   ipDetectionFailedDescription:
     "インターネット接続またはネットワーク設定を確認してください。",
   checkIPInBackground: "バックグラウンドでIPの変更を確認する",
+  checkIPInBackgroundInfo:
+    "このオプションは、上記のオプションが有効な場合にのみ有効です。",
+  minute: "分",
+  minutes: "分",
+  second: "秒",
+  seconds: "秒",
 };

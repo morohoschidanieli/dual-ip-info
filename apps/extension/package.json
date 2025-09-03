@@ -5,7 +5,7 @@
     "name": "Daniel Morohoschi",
     "email": "mdi.contact.dev@gmail.com"
   },
-  "version": "2.2.0",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

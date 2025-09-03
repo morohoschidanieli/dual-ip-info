@@ -68,7 +68,7 @@ export const tr = {
   back: "Geri",
   copyToClipboard: "Panoya kopyala",
   copiedToClipboard: "Panoya kopyalandı",
-  backgroundCheckInterval: "Kontrol aralığı (saniye)",
+  backgroundCheckInterval: "Arka plan kontrol sıklığı",
   selectCheckInterval: "Aralık seç",
   notificationTitle: "Genel IP değişti",
   notificationMessage: "IP adresiniz son kontrolden bu yana değişti.",
@@ -76,4 +76,10 @@ export const tr = {
   ipDetectionFailedDescription:
     "İnternet bağlantınızı veya ağ ayarlarınızı kontrol edin.",
   checkIPInBackground: "IP değişikliklerini arka planda kontrol et",
+  checkIPInBackgroundInfo:
+    "Bu seçenek yalnızca yukarıdaki seçenek etkinleştirildiyse aktiftir.",
+  minute: "Dakika",
+  minutes: "Dakikalar",
+  second: "Saniye",
+  seconds: "Saniyeler",
 };
