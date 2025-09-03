@@ -68,7 +68,7 @@ export const fr = {
   back: "Retour",
   copyToClipboard: "Copier dans le presse-papiers",
   copiedToClipboard: "Copié dans le presse-papiers",
-  backgroundCheckInterval: "Intervalle (secondes)",
+  backgroundCheckInterval: "Fréquence des vérifications en arrière-plan",
   selectCheckInterval: "Sélectionner l'intervalle",
   notificationTitle: "IP Publique Modifiée",
   notificationMessage:
@@ -77,4 +77,10 @@ export const fr = {
   ipDetectionFailedDescription:
     "Vérifiez votre connexion internet ou vos paramètres réseau.",
   checkIPInBackground: "Vérifier les changements d’IP en arrière-plan",
+  checkIPInBackgroundInfo:
+    "Cette option est active uniquement si l'option ci-dessus est activée.",
+  minute: "Minute",
+  minutes: "Minutes",
+  second: "Seconde",
+  seconds: "Secondes",
 };

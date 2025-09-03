@@ -68,7 +68,7 @@ export const en = {
   back: "Back",
   copyToClipboard: "Copy to clipboard",
   copiedToClipboard: "Copied to clipboard",
-  backgroundCheckInterval: "Check interval (seconds)",
+  backgroundCheckInterval: "Frequency of background checks",
   selectCheckInterval: "Select interval",
   notificationTitle: "Public IP Changed",
   notificationMessage: "Your IP has changed since last check.",
@@ -76,4 +76,10 @@ export const en = {
   ipDetectionFailedDescription:
     "Check your internet connection or network settings.",
   checkIPInBackground: "Check for IP changes in the background",
+  checkIPInBackgroundInfo:
+    "This option is active only if the above option is enabled.",
+  minute: "Minute",
+  minutes: "Minutes",
+  second: "Second",
+  seconds: "Seconds",
 };

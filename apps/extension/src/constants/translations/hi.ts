@@ -68,7 +68,7 @@ export const hi = {
   back: "वापस",
   copyToClipboard: "क्लिपबोर्ड पर कॉपी करें",
   copiedToClipboard: "क्लिपबोर्ड पर कॉपी किया गया",
-  backgroundCheckInterval: "जांच अंतराल (सेकंड)",
+  backgroundCheckInterval: "पृष्ठभूमि जांच की आवृत्ति",
   selectCheckInterval: "अंतराल चुनें",
   notificationTitle: "सार्वजनिक IP बदला गया",
   notificationMessage: "आपका IP पिछली जांच के बाद बदल गया है।",
@@ -76,4 +76,10 @@ export const hi = {
   ipDetectionFailedDescription:
     "अपना इंटरनेट कनेक्शन या नेटवर्क सेटिंग्स जांचें।",
   checkIPInBackground: "IP परिवर्तनों की पृष्ठभूमि में जाँच करें",
+  checkIPInBackgroundInfo:
+    "यह विकल्प तभी सक्रिय होता है जब ऊपर दिया गया विकल्प सक्षम हो।",
+  minute: "मिनट",
+  minutes: "मिनट्स",
+  second: "सेकंड",
+  seconds: "सेकंड्स",
 };

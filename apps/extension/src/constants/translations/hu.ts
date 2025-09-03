@@ -69,7 +69,7 @@ export const hu = {
   back: "Vissza",
   copyToClipboard: "Másolás vágólapra",
   copiedToClipboard: "Vágólapra másolva",
-  backgroundCheckInterval: "Ellenőrzési időköz (másodperc)",
+  backgroundCheckInterval: "Háttérellenőrzések gyakorisága",
   selectCheckInterval: "Válassz időközt",
   notificationTitle: "Nyilvános IP megváltozott",
   notificationMessage: "Az IP-címed megváltozott az utolsó ellenőrzés óta.",
@@ -77,4 +77,10 @@ export const hu = {
   ipDetectionFailedDescription:
     "Ellenőrizd az internetkapcsolatod vagy hálózati beállításaid.",
   checkIPInBackground: "IP-cím változások ellenőrzése a háttérben",
+  checkIPInBackgroundInfo:
+    "Ez az opció csak akkor aktív, ha a fenti opció engedélyezve van.",
+  minute: "Perc",
+  minutes: "Percek",
+  second: "Másodperc",
+  seconds: "Másodpercek",
 };

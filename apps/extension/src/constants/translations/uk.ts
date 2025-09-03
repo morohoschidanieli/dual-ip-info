@@ -68,7 +68,7 @@ export const uk = {
   back: "Назад",
   copyToClipboard: "Копіювати в буфер",
   copiedToClipboard: "Скопійовано",
-  backgroundCheckInterval: "Інтервал перевірки (секунди)",
+  backgroundCheckInterval: "Частота фонових перевірок",
   selectCheckInterval: "Виберіть інтервал",
   notificationTitle: "Публічний IP змінено",
   notificationMessage: "Ваш IP змінився з моменту останньої перевірки.",
@@ -76,4 +76,10 @@ export const uk = {
   ipDetectionFailedDescription:
     "Перевірте ваше інтернет-з'єднання або налаштування мережі.",
   checkIPInBackground: "Перевіряти зміни IP у фоновому режимі",
+  checkIPInBackgroundInfo:
+    "Цей параметр активний лише за умови увімкнення попереднього.",
+  minute: "Хвилина",
+  minutes: "Хвилини",
+  second: "Секунда",
+  seconds: "Секунди",
 };

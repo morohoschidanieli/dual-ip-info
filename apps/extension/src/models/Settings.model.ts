@@ -12,6 +12,7 @@ export interface SettingsModel {
   numberOfIPsToShow: 3 | 6 | 9;
   allowDeleteFromHistory: boolean;
   checkIPInBackground: boolean;
+  checkInterval: number;
   dateFormat: Date;
   timeFormat: Time;
 }

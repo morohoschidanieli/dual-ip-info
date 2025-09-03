@@ -26,7 +26,9 @@ import type {
   ValueChangeDetails,
 } from "@models";
 import { DateFormats, Languages, TimeFormats } from "@constants";
+import { Flag, InfoTip } from "@components";
 import {
+  changeCheckInterval,
   changeCheckIPInBackground,
   changeDateFormat,
   changeShowPublicIPNotification,
@@ -36,7 +38,6 @@ import {
   selectSettings,
 } from "@reducers/settingsReducer";
 import { SelectValue } from "./SelectValue";
-import { Flag } from "@components";
 
 export const General: FC = () => {
   const {
@@ -44,6 +45,7 @@ export const General: FC = () => {
     timeFormat,
     showPublicIPNotification,
     checkIPInBackground,
+    checkInterval,
     theme,
     useSystemTheme,
   } = useSelector(selectSettings);
@@ -58,22 +60,33 @@ export const General: FC = () => {
     return theme;
   }, [theme, useSystemTheme]);
 
-  const dateFormats = createListCollection({
+  const dateFormatListCollection = createListCollection({
     items: DateFormats,
     itemToString: (dateFormat) => dateFormat.label,
     itemToValue: (dateFormat) => dateFormat.formatString,
   });
 
-  const timeFormats = createListCollection({
+  const timeFormatListCollection = createListCollection({
     items: TimeFormats,
     itemToString: (timeFormat) => timeFormat.label,
     itemToValue: (timeFormat) => timeFormat.formatString,
   });
 
-  const languages = createListCollection({
+  const languageListCollection = createListCollection({
     items: Languages,
     itemToString: (language) => ` ${t(`${language.name}`)}`,
     itemToValue: (language) => language.value,
+  });
+
+  const checkIntervalListCollection = createListCollection({
+    items: [30, 60, 120, 300, 600],
+    itemToString: (intervalInSeconds) => {
+      const intervalInMinutes = intervalInSeconds / 60;
+      const translation = intervalInMinutes > 1 ? t("minutes") : t("minute");
+
+      return `${intervalInMinutes} ${translation.toLowerCase()}`;
+    },
+    itemToValue: (interval) => `${interval}`,
   });
 
   const handleThemeChange = ({ value }: ValueChangeDetails<string | null>) => {
@@ -106,6 +119,10 @@ export const General: FC = () => {
     checked,
   }: CheckedChangeDetails) => {
     dispatch(changeCheckIPInBackground(checked));
+  };
+
+  const handleChangeIntervalChange = ({ value }: ValueChangeDetails) => {
+    dispatch(changeCheckInterval(Number(value[0])));
   };
 
   return (
@@ -158,7 +175,7 @@ export const General: FC = () => {
         </RadioGroup.Root>
       </Fieldset.Root>
       <Select.Root
-        collection={languages}
+        collection={languageListCollection}
         defaultValue={[i18n.resolvedLanguage ?? i18n.language]}
         multiple={false}
         onValueChange={handleLanguageChange}
@@ -176,7 +193,7 @@ export const General: FC = () => {
         <Portal>
           <Select.Positioner>
             <Select.Content>
-              {languages.items.map(({ value, flagCode }) => (
+              {languageListCollection.items.map(({ value, flagCode }) => (
                 <Select.Item item={value} key={value}>
                   <Flex
                     alignItems="center"
@@ -196,7 +213,7 @@ export const General: FC = () => {
         </Portal>
       </Select.Root>
       <Select.Root
-        collection={dateFormats}
+        collection={dateFormatListCollection}
         multiple={false}
         defaultValue={[dateFormat]}
         onValueChange={handleDateFormatChange}
@@ -214,23 +231,25 @@ export const General: FC = () => {
         <Portal>
           <Select.Positioner>
             <Select.Content>
-              {dateFormats.items.map(({ formatString, label, example }) => (
-                <Select.Item item={formatString} key={formatString}>
-                  <Stack gap="0">
-                    <Select.ItemText>{label}</Select.ItemText>
-                    <Span color="fg.muted" textStyle="xs">
-                      {example}
-                    </Span>
-                  </Stack>
-                  <Select.ItemIndicator />
-                </Select.Item>
-              ))}
+              {dateFormatListCollection.items.map(
+                ({ formatString, label, example }) => (
+                  <Select.Item item={formatString} key={formatString}>
+                    <Stack gap="0">
+                      <Select.ItemText>{label}</Select.ItemText>
+                      <Span color="fg.muted" textStyle="xs">
+                        {example}
+                      </Span>
+                    </Stack>
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                )
+              )}
             </Select.Content>
           </Select.Positioner>
         </Portal>
       </Select.Root>
       <Select.Root
-        collection={timeFormats}
+        collection={timeFormatListCollection}
         multiple={false}
         defaultValue={[timeFormat]}
         onValueChange={handleTimeFormatChange}
@@ -248,7 +267,7 @@ export const General: FC = () => {
         <Portal>
           <Select.Positioner>
             <Select.Content>
-              {timeFormats.items.map((timeFormat) => (
+              {timeFormatListCollection.items.map((timeFormat) => (
                 <Select.Item
                   item={timeFormat.formatString}
                   key={timeFormat.formatString}
@@ -301,6 +320,40 @@ export const General: FC = () => {
           </Switch.Thumb>
         </Switch.Control>
       </Switch.Root>
+
+      <Select.Root
+        collection={checkIntervalListCollection}
+        multiple={false}
+        disabled={!checkIPInBackground}
+        defaultValue={[String(checkInterval)]}
+        onValueChange={handleChangeIntervalChange}
+      >
+        <Select.HiddenSelect />
+        <Select.Label fontSize="sm">
+          {t("backgroundCheckInterval")}
+          <InfoTip content={t("checkIPInBackgroundInfo")} />
+        </Select.Label>
+
+        <Select.Control>
+          <Select.Trigger>
+            <Select.ValueText placeholder={t("selectCheckInterval")} />
+          </Select.Trigger>
+          <Select.IndicatorGroup>
+            <Select.Indicator />
+          </Select.IndicatorGroup>
+        </Select.Control>
+
+        <Select.Positioner>
+          <Select.Content>
+            {checkIntervalListCollection.items.map((intervalInSeconds) => (
+              <Select.Item item={intervalInSeconds} key={intervalInSeconds}>
+                {`${intervalInSeconds / 60} ${intervalInSeconds / 60 > 1 ? t("minutes").toLowerCase() : t("minute").toLowerCase()}`}
+                <Select.ItemIndicator />
+              </Select.Item>
+            ))}
+          </Select.Content>
+        </Select.Positioner>
+      </Select.Root>
     </Box>
   );
 };

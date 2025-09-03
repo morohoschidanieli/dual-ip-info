@@ -69,7 +69,7 @@ export const ro = {
   back: "Înapoi",
   copyToClipboard: "Copiază în clipboard",
   copiedToClipboard: "Copiat în clipboard",
-  backgroundCheckInterval: "Interval de verificare (secunde)",
+  backgroundCheckInterval: "Frecvența verificărilor în fundal",
   selectCheckInterval: "Selectează intervalul",
   notificationTitle: "IP Public Schimbat",
   notificationMessage: "Adresa ta IP s-a schimbat de la ultima verificare.",
@@ -77,4 +77,10 @@ export const ro = {
   ipDetectionFailedDescription:
     "Verifică conexiunea la internet sau setările de rețea.",
   checkIPInBackground: "Verifică schimbările de IP în fundal",
+  checkIPInBackgroundInfo:
+    "Această opțiune este activă doar dacă opțiunea de mai sus este activată.",
+  minute: "Minut",
+  minutes: "Minute",
+  second: "Secundă",
+  seconds: "Secunde",
 };
