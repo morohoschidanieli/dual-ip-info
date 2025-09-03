@@ -1,3 +1,7 @@
+## [2.3.0] - 04-09-2025
+
+- ✨ feat: add new setting to set the frequency of fetching IP changes in background(0.5min, 1min, 2min, 5mins, 10mins)
+
 ## [2.2.0] - 20-07-2025
 
 - ✨ feat: add translations for arabic, czech, hindi, hungarian, turkey and ukrainian
